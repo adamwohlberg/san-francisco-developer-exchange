@@ -22,4 +22,4 @@
 # Ignore application configuration
 /config/application.yml
 /config/secret.yml
-public/system
+public/assets
