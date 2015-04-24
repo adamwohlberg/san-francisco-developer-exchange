@@ -1,0 +1,73 @@
+<section class="developerpage" ng-init="init()">
+  <div class="row" >
+    <div id="developer_container_all_developers" class="small-12 medium-3 large-3 columns">
+        <div id="pagination_upper" class="pagination">
+        <span ng-click="first()"> First </span>          
+        <span ng-click="prev()"> &laquo;Prev</span>
+        <span ng-click="page1()"> 1 </span>
+        <span ng-click="page2()"> 2 </span>
+        <span ng-click="page3()"> 3 </span>
+        <span ng-click="next()">Next&raquo; </span>
+        </div>
+        <div ng-repeat="developer in developers | filter:query | filter:skills | limitTo: 99 | orderBy: developerOrder:direction" ng-class="{'rotate-left': rotate === 'left', 'rotate-right': rotate === 'right'}" class="developer_container_each_developer" ng-swipe-left="swipeLeft(developer); rotate='left'" ng-swipe-right="swipeRight(developer); rotate='right'" ng-hide="showOnlyFavoritesChecked && !developer.favorited">
+          <div class="small-12 medium-12 large-12 columns">
+          <div id="developer_image_container">
+            <div class="animation_3d" id="rotation_box">
+                  <div class="small-12 medium-3 large-3 columns">
+                    <a ng-href="/developers/{{developer.id}}">
+                  <img ng-if="developer.avatar" id="developer_profile_image" class="developer_profile_image" ng-src="{{developer.avatar}}.jpg" alt="Image of {{developer.username}}"></a>
+                   <img ng-if="!developer.avatar" id="developer_profile_image" class="developer_profile_image" ng-src="noface.jpg" alt="Image of {{developer.username}}"></a>                                                                   
+                  </div>
+                  <div class="small-12 medium-8 large-8 columns developer_stats_box">
+                      <h2 id="developer_title">    
+                        <a ng-href="/developers/{{developer.id}}">{{developer.title | limitTo : 37}}</a>
+                      </h2>
+                      <i><div id="developer_location">{{developer.location}}</div></i>
+                      <p>Distance: aprox. {{developer.distance | number:0}} miles</br>
+                      Codername: {{developer.username}}
+                      </p>
+
+                  </div>
+                  <div class="small-12 medium-1 large-1 columns">
+                    <div id="like_unlike_buttons">
+                      <button  ng-if="developer.favorited" ng-click="unstarIt(developer); rotate='left'" id="rockstar" class="fi-star foundation-icon selected developer_liked"><span id="the_word_liked">&nbsp;&nbsp;Liked</span></button>
+                     <button ng-if="!developer.favorited" ng-click="starIt(developer); rotate='right'" id="rockstar" class="fi-star foundation-icon developer_unliked"><span id="the_word_like">&nbsp;&nbsp;Like&nbsp;</span></button>
+                    </div>
+
+                  </div> 
+
+                   <div class="small-12 medium-9 large-9 columns developer_stats_box" id="developer-description-content">               
+                      <div id="inline-span">
+                        <strong>Minimum Contract Amount: </strong>{{developer.min_contract_amount | currency:undefined:0}}
+                      </div>  
+
+                      <div id="developer_description" class="truncate">
+                      <p>{{developer.description | limitTo : 150}}<a ng-href="/developers/{{developer.id}}"><span id="view_full_profile_text">..more.</span></a></p>
+                      </div>
+                  </div>        
+            </div>
+          </div>
+                <div class="small-12 medium-12 large-12 columns border">
+                      <div id="developer_skills" class="truncate">
+                        <strong id="super_powers">Skills: </strong><a ng-href="/developers/{{developer.id}}"><span id="view_full_profile_text">(view full profile)</span></a><br/>
+                        <span ng-repeat="skill in developer.skills | limitTo:quantity" class="skills_tag">{{ skill }}</span>
+                      </div>
+                     
+                </div>
+
+              <div class="small-12 med-9 large-9 columns request_interview_button_container"></div>
+            </div>
+            <hr id="black-hr">
+        </div>
+      </div> <!-- developer container -->
+        <div id="pagination_lower" class="pagination">
+          <span ng-click="first()"> First </span>          
+          <span ng-click="prev()"> &laquo;Prev</span>
+          <span ng-click="page1()"> 1 </span>
+          <span ng-click="page2()"> 2 </span>
+          <span ng-click="page3()"> 3 </span>
+          <span ng-click="next()">Next&raquo; </span>
+        </div>
+    </div> <!-- end row -->
+</section>
+    <br>

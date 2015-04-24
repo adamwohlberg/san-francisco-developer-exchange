@@ -1,0 +1,40 @@
+// Place all the styles related to the landing_page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bg-content-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    max-height: 580px;
+    margin-top: -20px;
+}
+.bg-content {
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.24) inset;
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.24) inset;
+    -o-box-shadow: 0 0 5px rgba(0,0,0,0.24) inset;
+    box-shadow: 0 0 5px rgba(0,0,0,0.24) inset;
+    position: static;
+}
+.bg-content video {
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto !important;
+    top: 0;
+    left: 0;
+}
+#landing-page-headline {
+    margin-top: -40px;
+    position: relative;
+    z-index: -99999;
+}

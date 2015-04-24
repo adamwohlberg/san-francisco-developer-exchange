@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="hide-for-small-only large-12 columns">
+    <div class="search">
+      <h2>Developers You Liked:</h2>
+   </div>
+  </div>
+
+<div class="row">
+  <div class="hide-for-small-only medium-3 large-3 columns"></div>
+  <% @developers.each do |developer| %>
+    <ul>
+      <div class="fi-star foundation-icon employer-likes-index-star"></div>
+      <%= link_to image_tag(developer.avatar, :id => 'developer_profile_image_show'), developer_path(developer.id) %>
+      <ul><h2><%= developer.title %></h2></ul>
+      <ul><li><%= developer.description %></li></ul>
+   </ul>
+  <% end %>
+

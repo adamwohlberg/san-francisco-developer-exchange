@@ -1,0 +1,92 @@
+      <%= user_signed_in? ? link_to('HIRE', developers_path, class: "button large [radius round] button_landing_page_left") : link_to('HIRE', new_user_registration_path, class: "button large [radius round] button_landing_page_left") %>
+      <%= user_signed_in? ? link_to('GET HIRED', contracts_path, class: "button large [radius round] button_landing_page_right") : link_to('GET HIRED', new_user_registration_path, class: "button large [radius round] button_landing_page_right") %>
+
+
+            <%= s.input :name, as: :boolean, label: "PHP", value: "PHP", :input_html => { :name => 'skill[]' , :include_hidden => false } %>
+      <%= s.input :name, as: :boolean, label: "Ruby", value: "Ruby", name: "name[]" %>
+      <%= s.input :name, as: :boolean, label: "Java", value: "Java" %>
+      <%= s.input :name, as: :boolean, label: "Objective-C", value: "Objective-C" %>
+      <%= s.input :name, as: :boolean, label: "Swift", value: "Swift" %>
+      <%= s.input :name, as: :boolean, label: ".NET", value: ".NET" %>
+      <%= s.input :name, as: :boolean, label: "Python", value: "Python" %>
+
+      <strong>Frontend</strong><br/>
+      <%= s.input :name, as: :boolean, label: "HTML", value: "HTML" %>
+      <%= s.input :name, as: :boolean, label: "CSS", value: "CSS" %>
+      <%= s.input :name, as: :boolean, label: "Javascript", value: "Javascript" %>
+      <%= s.input :name, as: :boolean, label: "jQuery", value: "jQuery" %>
+      <%= s.input :name, as: :boolean, label: "AngularJS", value: "AngularJS" %>
+      <%= s.input :name, as: :boolean, label: "BackboneJS", value: "BackboneJS" %>
+
+      <strong>Frontend Frameworks</strong><br/>
+      <%= s.input :name, as: :boolean, label: "Foundation", value: "Foundation" %>
+      <%= s.input :name, as: :boolean, label: "Bootstrap", value: "Bootstrap" %>
+      <%= s.input :name, as: :boolean, label: "Meteor", value: "Meteor" %>
+      <%= s.input :name, as: :boolean, label: "Phonegap", value: "Phonegap" %>
+
+      <strong>Databases</strong><br/>
+      <%= s.input :name, as: :boolean, label: "MySQL", value: "MySQL" %>
+      <%= s.input :name, as: :boolean, label: "Postgres", value: "Postgres" %>
+      <%= s.input :name, as: :boolean, label: "MongoDB", value: "MongoDB" %>
+      <%= s.input :name, as: :boolean, label: "SQL", value: "SQL" %>
+
+      <strong>Backend Frameworks</strong><br/>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Rails", value: "Rails" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Laravel", value: "Laravel" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "CakePHP", value: "CakePHP" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Wordpress", value: "Wordpress" %>
+
+      <strong>Other Coding SKills</strong><br/>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Git", value: "Git" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "GitHub", value: "GitHub" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Coffeescript", value: "Coffeescript" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Sass", value: "Sass" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "LESS", value: "LESS" %>
+
+      <strong>Design</strong><br/>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Photoshop", value: "Photoshop" %>
+      <%= s.input :name, as: :boolean, name: "skills[]", label: "Illustator", value: "Illustator" %>
+
+
+
+                          <button  data-unlike-it="" data-developer-id="{{developer.id}}" data-employer-id="<% current_user.type == 'Employer' ? current_user.id : nil %>" ng-click="unlikeIt($event) ;show=!show; myValue=true" id="unlike" class="fi-x foundation-icon"></button>
+
+
+      <%= skill.check_box :name, "Java" %>
+      <%= skill.check_box :name, "Objective-C" %>
+      <%= skill.check_box :name, "Swift" %>
+      <%= skill.check_box :name, ".NET" %>
+      <%= skill.check_box :name, "Python" %>
+
+
+
+
+
+      <div ng-controller="UsersController">
+      <input type="checkbox" ng-click="add('ruby')">
+      <button ng-click="submit()"></button>
+</div>
+
+myApp.controller('UserSignUpController', function($scope, $http) {
+      
+      $scope.skills = []
+
+      $scope.ruby
+
+      $scope.add = function(skill){
+            $scope.skills << skill;
+      };    
+
+      $scope.remove = function(skill){
+            $scope.delete(skill);
+      };    
+
+      $scope.submit = function() {
+            var payload = {
+                  skills: $scope.skills
+            }
+            $http.put('/users', payload).success(function() {
+
+            });
+      };
+});

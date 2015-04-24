@@ -1,0 +1,7 @@
+$('#contract_<%=@contract.id%>').html('<%=@contract.status%>');
+
+<% if alert %>
+  $('.alert').html('<%=alert%>');
+  <% elsif notice %>
+  $('.notice').html('<%=notice%>');
+<% end %>

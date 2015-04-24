@@ -1,0 +1,16 @@
+<%= form_tag send_email_to_employer_negotiation_path(@negotiation), method: :post  do %>
+
+<br />
+<strong><h4>Message:</h4></strong>
+	<%= text_area_tag(:message, "", size: "50x6") %>
+	  <%= submit_tag("Send Message", class: "button large success")%>
+	<% end %>
+	<% @negotiation.negotiation_messages.employer_message.each do |negotiation_message| %>
+		<div id="negotiation_message_textbox">
+		  <span class='time'><%=  'about ' + time_ago_in_words(negotiation_message.created_at) + ' ago:' %></span>		  
+		  <p><%= negotiation_message.message %></p>
+		</div>
+		<hr>
+	<% end %>
+
+

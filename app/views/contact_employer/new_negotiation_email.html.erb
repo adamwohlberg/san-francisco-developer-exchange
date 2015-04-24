@@ -1,0 +1,7 @@
+<p>Hey <%= @employer.first_name %>,</p>
+ 
+<p>A developer responded to your email.</p>
+
+<p><%= link_to "See the message now", negotiation_url(@negotiation) %>
+<span>or...</span>
+<span><%= link_to "hire the developer now.", negotiation_url(@negotiation) %></span></p>

@@ -1,0 +1,66 @@
+<div id="developer_form">
+  <!-- sti so developer has already been created thus form submits to update action -->
+  <%= simple_form_for(@developer, :url => {:action => 'update', :id => @developer.id}, html: { multipart: true}) do |f| %>
+    <% if @developer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@developer.errors.count, "error") %> prohibited this developer from being saved:</h2>
+
+        <ul>
+        <% @developer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label "What type of developer are you?" %><br>
+      <%= f.select :title, ['PHP Developer', 'Ruby on Rails Developer', 'iOS Developer', 'Android Developer', 'Front End Developer'] %>
+    </div>
+    <div class="field">
+      <%= f.label 'Choose your alter ego\'s username:' %><br>
+      <%= f.text_field :username, :placeholder => 'e.g. bruce_wayne'  %>
+    </div>
+    <div class="field">
+      <%= f.label :description, label: "What is your professional summary?" %><br>
+      <%= f.text_area :description, :placeholder => "i.e. This is my experience and the unique attributes that set me apart from other developers in 500 words or less...", :size => "30x10"%>
+    </div>
+    <div class="field">
+      <%= f.label :min_contract_amount, label: "What is the minimum contract amount you require?" %><br>
+      <%= f.input :min_contract_amount, label: false, :placeholder => '$5,000' %>
+    </div>
+    <div class="field">
+      <%= f.label :cell, label: "What is your cell phone # (to be provided to qualified employers)?" %><br>
+      <%= f.input :cell, as: :tel, label: false, placeholder: 'e.g. 310-555-1212' %>
+    </div>
+    <div class="field">
+      <%= f.label :paypal_email, label: "What is your PayPal email (required if you would like direct PayPal payments)" %><br>
+      <%= f.input :paypal_email, label: false, placeholder: 'e.g. elon.musk@zmail.com' %>
+    </div>
+    <div class="field image_upload_section">
+        <%= f.label :avatar, label: "Upload a profile image:" %>
+        <%= f.file_field :avatar %>
+    </div>
+    <h4>In which of these skills can you demonstrate proficiency?</h4>
+      <div class="field form-actions" id="skills_section_of_new_developer_form">
+        <%= render partial: 'skill_category', collection: @skill_categories, locals: {form: f} %>
+      </div>
+    <div id="terms_of_use_partial">
+      <%= render 'developers/terms' %>
+    </div>
+    <div id="agree_to_terms">
+      <input type="checkbox" ng-model="checked">
+      <span>I have read and agree to the <span><%= link_to "terms and conditions", "/legal/membership-terms", :class => "popup", :"data-width" => 600, :"data-height" => 300 %>.</span>
+    </div>
+    <div class="form-actions">
+      <input type="submit" class="button medium" ng-disabled="!checked">
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+

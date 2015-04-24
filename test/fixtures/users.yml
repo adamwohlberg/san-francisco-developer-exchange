@@ -1,0 +1,115 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  created_at             :datetime
+#  updated_at             :datetime
+#  username               :string(255)
+#  latitude               :float(24)
+#  longitude              :float(24)
+#  location               :string(255)
+#  ip                     :string(255)
+#  relationship_type      :string(255)
+#  star_rating            :integer
+#  type                   :string(255)
+#  company_name           :string(255)
+#  title                  :string(255)
+#  description            :text
+#  ein                    :string(255)
+#  image_path             :string(255)
+#  min_contract_amount    :string(255)
+#  min_full_time_amount   :string(255)
+#  agree_to_terms         :boolean
+#  balance                :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+developer:
+   id: 1
+   first_name: "Developer"
+   email: "developer@gmail.com"
+   location: "95060"
+   username: "dev_flunkr"
+   type: "Employer"
+   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+
+employer:
+   id: 2
+   first_name: "Employer"
+   email: "employer@gmail.com"
+   location: "95060"
+   username: "emp_flunkr"
+   type: "Employer"
+   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+jason:
+   id: 3
+   first_name: "Jason"
+   email: "jasonz@teamtreehouse.com"
+   location: "95060"
+   username: "jaybona"
+   type: "Employer"
+   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+jim:
+   id: 4
+   first_name: "Jim"
+   email: "jimz@teamtreehouse.com"
+   username: "jimarooni"
+   location: "95060"
+   type: "Developer"
+   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+adam:
+   id: 5
+   first_name: "Adam"
+   email: "adamz@adamzuckerberg.com"
+   username: "zuckerberg"
+   location: "95060"
+   type: "Developer"
+   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

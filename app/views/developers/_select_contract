@@ -1,0 +1,7 @@
+		<h5>Please select one of your contracts:</h5>
+    <%= simple_form_for(@contract, data: {:developer_id => @developer.id}) do |f| %>
+		<%= f.input :name, collection: current_user.contracts.map{ |c| c }, :label_method => lambda { |contract| 'Contract ID: '+' '+"#{contract.id}"+' - '+"#{contract.name}"+' - $'+"#{ "%g" % (contract.amount)}"}, label: false %> 
+    <p>*Please note, the contract amount must meet this developer's min. contract requirements.</p>
+		<% end %>
+
+

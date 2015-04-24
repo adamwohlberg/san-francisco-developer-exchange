@@ -1,0 +1,27 @@
+// Place all the styles related to the Negotiations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#negotiation_message_textbox {
+	border: 4px solid steelblue;
+	border-radius: 5px;
+	background: #fcfbf9;
+	padding: 10px;
+}
+#negotiation_message_textbox:hover {
+	background: #ffffff;
+}
+
+span.time {
+	font-size: 0.9em;
+	opacity: 0.5;
+}
+
+#pdf_download_image {
+	width: 90px;
+	opacity: 0.5;
+}
+
+#pdf_download_image:hover {
+	opacity: 1.0;
+}

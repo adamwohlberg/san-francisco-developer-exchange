@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang-"en" ng-app="myApp">
+<head>
+  <title>San Francisco Developer Exchange | Hire a Local Developer Today </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The premium marketplace for freelance, developer contracts. The fastest, easiest way to find and hire a local developer.">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico?v=2' %>
+</head>
+<body>
+<%= javascript_tag "embedGoogleAnalyticsTrackingCode()" -%>
+<div class="fixed">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <%= link_to image_tag("/images/logo.png", height: '100', width: '500'), root_path %>
+    </ul>
+  <div class="right">
+      <% if current_user && current_user.avatar_file_name? %>
+        <%= image_tag(current_user.avatar, :id => 'headerProfileImage', alt: "profile") %><br />
+      <% elsif current_user && current_user.fb_image.present? %>
+        <%= image_tag(current_user.fb_image, :id => 'headerProfileImage', alt: "profile image") %><br/>
+      <% else %>
+        <%# image_tag('noface.jpg', :id => 'headerProfileImage', alt: "search image spinning")  %><br />
+      <% end %>
+    <ul id="register_and_login_links">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Hi ' + current_user.first_name.capitalize, edit_user_registration_path, id: "register_name" %></li>
+      <% else %>
+        <li><%= link_to 'Already a Member? Sign In', login_path %></li>
+        <li id="register"><%= link_to 'Register', register_path %></li>
+      <% end %>
+        <div id="hidden-register-name-dropdown-links">
+          <li><%= link_to 'LOG OUT', logout_path %></li>
+        <% if user_signed_in? && current_user.type == 'Employer'%>
+        <li><%= link_to('NEW CONTRACT', new_contract_path) %></li>
+          <li><%= link_to('HIRE DEVELOPERS', search_developers_path) %></li>
+          <li><%= link_to('MY CONTRACTS', my_contracts_path) %></li>
+<!--           <li><%# link_to 'MY PAYMENTS', edit_user_registration_path %></li> -->
+        <% end %>
+        <% if user_signed_in? && current_user.type == 'Developer'%>
+          <li><%= link_to('MY PROFILE', edit_developer_path(current_user.id)) %></li> 
+          <li><%= link_to('GET HIRED', search_contracts_path) %></li>
+          <li><%= link_to('MY CONTRACTS', my_contracts_path) %></li>
+<!--           <li><%# link_to 'MY PAYMENTS', edit_user_registration_path %></li> -->
+        <% end %>
+          <li><%= link_to 'MY ACCOUNT', edit_user_registration_path %></li>
+        </div>
+    </ul>
+    </div>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if user_signed_in? && current_user.type == 'Employer'%>
+
+        <% end %> 
+        <% if user_signed_in? && current_user.type == 'Developer'%>  
+
+        <% end %> 
+    </section>
+  </nav>
+</div>

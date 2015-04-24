@@ -1,0 +1,2 @@
+class TradingFloorController < ApplicationController
+end

@@ -1,0 +1,10 @@
+<p>Hi <%= @employer.first_name %>,</p>
+ 
+<p>Your contract is completed.</p>
+
+<p>Please <%= link_to 'mark the contract as completed', my_contracts_url %> as soon as possible.<p>
+
+<p>Thank you!</p>
+
+<p>Sincerely,</p>
+<%= @developer.first_name %>

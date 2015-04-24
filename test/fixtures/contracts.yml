@@ -1,0 +1,62 @@
+# == Schema Information
+#
+# Table name: contracts
+#
+#  id                 :integer          not null, primary key
+#  name               :string(255)
+#  description        :text
+#  amount             :integer
+#  location           :string(255)
+#  title              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  employer_id        :integer
+#  developer_id       :integer
+#  company            :string(255)
+#  contract_type      :string(255)
+#  agree_to_terms     :boolean
+#  remote_work_status :string(255)
+#  equity             :boolean
+#  relationship_type  :string(255)
+#  image              :string(255)
+#  latitude           :float(24)
+#  longitude          :float(24)
+#  ein                :string(255)
+#  complete           :boolean
+#  balance            :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+     name: "PHP Developer Contract"
+     amount: 2500
+     title: "PHP Developer"
+     ein: '55-1234567'
+     status: 'open'
+     developer_id: 1
+     employer_id: 2
+
+two:
+     name: "Ruby Developer Contract"
+     amount: 2000
+     title: "PHP Developer"
+     ein: '55-1234567'
+     status: 'closed'
+     developer_id: 1
+     employer_id: 2
+
+three:
+     name: "Ruby Developer Contract"
+     amount: 5000
+     title: "PHP Developer"
+     ein: '55-1234567'
+     status: 'closed'
+     developer_id: 1
+     employer_id: 2
+
+
+
+
+
+

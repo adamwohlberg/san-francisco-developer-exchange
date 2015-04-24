@@ -1,0 +1,19 @@
+
+<div class="row">
+	<div class="medium-4 large-4 columns"></div>
+</div>
+<div class="row">
+	<div class="small-12 medium-8 large-8 columns">
+  <% if current_user && current_user.type == 'Employer' %>
+  <%= image_tag(@developer.avatar, :id => 'developer_profile_image_show') %><br />
+  <% elsif current_user && current_user.type == 'Developer' %>
+  <%= image_tag(@employer.avatar, :id => 'developer_profile_image_show') %><br />
+  <% end %>
+<h1>Congratulations!</h1>
+<h5>We just sent an email to the developer - they know you're interested!</h5>
+	</div>
+</div>
+<%= link_to '<<Back to the Contract', contract_path(@contract) %>
+<div class="row">
+	<div class="medium-4 large-4 columns"></div>
+</div>

@@ -1,0 +1,42 @@
+
+
+<div class="row">
+  <div class="small-12 medium-6 large-6 columns">
+    <h2>Sign up</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= resource.errors.full_messages.join(", ") %>
+        <div class="form-inputs">
+          <%= radio_button_tag(:type, "Employer") %>
+            <%= label_tag(:type, "I'm an employer") %>
+          <%= radio_button_tag(:type, "Developer", {:checked => true}) %>
+            <%= label_tag(:type, "I'm a developer") %>
+
+          <div id="facebook_button_register_page">
+            <%= link_to image_tag("facebook-buttons/facebook.jpg"), user_omniauth_authorize_path(:facebook, type: 'Developer'), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
+          </div>
+          <%= f.input :first_name, required: true, autofocus: true, :placeholder => "Barack" %>
+          <%= f.input :email, required: true, autofocus: true, label:
+          "Primary email", :placeholder => "e.g. barack@whitehouse.gov" %>
+          <%= f.input :location, label: "City, State", :placeholder => "e.g. Beverly Hills, CA" %>
+          
+          <% if f.object.password_required? %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+            <%= f.input :password_confirmation, required: true %>
+          <% end %>
+
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Sign Up" %>
+        </div>
+      <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+      <div class="show-for-medium-up medium-6 large-6 columns">
+        <h3>Signing up is easy and fun.</h3>
+  </div>
+</div>
+
+
+
+
+

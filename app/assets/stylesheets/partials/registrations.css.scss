@@ -1,0 +1,32 @@
+// Place all the styles related to the registrations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#linkedin_button {
+	margin: 20px;
+}
+#facebook_button, #facebook_button_register_page {
+	margin: 15px 0px 15px 55px;
+	width: 300px;
+	opacity: 0.8;
+}
+
+#facebook_button:hover {
+	opacity: 1.0;
+}
+
+#facebook_button_register_page:hover {
+	opacity: 1.0;
+}
+
+/*#facebook_button_register_page {
+	display: none;
+}*/
+
+/*#registration_radio_buttons {
+	font-size: 1.2em;
+}
+
+span#developer, span#employer {
+	font-weight: 600;
+}*/

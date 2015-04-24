@@ -1,0 +1,936 @@
+
+---
+contracts:
+  columns:
+  - id
+  - name
+  - description
+  - amount
+  - location
+  - title
+  - created_at
+  - updated_at
+  - employer_id
+  - developer_id
+  - company
+  - contract_type
+  - agree_to_terms
+  - remote_work_status
+  - equity
+  - relationship_type
+  records: 
+  - - 10
+    - 
+    - Long hours and low pay. No equity. Suck it slave boy.
+    - 500
+    - Silicon Holllywodo
+    - Big Money LAMP
+    - 2014-12-10 22:56:31.000000000 Z
+    - 2014-12-10 22:56:31.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 12
+    - 
+    - Great project.
+    - 50000
+    - Silicon Beach
+    - Ruby on Rails
+    - 2014-12-10 22:59:21.000000000 Z
+    - 2014-12-10 22:59:21.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 13
+    - 
+    - Now that Pirate Bay has been raided by the Swedes, let's rebuild it from offshore
+      Russia. Putin loves a good pirate.
+    - 200000
+    - Remote
+    - Pirate Bay 2.0
+    - 2014-12-10 23:01:18.000000000 Z
+    - 2014-12-10 23:01:18.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 14
+    - 
+    - Build stuff for us
+    - 5000
+    - Silicon Beach (i.e. Venice, Santa Monica)
+    - PHP DEVELOPER
+    - 2014-12-13 08:24:48.000000000 Z
+    - 2014-12-13 08:24:48.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 15
+    - 
+    - ''
+    - 
+    - New York City
+    - 
+    - 2014-12-15 16:02:25.000000000 Z
+    - 2014-12-15 16:02:25.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 16
+    - 
+    - ''
+    - 0
+    - Silicon Valley (i.e. SF, East Bay)
+    - PHP Developer (Entry-Level)
+    - 2014-12-15 16:35:51.000000000 Z
+    - 2014-12-15 16:35:51.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 17
+    - 
+    - ''
+    - 0
+    - Silicon Beach (i.e. Venice, Santa Monica)
+    - PHP Developer Level (Senior)
+    - 2014-12-15 16:36:51.000000000 Z
+    - 2014-12-15 16:36:51.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 18
+    - 
+    - ''
+    - 0
+    - Silicon Beach (i.e. Venice, Santa Monica)
+    - PHP Developer Level (Senior)
+    - 2014-12-15 16:37:53.000000000 Z
+    - 2014-12-15 16:37:53.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 19
+    - Hot Sex
+    - 
+    - 
+    - 
+    - 
+    - 2014-12-17 19:41:38.000000000 Z
+    - 2014-12-17 19:41:38.000000000 Z
+    - 1
+    - 3
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - 20
+    - Bad Sex
+    - 
+    - 
+    - 
+    - 
+    - 2014-12-17 19:44:46.000000000 Z
+    - 2014-12-17 19:44:46.000000000 Z
+    - 2
+    - 1
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 
+
+---
+developers:
+  columns:
+  - id
+  - username
+  - first_name
+  - last_name
+  - description
+  - title
+  - min_contract
+  - min_salary
+  - location
+  - rating
+  - contracts_completed
+  - total_dollars_earned
+  - primary_skill
+  - primary_skill_verfified
+  - created_at
+  - updated_at
+  - email
+  - agree_to_terms
+  - user_id
+  - star_rating
+  - work_type_available_for
+  - relationship_type
+  records: 
+  - - 1
+    - 
+    - JohnnyG
+    - Focker
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-13 07:33:41.000000000 Z
+    - 2014-12-17 19:19:16.000000000 Z
+    - jason@teamtreehouse.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 2
+    - 
+    - JohnnyG
+    - 
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-13 07:34:37.000000000 Z
+    - 2014-12-13 07:34:37.000000000 Z
+    - adam.wohlberg@gmail.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 3
+    - 
+    - JohnnyG
+    - Superstar
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-13 07:35:04.000000000 Z
+    - 2014-12-17 19:26:04.000000000 Z
+    - adam.wohlberg@gmail.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 6
+    - 
+    - Adam
+    - Zucker
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - 
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 16:08:53.000000000 Z
+    - 2014-12-14 16:08:53.000000000 Z
+    - noreply@fakestuff.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 7
+    - 
+    - Adam
+    - Rothersteinski
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - 
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 16:09:07.000000000 Z
+    - 2014-12-14 16:09:07.000000000 Z
+    - noreply@fakestuff.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 8
+    - 
+    - Adam
+    - Weisbuerg
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - 
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 16:09:22.000000000 Z
+    - 2014-12-14 16:09:22.000000000 Z
+    - noreply@fakestuff.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 9
+    - 
+    - Adam
+    - Rothstein
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - 
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 16:09:32.000000000 Z
+    - 2014-12-14 16:09:32.000000000 Z
+    - noreply@fakestuff.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 11
+    - 
+    - JohnnyG
+    - 
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 17:26:01.000000000 Z
+    - 2014-12-14 17:26:01.000000000 Z
+    - mark@facebook.com
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 12
+    - 
+    - JohnnyG
+    - 
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 17:47:47.000000000 Z
+    - 2014-12-14 17:47:47.000000000 Z
+    - ''
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 13
+    - 
+    - JohnnyG
+    - 
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 17:48:02.000000000 Z
+    - 2014-12-14 17:48:02.000000000 Z
+    - ''
+    - false
+    - 
+    - 2.5
+    - 
+    - 
+  - - 14
+    - 
+    - 
+    - 
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-14 20:20:04.000000000 Z
+    - 2014-12-14 20:20:04.000000000 Z
+    - adfa@ssdaD.com
+    - true
+    - 
+    - 2.5
+    - 
+    - 
+  - - 15
+    - 
+    - 
+    - 
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - PHP Developer
+    - 
+    - 
+    - Silicon Valley (i.e. SF, East Bay)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-16 00:55:42.000000000 Z
+    - 2014-12-16 00:55:42.000000000 Z
+    - DFzd@fuckyou.com
+    - true
+    - 
+    - 2.5
+    - 
+    - 
+  - - 16
+    - 
+    - 
+    - 
+    - Bacon ipsum dolor amet sausage nisi esse ham, ad consequat short ribs boudin.
+      Meatball t-bone commodo ad, minim dolore doner drumstick exercitation in ea.
+      Laboris strip steak tri-tip eiusmod tail, rump magna proident ad. Anim beef
+      pastrami velit kevin pork chop, non voluptate magna salami filet mignon duis
+      et. Frankfurter sint cow non nisi adipisicing.
+    - 
+    - 
+    - 
+    - Silicon Beach (i.e. Venice, Santa Monica)
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-16 03:10:38.000000000 Z
+    - 2014-12-16 03:10:38.000000000 Z
+    - ''
+    - true
+    - 
+    - 2.5
+    - 
+    - 
+  - - 17
+    - 
+    - Ducky
+    - McFucky
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - '0'
+    - 
+    - 
+    - false
+    - 2014-12-17 14:40:54.000000000 Z
+    - 2014-12-17 14:40:54.000000000 Z
+    - 
+    - false
+    - 1
+    - 2.5
+    - 
+    - 
+
+---
+employers:
+  columns:
+  - id
+  - company_name
+  - image_link
+  - phone
+  - email
+  - ein
+  - location
+  - website_url
+  - created_at
+  - updated_at
+  - user_id
+  records: 
+  - - 1
+    - Obama Administration
+    - 
+    - 
+    - 
+    - 555-666-6666
+    - Silicon Valley
+    - www.whitehouse.gov
+    - 2014-12-15 15:36:46.000000000 Z
+    - 2014-12-15 15:36:46.000000000 Z
+    - 
+  - - 2
+    - NextSpace
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 2014-12-15 15:45:20.000000000 Z
+    - 2014-12-15 15:45:20.000000000 Z
+    - 
+  - - 3
+    - Larry Flynt Productions
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 2014-12-15 15:45:41.000000000 Z
+    - 2014-12-15 15:45:41.000000000 Z
+    - 
+  - - 4
+    - Evil Corporation
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 2014-12-17 14:44:08.000000000 Z
+    - 2014-12-17 14:44:08.000000000 Z
+    - 2
+
+---
+negotiations:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - contract_id
+  - message_content
+  - filename
+  - content_type
+  - data
+  - developer_id
+  - employer_id
+  - summary
+  records: 
+  - - 1
+    - 2014-12-13 15:15:45.000000000 Z
+    - 2014-12-17 19:28:57.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - I want your hands on my staff!
+  - - 2
+    - 2014-12-13 15:18:08.000000000 Z
+    - 2014-12-13 15:18:08.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 3
+    - 2014-12-13 15:38:10.000000000 Z
+    - 2014-12-13 15:38:10.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 4
+    - 2014-12-15 03:58:30.000000000 Z
+    - 2014-12-15 03:58:30.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 5
+    - 2014-12-15 03:58:33.000000000 Z
+    - 2014-12-15 03:58:33.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 6
+    - 2014-12-17 01:50:14.000000000 Z
+    - 2014-12-17 01:50:14.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 7
+    - 2014-12-17 01:54:48.000000000 Z
+    - 2014-12-17 01:54:48.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 8
+    - 2014-12-17 01:56:07.000000000 Z
+    - 2014-12-17 01:56:07.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 9
+    - 2014-12-17 02:02:48.000000000 Z
+    - 2014-12-17 02:02:48.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 10
+    - 2014-12-17 02:39:28.000000000 Z
+    - 2014-12-17 02:39:28.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 11
+    - 2014-12-17 02:40:24.000000000 Z
+    - 2014-12-17 02:40:24.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 12
+    - 2014-12-17 12:45:16.000000000 Z
+    - 2014-12-17 12:45:16.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 13
+    - 2014-12-17 19:24:33.000000000 Z
+    - 2014-12-17 19:24:33.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 3
+    - 1
+    - 
+  - - 14
+    - 2014-12-17 19:27:15.000000000 Z
+    - 2014-12-17 19:27:15.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 3
+    - 1
+    - 
+
+---
+users:
+  columns:
+  - id
+  - first_name
+  - last_name
+  - profile_name
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - username
+  - company
+  - location
+  - description
+  - min_salary
+  - min_contract
+  records: 
+  - - 1
+    - Adam
+    - Wohlberg
+    - 
+    - adam.wohlberg@gmail.com
+    - $2a$10$wuyRInlV9cCNnRiPRjvvMetsQ10KeeWDtWhJF6BufuZl3/armbRHW
+    - 
+    - 
+    - 
+    - 4
+    - 2014-12-17 14:22:45.000000000 Z
+    - 2014-12-17 13:58:54.000000000 Z
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2014-12-10 19:44:29.000000000 Z
+    - 2014-12-17 14:22:45.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 2
+    - 
+    - 
+    - 
+    - adam@adamzuckerberg.com
+    - $2a$10$.cc94qwfmlqQNviO7E0en.GBRcuIc.Z4If6JIi2rokXabkWXHGNBu
+    - 
+    - 
+    - 
+    - 1
+    - 2014-12-10 19:57:58.000000000 Z
+    - 2014-12-10 19:57:58.000000000 Z
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2014-12-10 19:57:58.000000000 Z
+    - 2014-12-11 23:40:37.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 3
+    - 
+    - 
+    - 
+    - sexy@sexy.com
+    - $2a$10$FQQwr93HgPYG5EMy7KVAPu27h6gYn3d3eV3Ee65fdTCffpZgiLBQi
+    - 
+    - 
+    - 
+    - 1
+    - 2014-12-10 23:37:56.000000000 Z
+    - 2014-12-10 23:37:56.000000000 Z
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2014-12-10 23:37:56.000000000 Z
+    - 2014-12-10 23:37:56.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 4
+    - 
+    - 
+    - 
+    - mark@facebook.com
+    - $2a$10$tzLGYD3.LF/V7xXvIWvb5uAkVAYTXa6i4l6P97NfWmdMNTvxcLSaq
+    - 
+    - 
+    - 
+    - 1
+    - 2014-12-11 14:32:25.000000000 Z
+    - 2014-12-11 14:32:25.000000000 Z
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2014-12-11 14:32:25.000000000 Z
+    - 2014-12-11 14:32:25.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 5
+    - 
+    - 
+    - 
+    - adam@adamzuckerberg2.com
+    - $2a$10$aRDDkKEUwTNspJa4OgFFj.lArSmh3NM2/KOaL3LdObEctcZzmfWCe
+    - 
+    - 
+    - 
+    - 1
+    - 2014-12-14 17:24:21.000000000 Z
+    - 2014-12-14 17:24:21.000000000 Z
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2014-12-14 17:24:21.000000000 Z
+    - 2014-12-14 17:24:21.000000000 Z
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 

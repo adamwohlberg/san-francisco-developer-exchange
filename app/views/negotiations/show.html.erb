@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-0 medium-2 large-2 columns"></div>
+  <div class="small-12 medium-8 large-8 columns">
+  <% if current_user %>
+    <% if current_user.type == 'Employer' %>
+      <%= image_tag(@developer.avatar, :id => 'developer_profile_image_show') %><br />
+      <strong><h5>Contract Name: </strong><%= (@contract.name).split.map(&:capitalize).join(' ') %></h5>
+      <strong><h5>Contract Amount: </strong><%= number_to_currency(@contract.amount, precision: 0)%></h5>
+    <% if @contract.attachment.present? %>   
+       <strong><h5>Project Documents: </strong><%= link_to image_tag("pdf_download.jpg", id: "pdf_download_image"), download_pdf_negotiation_path(@contract) %></h5>   
+    <% else %>
+      <strong><h5>Project Documents: </strong><em>no documents uploaded</em></h5>
+    <% end %>  
+      <%= render 'contact_developer_form' %>
+    <% elsif current_user.type == 'Developer' %>
+      <%= image_tag(@employer.avatar, :id => 'developer_profile_image_show') %><br />
+      <%= render 'contact_employer_form' %>
+    <% end %>
+  <% end %>
+</div>
+  <div class="small-0 medium-2 large-2 columns"></div>
+<div class="row">
+  <div class="small-0 medium-2 large-2 columns"></div>  
+  <div class="small-12 medium-8 large-8 columns">
+    <%= link_to '<<Back to Developer Profile', developer_path(@developer) %>
+  </div>
+  <div class="small-0 medium-2 large-2 columns"></div>  

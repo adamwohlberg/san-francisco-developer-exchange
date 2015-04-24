@@ -1,0 +1,32 @@
+  <div class="hide-for-small-only large-12 columns">
+    <div class="search">
+      <h2 id="developer_directory">Developer Directory</h2>
+      <label>search: </label>
+    <input ng-model="query" placeholder="search developers in your area" autofocus>
+    <label class="formgroup" id="sort_by_label"><strong>Sort by:</strong>
+      <span>
+      <select ng-model="developerOrder">
+        <option value="min_contract_amount">Minimum Contract Amount</option>
+        <option value="distance" ng-selected="true">Distance From You</option>
+      </select>
+      </span>
+    </label>
+
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" checked>
+      ascending
+    </label>
+    <label class="formgroup">
+       <input type="radio" ng-model="direction" name="direction" value="reverse">     
+      descending
+    </label><br>
+    <label class="formgroup">
+       <input type="checkbox" ng-model="showOnlyFavoritesChecked">     
+      only show liked
+    </label>
+
+   </div>
+  </div>
+
+
+

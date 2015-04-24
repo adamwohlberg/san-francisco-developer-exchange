@@ -1,0 +1,2 @@
+module DeveloperLikesHelper
+end

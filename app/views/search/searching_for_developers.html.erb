@@ -1,0 +1,21 @@
+<div id="searching_for_things">
+<h2 id="searching_headline">Searching for developers near you...</h2>
+	<div class="row">
+		<div class="large-12 column">
+			<% if current_user.avatar_file_name? %>
+				<%= image_tag(current_user.avatar, :id => 'profileImage', size: "225x225", alt: "search image spinning") %><br />
+			<% elsif current_user.fb_image.present? %>
+				<%= image_tag(current_user.fb_image, :id => 'profileImage', size: "225x225", alt: "search image spinning") %><br />
+			<% else %>
+				<%= image_tag('noface.jpg', :id => 'profileImage', size: "225x225", alt: "search image spinning")  %><br />
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+<%= javascript_tag "spinProfileImage()" -%>
+<%= javascript_tag "renderDevelopers()" -%>
+<%= javascript_tag "facebookPopUp()" -%>
+<%= javascript_tag "facebookNewEmailConversion()" -%>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6027479917035&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>

@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="small-2 medium-2 large-2 columns"></div>
+</div>
+<div class="row">
+	<div class="small-8 medium-8 large-8 columns">
+<% if @developer.present? %>
+<h2>Review your order</h2>
+    <% if @developer.avatar.exists? %>
+    <%= image_tag(@developer.avatar, :id => 'developer_profile_image_show') %><br />
+    <% else %>
+    <%= image_tag('noface.jpg', :id => 'developer_profile_image_show') %><br />
+    <% end %>
+<%= @developer.username %>
+<h4><strong><%= @developer.title %></strong></h4>
+<% end %>
+<table style="width:100%" id="hire_developer_table">
+
+  <caption>Hire this Developer</caption>
+  <tr>
+    <td>Contract</td>
+    <td><%= number_to_currency(@contract.amount, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td>Service Fee</td>
+    <td><%= number_to_currency(@contract.service_fee, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td><strong>Total</strong></td>
+    <td><strong><%= number_to_currency(@contract.total_payment, :precision => 0) %></strong></td>
+  </tr>
+</table>
+<!-- <p>By clicking on "Request to Hire" or  -->
+<p>By clicking on "Instant Hire" you agree to the <%= link_to 'Terms of Service', '/membership-terms.html', id: "membership-terms", :class => "popup", :"data-width" => 600, :"data-height" => 300 %> and to pay the total amount shown, which includes Service Fees.</p>
+<hr/>
+<%= link_to 'Instant Hire', @contract.paypal_url(@contract.total_payment, payment_notifications_url(developer_id: @developer.id), payment_notifications_url), :method => :post, class: "button large success" %>
+
+<p>When you "Instant Hire" a developer, you will be charged immediately. If the developer declines, your payment will be refunded.</p>
+
+<%# link_to 'Request to Hire', @contract.paypal_url(@contract.total_payment, developers_path, payment_notifications_url), class: "button large disabled" %>
+
+<!-- <p>If you click "Request to Hire", you will only be charged if the developer accepts your request. They'll have 24 hours to reply. If the developer declines or does not respond, no charge is made.</p> -->
+
+</div>
+<div class="row">
+<div class="small-2 medium-2 large-2 columns"></div>
+</div>

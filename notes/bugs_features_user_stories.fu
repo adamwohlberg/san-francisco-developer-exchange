@@ -1,0 +1,179 @@
+********************************
+BUGS & FEATURES
+*******************************
+
+Create new git repo
+
+Deauthorize Callback URL for Facebook
+
+Private email in paypal to env
+
+Facebook location get OKd
+
+Confirm geolocation after FB login
+
+Add TESTING!!!
+
+Block developer Liked >> Like << Blocked (Swipe flow)
+
+Headline add shadow and remove Gregory
+
+********************************
+ANGULARjs
+********************************
+
+Checkbox show only favorites
+
+Contract skills not listing on index
+
+Location as City, State NOT zipcode on Developer show page
+
+Location as City, State NOT zipcode on Developer index page
+
+Location as City, State NOT zipcode on Contract show page
+
+Location as City, State NOT zipcode on Contract index page
+
+Zipcode should appear as city, state (AngularJS)
+
+[AngularJS] Checkbox on developer index page to view only favorited developers (1.0 hr)
+
+[AngularJS] Checkbox on contract index page to view only favorited developers (1.0 hr)
+
+Capitalize Developers names on index
+
+Capitalize Contracts name on index
+
+********************************
+LOW PRIORITY OR TABLED
+********************************
+
+Email to administrator after x days if dev is not paid???
+
+Employers will be able to view each developer's average star rating. (tabled)
+
+Developers will be able to view employer's average star rating.(tabled)
+
+Only Employers who have closed contracts with a Developer can view the Add a Review section (tabled)
+
+Developers will be able to add a review after a contract is completed (tabled)
+
+Developers and Employers will be emailed with a link to add a review after the contract is marked completed (tabled)
+
+Create a NYSE big board showing trades (tabled)
+
+On developer and employer show pages the average star rating will calulate. The star images will match the average star rating (i.e. if 3.0 stars then 3 stars will show) (tabled)
+
+Employers will be able to view all of their project payments via a "My Payments" link in a table showing  (1.0 hr)
+	Contract title ------ XXXXX
+		     amount ------$XXXX
+		     service fee -$XXXX
+		     __________________
+		     total payment $XXX
+
+Developers will be able to view all of their project payments via a "My Payments" link in a table showing  (1.0 hr)
+	Contract title ------ XXXXX
+		     amount ------$XXXX
+		     service fee -$XXXX
+		     __________________
+		     total payment $XX
+
+Request hire - users will be able to request hire OR instant hire with two buttons.  Paypal will authorize the full amount.  Developer will receive an email request and must accept the project.  When accepted, Paypal will charge the full amount and employer will be notified. (3.0 hr)
+
+Developers will be able to set off an email to Employer to mark the project complete so that developer will be paid. (2.0 hr)
+
+When employer marks project complete, Developer will be automatically paid, project marked closed, emails to dev and emp for reviews. (1.5 hrs)
+
+Should contracts be locked so the can't be edited without consent after agreed to by Developer with dev agreeing to changes or when contract funded?
+
+Geocoding - 
+	*Will it scale?
+	*Front end geocoding?
+
+
+********************************
+COMPLETED ISSUES
+********************************
+
+Distance from current_user will be calculated correctly for developers on developer index page (4/4/15)
+
+Distance from current_user will be calculated correctly for contracts on contract index page (4/4/15)
+
+Pagination links will get $routeParams in the AngularJS controllers for developers (4/4/15)
+  
+Pagination links will get $routeParams in the AngularJS controllers for contracts (4/4/15)
+
+Contacting a developer on developer/:id show page will be a POST request (currently GET).  When the developer is contacted, the mailer will be sent correctly via the CREATE method (developers private information will be emailed to employer) See negotiations.js.coffee. (2.0 hr) 4/11/15
+
+Contacting an employer on employer/:id show page will be a POST request (currently GET). (1.0 hr) 4/11/15
+
+Skills not listing in the Developer profile form
+
+Skills not listing in the Contract form
+
+Employers should be able to find and edit their own contracts via a "My Contract" link in the header drop-down. Employers will be able to click on a contract and update it. (1.0 hr)
+
+Developers should be able to find and edit their own contracts via a "My Contracts" link in the header drop-down.
+
+Developer is emailed after PayPal payment with a "You're hired" email
+
+Move email to developer mailer to updated negotiation flow
+
+Covert all amounts from integer to decimal (min_contract_amount, amount)
+
+If you are on Contract show and use back button to Contract#index, no contracts show 
+
+FB login should be a popup box
+
+Negotiations not correctly showing ID.
+
+Drop-down for CONTACT and HIRE of developer should only work if the contract.amount > developer.min_contract_amount. This is broken.
+
+Find Developer by Username 4/16/14
+
+Terms of Use link on Payments Page (contracts#edit) should be a pop-up not a redirect
+
+Robots text no follow
+
+Update metatag - see email to self
+
+My contracts lists the 'status' as open or closed
+
+Add Google robots no follow
+
+Add word "liked" like OkCup on star. Widen star.
+
+If a dev clicks on "my contracts" and there are no contracts, say "You don't have any contracts yet."
+
+Employer can mark contract as completed via a button.  Sends email to administrator to pay and
+sends employer to a your done page.
+
+Add email interceptor and update mailers
+
+Facebook popup - everything is appearing in pop - it's not always closing!!!!!!
+
+Contract documents failing on Constract show page
+
+Landing page - Foundation icons not showing up on Heroku
+
+Need to switch to Heroku postgres production (see mysqltopostrgres gem)
+
+My contract if dev and no contracts
+
+Facebook Ads -
+	*Pixels for new emails
+	*Pixels for new profiles
+
+Developer can mark status as completed (but doesn't have to) -> just sends an email to the employer
+with a pay_me_now_please function
+
+Contract skills listing duplicates on tab
+
+Add Google Analytics tracking code
+
+Style the FB pixel tracking conversion pages
+
+Favicon png remove white edges
+
+
+

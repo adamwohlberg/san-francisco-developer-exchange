@@ -1,0 +1,71 @@
+<div id="contract_form">
+        <%= simple_form_for(@contract, html: {multipart: true}) do |f| %>
+          <% if @contract.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+              <ul>
+              <% @contract.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label "Type of developer you are seeking:" %><br>
+            <%= f.select :title, ['PHP Developer', 'Ruby on Rails Developer', 'iOS Developer', 'Android Developer', 'Front End Developer'] %>
+          </div>
+          <div class="field">
+            <%= f.label "Your project's name:" %><br>
+            <%= f.input :name, placeholder: 'e.g. Add AngularJS filters to Ruby on Rails web application', label: false %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Brief description of your project:" %><br>
+            <%= f.text_area :description, :size => "30x10", placeholder: "e.g. We need a RoR developer to integrate the AngularJS MVC framework into our web application so that users can filter data using multiple checkboxes." %>
+          </div>
+
+          <div class="field">
+            <%= f.label :attachment, label: "Upload a project document (e.g. project scope or detailed projects description)" %><br>
+            <%= f.file_field :attachment, as: :file %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Your Federal Employee Identification Number (EIN)" %><br>
+            <%= f.input :ein, label: false, placeholder: 'e.g. 27-3537698' %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Total Contract Amount (contract minimum is $500):" %><br>
+            <%= f.input :amount, placeholder: '$12,000', label: false %>  
+          </div>
+
+            <%= f.hidden_field :location, :value => current_user.location %>
+
+          <h4>What skills are required for this project?</h4>
+            <div class="field form-actions" id="skills_section_of_new_developer_form">
+              <%= render partial: 'skill_category', collection: @skill_categories, locals: {form: f} %>
+            </div> 
+
+            <div id="terms_of_use_partial">
+          <%= render 'developers/terms' %>
+          </div>
+
+          <div class="field" id="agree_to_terms">
+              <%# f.label :agree_to_terms %>
+              <%# f.check_box :agree_to_terms,  %>
+              <input type="checkbox" ng-model="checked">
+            <span>I have read and agree to the <span><%= link_to "terms and conditions.", "/legal/membership-terms", :class => "popup", :"data-width" => 600, :"data-height" => 300 %> </span>
+          </div>
+
+          <div class="actions" id="contract_submit_button">
+            <input type="submit" class="button actions" id="contract_submit_button" ng-disabled="!checked">
+            <%# f.button :submit %>
+          </div>
+
+
+
+        <% end %>
+
+</div>

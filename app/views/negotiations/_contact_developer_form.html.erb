@@ -1,0 +1,18 @@
+<%= form_tag send_email_to_developer_negotiation_path(@negotiation), method: :post  do %>
+
+<br />
+<strong><h4>Message:</h4></strong>
+	<% if @negotiation.negotiation_messages.developer_message.blank? %>
+		<%= text_area_tag(:message, "\nHi #{@developer.username}: \n\n\tI found you on the San Francisco Developer Exchange and wanted to interview you immediately regarding an urgent project. \n\n\tPlease contact me asap. \n\nSincerely,\n#{@employer.username}", size: "50x12") %>
+	<% else %>
+		<%= text_area_tag(:message, "", size: "50x6") %>
+	<% end %>
+	<%= submit_tag("Send Message", class: "button large success")%>
+	<% end %>
+	<% @negotiation.negotiation_messages.developer_message.each do |negotiation_message| %>
+		<div id="negotiation_message_textbox">
+		  <span class='time'><%=  'about ' + time_ago_in_words(negotiation_message.created_at) + ' ago:' %></span>		  
+		  <p><%= negotiation_message.message %></p>
+		</div>
+		<hr>
+	<% end %>

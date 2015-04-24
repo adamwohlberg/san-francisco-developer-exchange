@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="small-0 medium-1 large-1 columns"></div>
+  <div class="small-12 medium-10 large-10 columns">
+<% if @employer.avatar.exists? %>
+<%= image_tag(@employer.avatar, :id => 'developer_profile_image_show') %><br />
+<% else %>
+<%= image_tag('noface.jpg', :id => 'developer_profile_image_show') %><br />
+<% end %>
+<br/>
+<section class="tabs" ng-controller="TabController as tab">
+  <ul class="tabs" data-tab role="tablist">
+    <li class="tab-title" ng-class="{ active: tab.isSet(1) }">
+      <a href ng-click="tab.setTab(1)">Project Description</a></li>
+    <li class="tab-title"  ng-class="{ active: tab.isSet(2) }">
+      <a href ng-click="tab.setTab(2)">Required Skills</a></li>
+    <li class="tab-title"  ng-class="{ active: tab.isSet(3) }">
+      <a href ng-click="tab.setTab(3)">Project Documents</a></li>
+<!--     <li class="tab-title"  ng-class="{ active: tab.isSet(4) }">
+      <a href ng-click="tab.setTab(4)">Reviews</a></li> -->
+<!--     <li class="tab-title"  ng-class="{ active: tab.isSet(5) }">
+      <a href ng-click="tab.setTab(5)">Submit a Review</a></li> -->
+  </ul>
+ <div class="tabs-content">
+  <section class="contents" ng-show="tab.isSet(1)">
+    <p><strong><%= (@contract.name).split.map(&:capitalize).join(' ') %></strong><span><strong>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp; Contract Amount: </strong><%= number_to_currency(@contract.amount, :precision => 0) %>
+</span>
+    <p><%= truncate(@contract.description, length: 1500) %></p>
+
+</section>
+<section class="contents" ng-show="tab.isSet(2)">
+    <br>    <br>
+      <% @skills.each do |skill| %>
+      <span class="skills_tag"><%= skill.name %></span>
+      <% end %>
+</section>
+<section class="contents" ng-show="tab.isSet(3)">
+       <h5>Project Documents: 
+        <% if @contract.attachment.present? %>
+          <%= link_to image_tag("pdf_download.jpg", id: "pdf_download_image"), download_pdf_contract_path(@contract) %></h5>  
+        <% else %>
+          <h4>No project documents have been uploaded for this contract.</h4>
+        <% end %>
+</section>
+  <section class="developer-reviews-body" ng-show="tab.isSet(4)">
+<!-- LOOP THROUGH THE EMPLOYER'S REVIEWS AND PRINT THE STARS, REVIEWS, REVIEWER EMAIL -->
+<% @contract.ratings.each do |rating| %>
+      <ul>
+<div class="starRating">              
+    <span id="star1" class="fi-star foundation-icon"></span>
+    <span id="star2" class="fi-star foundation-icon"></span>
+    <span id="star3" class="fi-star foundation-icon"></span>
+    <span id="star4" class="fi-star foundation-icon"></span>
+    <span id="star5" class="fi-star foundation-icon"></span>
+    &nbsp;&nbsp;
+ <span><%= rating.employer_stars %> Stars</span>
+  </div>
+        <blockquote>
+          "<%= rating.employer_review %>""
+        </blockquote>
+      <cite class="clearfix">--<%= rating.employer_reviewer_email %></cite>
+      </ul>
+<% end %>
+  </section>
+   <section class="developer-add-reviews-body" ng-show="tab.isSet(5)">
+    <!--  Review Form -->
+    <fieldset class="form-group">
+      <select ng-model="review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+        <option value="">Rate the Employer</option>
+      </select>
+    </fieldset>
+    <fieldset class="form-group">
+      <textarea ng-model="review.body" class="form-control" placeholder="Write a short review of the developer..." title="Review"></textarea>
+    </fieldset>
+    <fieldset class="form-group">
+      <input ng-model="review.author" type="email" class="form-control" placeholder="employer@example.org" title="Email" />
+    </fieldset>
+    <fieldset class="form-group">
+      <input type="submit" class="button" value="Submit Review" />
+    </fieldset>
+  </section>
+ </div>
+</section>
+
+<div id='contracts_contact_button_container'>
+<%= link_to 'CONTACT', new_negotiation_path(contract_id: @contract.id), class: "button large success", id: "contracts_request_interview_button" %>
+</div>
+<% if current_user.type == "Employer" %> 
+<%= button_to 'Edit contract', edit_contract_path(@contract), :class => "button success", :action => :edit %>
+<% end %>
+<%= link_to '<< Back to all contracts', '/contracts#/list_contracts' %>
+  </div>
+  <div class="small-0 medium-1 large-1 columns"></div>
+  <!-- Modal window -->
+<% if current_user.type == 'Developer' && current_user.title.nil? %>
+<script>
+$(document).ready(function(){$('#NewDeveloperModal').foundation('reveal', 'open')});
+</script>
+<% end %>
+    <div id="NewDeveloperModal" class="reveal-modal medium" data-reveal>
+        <a class="close-reveal-modal">&#215;</a>
+        <h2>Complete Profile to Continue</h2>
+        <%= render 'developers/form' %>
+    </div>
+<!-- Modal window -->
