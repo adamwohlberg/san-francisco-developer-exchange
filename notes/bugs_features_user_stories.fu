@@ -2,8 +2,6 @@
 BUGS & FEATURES
 *******************************
 
-Create new git repo
-
 Deauthorize Callback URL for Facebook
 
 Private email in paypal to env
@@ -174,6 +172,8 @@ Add Google Analytics tracking code
 Style the FB pixel tracking conversion pages
 
 Favicon png remove white edges
+
+Create new git repo
 
 
 
