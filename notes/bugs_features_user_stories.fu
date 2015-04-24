@@ -2,6 +2,14 @@
 BUGS & FEATURES
 *******************************
 
+After a developer updates her profile, it goes to a blank page
+
+On register if no image, you see a blank spinning nothing image
+
+Emails not working in production
+
+Paypal not working in production
+
 Deauthorize Callback URL for Facebook
 
 Private email in paypal to env
