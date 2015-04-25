@@ -93,7 +93,9 @@
   <!-- Modal window -->
 <% if current_user.type == 'Developer' && current_user.title.nil? %>
 <script>
-$(document).ready(function(){$('#NewDeveloperModal').foundation('reveal', 'open')});
+$(document).ready(function(){
+  $('#NewDeveloperModal').foundation('reveal', 'open');
+});
 </script>
 <% end %>
     <div id="NewDeveloperModal" class="reveal-modal medium" data-reveal>
