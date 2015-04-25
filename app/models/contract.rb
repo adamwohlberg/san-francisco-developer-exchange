@@ -123,7 +123,7 @@ class Contract < ActiveRecord::Base
       quantity: '1',
       notify_url: notify_url
     }
-    "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?#{values.to_query}"
+    "#{paypal_url}/cgi-bin/webscr?#{values.to_query}"
    end
 end
 
