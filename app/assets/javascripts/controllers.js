@@ -12,7 +12,6 @@ developerControllers.controller('ListDevelopersController', function($scope, $ht
     });
   }
   $scope.quantity = 10;
-  
   $scope.first = function() {
     page_id = 1;
     $location.path('list_developers/' + page_id)
