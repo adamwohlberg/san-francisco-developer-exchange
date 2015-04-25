@@ -1,4 +1,5 @@
 class NegotiationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_negotiation, only: [:show, :edit, :update, :destroy, :show_private, :send_email_to_developer, :send_email_to_employer]
   before_action :set_developer, only: [:edit]
 
@@ -26,6 +27,7 @@ class NegotiationsController < ApplicationController
       @developer = current_user
       @employer = @contract.employer
       DeveloperContactEmployer.developer_interested_in_contract(@developer,@contract).deliver    
+      flash[:notice] = "Congratulations. We just contacted the employer and let them know you're interested. Good luck!"    
     elsif current_user.type == 'Employer'
       redirect_to 'index'
     end

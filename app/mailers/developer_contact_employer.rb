@@ -3,7 +3,7 @@ class DeveloperContactEmployer < ActionMailer::Base
   def developer_interested_in_contract(developer, contract)
   	@developer = developer
   	@contract = contract
-  	@employer = employer
+  	@employer = contract.employer
     mail(to: @employer.email, subject: "Yes, I'm Interested")
   end
 end

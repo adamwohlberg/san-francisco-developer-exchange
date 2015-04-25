@@ -92,15 +92,13 @@
   <div class="small-0 medium-1 large-1 columns"></div>
   <!-- Modal window -->
 <% if current_user.type == 'Developer' && current_user.title.nil? %>
-<script>
-$(document).ready(function(){
-  $('#NewDeveloperModal').foundation('reveal', 'open');
-});
-</script>
 <% end %>
-    <div id="NewDeveloperModal" class="reveal-modal medium" data-reveal>
+    <div id="NewDeveloperModal" class="reveal-modal medium" data-reveal aria-hidden="true" role="dialog">
         <a class="close-reveal-modal">&#215;</a>
         <h2>Complete Profile to Continue</h2>
         <%= render 'developers/form' %>
     </div>
+<script type="text/javascript">
+  $(document).ready(function(){$('#NewDeveloperModal').foundation('reveal', 'open')});
+</script>
 <!-- Modal window -->

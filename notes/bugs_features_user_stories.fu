@@ -2,19 +2,13 @@
 BUGS & FEATURES
 *******************************
 
+Developer contact (aka APPLY) is broken - does it direct to the same page as employers contacting a developer
+
+Favicon to blue square
+
 Reveal modals not working and error message on dev and contracts
 
 After a developer updates her profile, it goes to a blank page
-
-On register if no image, you see a blank spinning nothing image
-
-Emails not working in production
-
-Paypal not working in production
-
-Deauthorize Callback URL for Facebook
-
-Private email in paypal to env
 
 Facebook location get OKd
 
@@ -23,8 +17,6 @@ Confirm geolocation after FB login
 Add TESTING!!!
 
 Block developer Liked >> Like << Blocked (Swipe flow)
-
-Headline add shadow and remove Gregory
 
 ********************************
 ANGULARjs
@@ -185,5 +177,16 @@ Favicon png remove white edges
 
 Create new git repo
 
+On register if no image, you see a blank spinning nothing image
+
+Emails not working in production
+
+Paypal not working in production
+
+Deauthorize Callback URL for Facebook
+
+Private email in paypal to env
+
+Headline add shadow and remove Gregory
 
 
