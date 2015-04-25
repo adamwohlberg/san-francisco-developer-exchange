@@ -75,4 +75,20 @@ describe "the signin process", :js => true do
     expect(page).to have_content 'Searching for developers near you...'
   end
 
+ it "Provides a profile image filler image when users first register via the form and thus do not provide an image" do
+    visit '/'
+    expect(page).to have_content 'GET STARTED'    
+    click_link 'Register'
+    expect(page).to have_content 'Signing up is easy and fun.'
+    page.find("#type_Developer").click
+    fill_in 'user_first_name', with: "test"
+    fill_in 'user_email', with: "test1@mailinator.com"
+    fill_in 'user_location', with: "test"
+    fill_in 'user_password', with: "12345678"
+    fill_in 'user_password_confirmation', with: "12345678"
+    click_button "Sign Up"
+    visit search_contracts_path 
+    page.find("#profileImage")['src'] == "http://localhost:3000/images/noface.jpg"
+  end
+
 end

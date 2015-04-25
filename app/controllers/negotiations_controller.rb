@@ -4,7 +4,7 @@ class NegotiationsController < ApplicationController
 
   respond_to :html
 
-  layout 'no_errors_layout'
+  layout 'application'
 
   def index
     @negotiations = Negotiation.all
@@ -65,6 +65,7 @@ class NegotiationsController < ApplicationController
   def send_email_to_developer
     @negotiation.negotiation_messages.create!(message: params[:message], is_employer: true)
     ContactDeveloper.new_negotiation_email(@negotiation, params[:message]).deliver
+    flash[:notice] = "Congratulations! Your message was sent to the developer."
     redirect_to negotiation_path(@negotiation)
   end
 
