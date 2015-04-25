@@ -1,17 +1,19 @@
+require 'spec_helper'
+
 describe "the signin process", :js => true do
-  it "Visit on home page" do
+  it "Displays the correct landing page" do
     visit '/'
     expect(page).to have_content 'GET STARTED'
   end
 
-  it "visit on register page with home page" do
+  it "Correctly displays the register page when the register link in the header is clicked" do
     visit '/'
     expect(page).to have_content 'GET STARTED'    
     click_link 'Register'
     expect(page).to have_content 'Signing up is easy and fun.'
   end
 
-  it "Regiter with facebook as developer" do
+  it "Allows users of type develper to register with the facebook login button" do
     visit '/'
     expect(page).to have_content 'GET STARTED'    
     click_link 'Register'
@@ -27,7 +29,7 @@ describe "the signin process", :js => true do
     end   
   end
 
-  it "Regiter as developer without facebook" do
+  it "Allows users of type employer to register with the facebook login button" do
     visit '/'
     expect(page).to have_content 'GET STARTED'    
     click_link 'Register'
@@ -58,7 +60,7 @@ describe "the signin process", :js => true do
     end   
   end
 
-  it "Regiter as Employer without facebook" do
+  it "Allows users of type employer to register with the facebook login button" do
     visit '/'
     expect(page).to have_content 'GET STARTED'    
     click_link 'Register'
