@@ -111,8 +111,9 @@ class Contract < ActiveRecord::Base
   # end
 
   def paypal_url(amount, return_path, notify_url)
+    paypal_url = Rails.application.secrets[:paypal_host] || ENV["paypal_host"]
     values = {
-      business: Rails.application.secrets["PAYPAL_BUSINESS_EMAIL"],
+      business: ENV["PAYPAL_BUSINESS_EMAIL"] || Rails.application.secrets[:PAYPAL_BUSINESS_EMAIL],
       cmd: "_xclick",
       upload: 1,
       return: return_path,
