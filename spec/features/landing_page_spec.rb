@@ -102,7 +102,7 @@ describe "the signin process", :js => true do
     click_button "Log in"
     visit '/developers#/list_developers'
     expect(page).to have_content "Developer Directory"
-    first('.developer_container_each_developer').click_link('#view_full_profile_text')
+    # first('.developer_container_each_developer').click_link('#view_full_profile_text')
   end
 
 end

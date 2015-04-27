@@ -71,15 +71,6 @@ class DevelopersController < ApplicationController
     else
       render('edit')
     end
-    # respond_to do |format|
-    #   if @developer.update_attributes(developer_params)
-    #     format.html { redirect_to @developer, notice: 'Developer was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @developer }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @developer.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def destroy
@@ -118,7 +109,7 @@ class DevelopersController < ApplicationController
     end
 
     def developer_params
-       params.require(:developer).permit(:avatar, :title, :username, :description, :min_contract_amount,
+       params.require(:developer).permit(:avatar, :title, :paypal_email, :username, :description, :min_contract_amount,
         :full_time_option, :min_full_time_amount, :cell, :image, :agree_to_terms, skill_ids: [])
     end
 end

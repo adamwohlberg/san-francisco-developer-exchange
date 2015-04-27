@@ -2,10 +2,7 @@
 BUGS & FEATURES
 *******************************
 
-
 Check if duplicate legal terms
-
-Developer redirect after updating profile is broken. Developer update.
 
 Reveal modals not working and error message on dev and contracts
 
@@ -198,3 +195,5 @@ After a developer updates her profile, it goes to a blank page
 
 
 Scroll for long dev and contract profiles
+
+Developer redirect after updating profile is broken. Developer update.
