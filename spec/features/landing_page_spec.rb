@@ -91,4 +91,18 @@ describe "the signin process", :js => true do
     page.find("#profileImage")['src'] == "http://localhost:3000/images/noface.jpg"
   end
 
+  it "Displays an index page of developers when the user logs in as an employer" do
+    FactoryGirl.create(:employer)
+    visit '/'
+    expect(page).to have_content 'GET STARTED'    
+    click_link 'Already a Member? Sign In'
+    expect(page).to have_content 'Sign in'
+    fill_in 'user_email', with: "employer@gmail.com"
+    fill_in 'user_password', with: "asdfjkl;"
+    click_button "Log in"
+    visit search_developers_path
+    byebug
+  end
+
 end
+

@@ -5,8 +5,6 @@ BUGS & FEATURES
 
 Reveal modals not working and error message on dev and contracts
 
-After a developer updates her profile, it goes to a blank page
-
 Facebook location get OKd
 
 Confirm geolocation after FB login
@@ -192,4 +190,4 @@ Developer contact (aka APPLY) is broken - does it direct to the same page as emp
 
 Favicon to blue square
 
-
+After a developer updates her profile, it goes to a blank page
