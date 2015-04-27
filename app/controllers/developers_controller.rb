@@ -50,6 +50,7 @@ class DevelopersController < ApplicationController
 
   def create
     @developer = Developer.new(developer_params)
+    @skill_categories = SkillCategory.all.includes(:skills)
     respond_to do |format|
       if @developer.save
         format.html { redirect_to new_profile_conversion_developers_path , notice: 'Developer was successfully created.' }

@@ -47,7 +47,7 @@ class ContractsController < ApplicationController
     @contract = Contract.new(contract_params)
     @employer = Employer.find(current_user.id)
     @contract = @employer.contracts.create(contract_params)
-
+    @skill_categories = SkillCategory.all.includes(:skills)
     respond_to do |format|
       if @contract.save
         format.html { redirect_to new_contract_conversion_contracts_path }
@@ -66,6 +66,7 @@ class ContractsController < ApplicationController
   def update
     if current_user.type == 'Employer'
       @contract = current_user.contracts.find(params[:id])
+      @skill_categories = SkillCategory.all.includes(:skills)
       respond_to do |format|
         if @contract.update(contract_params)
           format.html { redirect_to @contract, notice: 'Contract was successfully updated.' }
