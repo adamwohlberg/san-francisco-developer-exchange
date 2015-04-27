@@ -37,15 +37,15 @@
         <li><%= link_to('NEW CONTRACT', new_contract_path) %></li>
           <li><%= link_to('HIRE DEVELOPERS', search_developers_path) %></li>
           <li><%= link_to('MY CONTRACTS', my_contracts_path) %></li>
-<!--           <li><%# link_to 'MY PAYMENTS', edit_user_registration_path %></li> -->
+          <li><%= link_to 'MY PROFILE', edit_user_registration_path %></li>
         <% end %>
         <% if user_signed_in? && current_user.type == 'Developer'%>
           <li><%= link_to('MY PROFILE', edit_developer_path(current_user.id)) %></li> 
           <li><%= link_to('GET HIRED', search_contracts_path) %></li>
           <li><%= link_to('MY CONTRACTS', my_contracts_path) %></li>
-<!--           <li><%# link_to 'MY PAYMENTS', edit_user_registration_path %></li> -->
-        <% end %>
           <li><%= link_to 'MY ACCOUNT', edit_user_registration_path %></li>
+        <% end %>
+
         </div>
     </ul>
     </div>
