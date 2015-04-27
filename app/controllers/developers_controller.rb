@@ -67,7 +67,7 @@ class DevelopersController < ApplicationController
     @developer = Developer.find(params[:id])
     @skill_categories = SkillCategory.all.includes(:skills)
     if @developer.update_attributes(developer_params)
-      redirect_to(:controller => 'contracts', :action => 'index')
+      redirect_to '/contracts#/list_contracts'
     else
       render('edit')
     end
