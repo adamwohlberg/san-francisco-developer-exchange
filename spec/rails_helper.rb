@@ -4,6 +4,7 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'factory_girl_rails'
 require 'capybara/rails'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -52,5 +53,5 @@ RSpec.configure do |config|
   end
   Capybara::SpecHelper.configure(config)
   Capybara.default_driver = :selenium
-
+  
 end
