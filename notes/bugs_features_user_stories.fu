@@ -2,6 +2,7 @@
 BUGS & FEATURES
 *******************************
 
+Developer redirect after updating profile is broken. Developer update.
 
 Reveal modals not working and error message on dev and contracts
 
@@ -10,8 +11,6 @@ Facebook location get OKd
 Confirm geolocation after FB login
 
 Add TESTING!!!
-
-Block developer Liked >> Like << Blocked (Swipe flow)
 
 No Procfile detected, using the default web server (webrick)
 
@@ -40,6 +39,8 @@ Zipcode should appear as city, state (AngularJS)
 Capitalize Developers names on index
 
 Capitalize Contracts name on index
+
+Block developer Liked >> Like << Blocked (Swipe flow)
 
 ********************************
 LOW PRIORITY OR TABLED

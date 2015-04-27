@@ -71,7 +71,6 @@ class DevelopersController < ApplicationController
     else
       render('edit')
     end
-
     # respond_to do |format|
     #   if @developer.update_attributes(developer_params)
     #     format.html { redirect_to @developer, notice: 'Developer was successfully updated.' }

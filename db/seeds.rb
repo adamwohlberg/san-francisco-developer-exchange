@@ -142,7 +142,7 @@ Contract.create!([
   {name: Company.bs,
    description: Lorem.paragraph(7),
    amount: rand(9000..20000),
-   location: 'San Francisco, CA',
+   location: ["Montreal, QC","Los Angeles, CA", "Austin, TX","Las Vegas, NV","Tucson, AZ","Williamsburg, NY","San Francisco, CA","Santa Cruz, CA"].sample, 
    title: Lorem.sentence,
    employer_id: [22,23,24,42].sample,
    developer_id: nil,
