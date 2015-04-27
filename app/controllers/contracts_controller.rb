@@ -23,6 +23,7 @@ class ContractsController < ApplicationController
 
   def show
     @developer = Developer.new
+    @skill_categories = SkillCategory.all.includes(:skills)
     if current_user.type == 'Employer'
       redirect_to action: "index"
     end
@@ -85,7 +86,7 @@ class ContractsController < ApplicationController
         if @contract.status == 'open' && @contract.paid == true 
           @contract.update_attributes(status: 'closed')
           ContactAdministrator.employer_marked_contract_closed_now_pay_the_developer(@contract).deliver 
-          flash[:notice] = "Congratulations! This contract is closed."
+          flash[:notice] = "Congratulations! This contract is now closed and the developer will be paid."
         else
           flash[:alert] = "There is an error. This contract cannot be closed."
         end

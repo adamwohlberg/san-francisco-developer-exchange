@@ -114,3 +114,10 @@ function embedGoogleAnalyticsTrackingCode(){
   ga('send', 'pageview');
 };
 
+
+function revealModal(){
+  $(document).ready(function(){
+    
+    $('#revealNewDeveloperForm').foundation('reveal', 'open');
+  });
+};

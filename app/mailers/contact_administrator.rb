@@ -6,3 +6,6 @@ class ContactAdministrator < ActionMailer::Base
     mail(to: admin_email, subject: "Pay the developer")
   end
 end
+
+
+

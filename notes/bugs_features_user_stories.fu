@@ -2,9 +2,9 @@
 BUGS & FEATURES
 *******************************
 
-In production, the skills aren't displaying for new developer profiles
+No video image on mobile
 
-Check if duplicate legal terms
+You can't click on links on mobile. OK for devs, contracts, not ok on landingpage.
 
 Reveal modals not working and error message on dev and contracts
 
@@ -195,7 +195,10 @@ Favicon to blue square
 
 After a developer updates her profile, it goes to a blank page
 
-
 Scroll for long dev and contract profiles
 
 Developer redirect after updating profile is broken. Developer update.
+
+When developer replies to initial email, no success message
+
+In production, the skills aren't displaying for new developer profiles

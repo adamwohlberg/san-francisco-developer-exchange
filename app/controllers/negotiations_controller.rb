@@ -73,6 +73,7 @@ class NegotiationsController < ApplicationController
   def send_email_to_employer
     @negotiation.negotiation_messages.create!(message: params[:message])
     ContactEmployer.new_negotiation_email(@negotiation, params[:message]).deliver
+    flash[:notice] = "Congratulations! Your message was sent to the employer."
     redirect_to negotiation_path(@negotiation)
   end
 

@@ -12,6 +12,7 @@ class DevelopersController < ApplicationController
   def show
     # get user by profile name
   @developer = Developer.find_by_username(params[:id])
+  @skill_categories = SkillCategory.all.includes(:skills)
     if @developer
       @skills = @developer.skills
       @skill = Skill.new

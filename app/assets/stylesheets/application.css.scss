@@ -488,8 +488,12 @@ XXLarge screens
 #the_word_like, #the_word_liked {
 	display: none;
 }
-a {
+/*disable clicking on mobile.*/
+/*a {
 pointer-events: none;
+}*/
+.developer_container_each_developer a{
+pointer-events: none;	
 }
 #like_unlike_buttons {
 position: relative;
