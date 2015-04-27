@@ -7,10 +7,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= radio_button_tag(:type, "Employer") %>
-      <%= label_tag(:type, "I'm an employer") %>
-    <%= radio_button_tag(:type, "Developer") %>
-      <%= label_tag(:type, "I'm a developer") %>
+    <%# radio_button_tag(:type, "Employer") %>
+      <%# label_tag(:type, "I'm an employer") %>
+    <%# radio_button_tag(:type, "Developer") %>
+      <%# label_tag(:type, "I'm a developer") %>
 
     <div id="facebook_button">
       <% if current_user %>
@@ -21,9 +21,9 @@
     </div>
       <% end %>
 
-
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :location, label: "City, State", :placeholder => "e.g.Beverly Hills, CA" %>
+    <%= f.input :paypal_email, label: "Paypal email", placeholder: 'e.g. elon.musk@zmail.com' %>
     <%= f.input :first_name, required: true, autofocus: true, :placeholder => "Barack" %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

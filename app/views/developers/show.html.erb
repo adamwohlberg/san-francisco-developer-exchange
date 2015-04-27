@@ -19,7 +19,7 @@
         <section class="contents" ng-show="tab.isSet(1)">
           <strong>Min. Contract Amount: </strong><%= number_to_currency(@developer.min_contract_amount, :precision => 0) %>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<strong> Location: </strong><%= @developer.location %>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<strong>Projects Completed: </strong><%= @developer.projects %><br>
           <br/> 
-            <p><%= @developer.description %></p>
+            <p id="developer_description_show_page"><%= @developer.description %></p>
         </section>
          <section class="contents" ng-show="tab.isSet(2)">
           <br>

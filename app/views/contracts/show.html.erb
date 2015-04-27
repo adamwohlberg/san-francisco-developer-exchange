@@ -24,7 +24,7 @@
   <section class="contents" ng-show="tab.isSet(1)">
     <p><strong><%= (@contract.name).split.map(&:capitalize).join(' ') %></strong><span><strong>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp; Contract Amount: </strong><%= number_to_currency(@contract.amount, :precision => 0) %>
 </span>
-    <p><%= truncate(@contract.description, length: 1500) %></p>
+    <p id="contract_description_show_page"><%= @contract.description %></p>
 
 </section>
 <section class="contents" ng-show="tab.isSet(2)">
@@ -85,7 +85,7 @@
 <%= link_to 'APPLY', new_negotiation_path(contract_id: @contract.id), class: "button large success", id: "contracts_request_interview_button" %>
 </div>
 <% if current_user.type == "Employer" %> 
-<%= button_to 'Edit contract', edit_contract_path(@contract), :class => "button success", :action => :edit %>
+  <%= button_to 'Edit contract', edit_contract_path(@contract), :class => "button success", :action => :edit %>
 <% end %>
 <%= link_to '<< Back to all contracts', '/contracts#/list_contracts' %>
   </div>

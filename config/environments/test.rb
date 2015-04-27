@@ -23,6 +23,10 @@ Rails.application.configure do
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = true
 
+  config.assets.js_compressor = :uglifier
+  # Solves AngularJS injection problem
+  config.assets.js_compressor = Uglifier.new(mangle: false)
+
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
 

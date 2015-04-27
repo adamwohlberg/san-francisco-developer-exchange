@@ -21,7 +21,7 @@ Developer.create!([
     type: "Developer", 
     company_name: nil, 
     title: "PHP Developer", 
-    description: Lorem.paragraph(5), 
+    description: Lorem.paragraph(20), 
     ein: Company.ein, 
     fb_image: nil, 
     min_contract_amount: rand(500..10000), 
@@ -56,7 +56,7 @@ Developer.create!([
     type: "Developer", 
     company_name: nil, 
     title: "PHP Developer", 
-    description: Lorem.paragraph(5), 
+    description: Lorem.paragraph(20), 
     ein: Company.ein, 
     fb_image: nil, 
     min_contract_amount: rand(500..10000), 
@@ -140,7 +140,7 @@ i = 500
 20.times do
 Contract.create!([
   {name: Company.bs,
-   description: Lorem.paragraph(7),
+   description: Lorem.paragraph(20),
    amount: rand(9000..20000),
    location: ["Montreal, QC","Los Angeles, CA", "Austin, TX","Las Vegas, NV","Tucson, AZ","Williamsburg, NY","San Francisco, CA","Santa Cruz, CA"].sample, 
    title: Lorem.sentence,

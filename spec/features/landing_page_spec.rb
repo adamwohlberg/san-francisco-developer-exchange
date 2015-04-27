@@ -100,7 +100,9 @@ describe "the signin process", :js => true do
     fill_in 'user_email', with: "employer@gmail.com"
     fill_in 'user_password', with: "asdfjkl;"
     click_button "Log in"
-    visit search_developers_path
+    visit '/developers#/list_developers'
+    expect(page).to have_content "Developer Directory"
+    first('.developer_container_each_developer').click_link('#view_full_profile_text')
   end
 
 end
