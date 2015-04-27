@@ -101,7 +101,6 @@ describe "the signin process", :js => true do
     fill_in 'user_password', with: "asdfjkl;"
     click_button "Log in"
     visit search_developers_path
-    byebug
   end
 
 end
