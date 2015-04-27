@@ -64,6 +64,7 @@ class DevelopersController < ApplicationController
   def update
     # Find an existing object using form parameters
     @developer = Developer.find(params[:id])
+    @skill_categories = SkillCategory.all.includes(:skills)
     if @developer.update_attributes(developer_params)
       redirect_to(:controller => 'contracts', :action => 'index')
     else
