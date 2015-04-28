@@ -12,6 +12,15 @@ class NegotiationsController < ApplicationController
     respond_with(@negotiations)
   end
 
+  def my_negotiations
+    @negotiations = current_user.negotiations
+  end
+
+  def my_negotiations_edit
+    @contract = current_user.contracts.find(params[:id])
+    @negotiations = @contract.negotiations  
+  end
+
   def show
     @negotiation = Negotiation.find(params[:id])
     @developer = @negotiation.developer

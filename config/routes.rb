@@ -14,6 +14,8 @@ end
   get 'search/contracts', to: 'search#searching_for_contracts'
   get 'search/developers', to: 'search#searching_for_developers'
   get 'my_contracts', to: 'contracts#my_contracts'
+  get 'my_negotiations', to: 'negotiations#my_negotiations'
+  match '/my_negotiations/:id/edit', to: 'negotiations#my_negotiations_edit', as: :my_negotiations_edit, :via => [:get,:post]
   match '/my_contracts/:id/edit', to: 'contracts#my_contracts_edit', as: :my_contracts_edit, :via => [:get,:post]
   get 'employer_favorites/destroy', to: 'employer_favorites#destroy'
 

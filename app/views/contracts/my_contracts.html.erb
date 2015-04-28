@@ -12,10 +12,12 @@
 					<% if current_user.type == 'Employer' %>
 						<%= button_to 'Edit Contract', my_contracts_edit_path(contract), :class => "button right tiny" %>
 						<%= link_to 'Mark Complete', update_contract_status_as_closed_and_pay_developer_contract_path(contract.id), :class => "button right success tiny", :id => 'mark_complete_button', remote: true %>
-						<%= link_to 'Delete Contract', contract_path(contract.id), method: :delete, data: { confirm: 'Are you certain you want to delete this contract?' }, :class => "right button tiny", :id => 'delete_contract_button' %>	
+						<%= link_to 'Delete Contract', contract_path(contract.id), method: :delete, data: { confirm: 'Are you certain you want to delete this contract?' }, :class => "right button tiny", :id => 'delete_contract_button' %>
+						<%= button_to 'View Negotiations', my_negotiations_edit_path(contract), :class => "button right tiny" %>
 					<% elsif current_user.type == 'Developer' %>
 						<%= link_to 'Mark Complete', developer_requests_contract_marked_complete_contract_path(contract.id), :class => "button right success tiny", :id => 'mark_complete_button' %>
-						<%= link_to 'Reject Offer', developer_rejects_contract_offer_contract_path(contract.id), :class => "right button tiny", :id => 'reject_offer_button' %>					
+						<%= link_to 'Reject Offer', developer_rejects_contract_offer_contract_path(contract.id), :class => "right button tiny", :id => 'reject_offer_button' %>
+						<%= button_to 'View Negotiations', my_negotiations_edit_path(contract), :class => "button right tiny" %>					
 					<% end %>
 					<hr>
 				</ul>
