@@ -9,7 +9,9 @@
         <span ng-click="page3()"> 3 </span>
         <span ng-click="next()">Next&raquo; </span>
         </div>
+        
         <div ng-repeat="developer in developers | filter:query | filter:skills | limitTo: 99 | orderBy: developerOrder:direction" ng-class="{'rotate-left': rotate === 'left', 'rotate-right': rotate === 'right'}" class="developer_container_each_developer" ng-swipe-left="swipeLeft(developer); rotate='left'" ng-swipe-right="swipeRight(developer); rotate='right'" ng-hide="showOnlyFavoritesChecked && !developer.favorited">
+
           <div class="small-12 medium-12 large-12 columns">
           <div id="developer_image_container">
             <div class="animation_3d" id="rotation_box">
