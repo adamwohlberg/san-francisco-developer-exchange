@@ -2,9 +2,9 @@
 BUGS & FEATURES
 *******************************
 
-Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]
+Need to remove mailers
 
-My negotiations styling
+Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]
 
 Show image if video does not load
 
@@ -215,3 +215,6 @@ In production, the skills aren't displaying for new developer profiles
 If employers change the contract amount, it is not updating.  The service fee and amount have to calculate right before instant hire not at contract creation. Or think about this.
 
 Contract skills are not displaying on index page
+
+My negotiations styling
+
