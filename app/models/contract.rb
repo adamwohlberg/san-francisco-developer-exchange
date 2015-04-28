@@ -57,8 +57,8 @@ class Contract < ActiveRecord::Base
   has_many :ratings
   has_many :negotiations
 
-  before_create :calculate_total_payment!
-  before_create :calculate_service_fee!
+  before_save :calculate_total_payment!
+  before_save :calculate_service_fee!
 
   scope :paid, -> { where(paid: true) }
   scope :unpaid, -> { where(paid: false) }
