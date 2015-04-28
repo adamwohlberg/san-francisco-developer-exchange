@@ -2,7 +2,11 @@
 BUGS & FEATURES
 *******************************
 
-Need to remove mailers
+Negotiations button margin not working
+
+Negotiation images are humongous in production...
+
+Need to remove mailer interceptor
 
 Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]
 
