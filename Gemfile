@@ -44,7 +44,7 @@ gem 'annotate', '~> 2.6.5', group: :development
 gem 'geocoder', '~> 1.2.7'
 gem 'paypal-sdk-rest'
 gem 'puma'
-
+gem 'foreman'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
