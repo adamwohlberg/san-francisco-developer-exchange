@@ -1,25 +1,30 @@
-<h1>My negotiations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
+  <div class="small-2 medium-2 large-2"></div>
+  <div class="small-10 medium-10 large-10">
+    <strong><h1>My Negotiations</h1></strong>
+    <strong><h3>Contract Name: </strong><%= @contract.name.downcase.titleize %>
+  <hr>
+  <% if @negotiations.present? %>
     <% @negotiations.each do |negotiation| %>
-
-      <tr>
-        <td>Developer: <%= negotiation.developer_id %></td>
-        <td>Contract: <%= negotiation.contract.name %></td>
-        <td><%= link_to 'Show', negotiation %></td>
-        <td><%= link_to 'Edit', edit_negotiation_path(negotiation) %></td>
-        <td><%= link_to 'Destroy', negotiation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <ol>
+        <li>
+          <% if current_user.type == 'Employer' %>
+            <%= link_to image_tag(negotiation.developer.avatar, :id => "developer_profile_image_my_negotiations_page",:alt => "developer image small"), negotiation_path(negotiation) %><br />
+            <strong><h5><%= link_to negotiation.developer.title, negotiation_path(negotiation) %><br>
+            username: <%= link_to negotiation.developer.username, negotiation_path(negotiation) %></h5>
+          <% elsif current_user.type == 'Developer' %>
+            <%= link_to image_tag(negotiation.contract.employer.avatar, :id => "developer_profile_image_my_negotiations_page",:alt => "developer image small") %><br />
+            <strong><h5><%= link_to negotiation.contract.title, negotiation_path(negotiation) %></h5></strong>   
+          <% end %>
+        </li>
+      </ol>
+      <hr>
     <% end %>
-  </tbody>
-</table>
+  <% else %>
+    <h5>You don't have any negotiations yet. <% link_to 'Find a developer now.', developers_path %></h5> 
+  <% end %>
+  </div>
+  <div class="small-2 medium-2 large-2"></div>
+</div>
 
-<br>
 
