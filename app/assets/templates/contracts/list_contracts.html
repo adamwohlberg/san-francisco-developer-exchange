@@ -44,7 +44,7 @@
                 <div class="small-12 medium-12 large-12 columns border">
                       <div id="developer_skills" class="truncate">
                         <strong id="super_powers">Required Skills: </strong><a ng-href="/contracts/{{contract.id}}"><span id="view_full_profile_text">(view full profile)</span></a><br/> 
-                        <span ng-repeat="skill in developer.skills | limitTo:quantity" class="skills_tag">{{ skill }}</span>
+                        <span ng-repeat="skill in contract.skills | limitTo:quantity" class="skills_tag">{{ skill }}</span>
                       </div>
                 </div>
               <div class="small-12 med-9 large-9 columns request_interview_button_container"></div>
