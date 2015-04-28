@@ -45,6 +45,7 @@ gem 'geocoder', '~> 1.2.7'
 gem 'paypal-sdk-rest'
 gem 'puma'
 gem 'foreman'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
