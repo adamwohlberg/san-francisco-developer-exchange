@@ -43,6 +43,7 @@ gem 'spring', group: :development
 gem 'annotate', '~> 2.6.5', group: :development
 gem 'geocoder', '~> 1.2.7'
 gem 'paypal-sdk-rest'
+gem 'puma'
 
 
 group :development, :test do

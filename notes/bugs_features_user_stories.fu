@@ -2,11 +2,9 @@
 BUGS & FEATURES
 *******************************
 
-My negotiations
+My negotiations styling
 
 Show image if video does not load
-
-Images are not showing up in production after initial upload.
 
 No video image on mobile
 
@@ -19,6 +17,7 @@ Confirm geolocation after FB login
 Add TESTING!!!
 
 No Procfile detected, using the default web server (webrick)
+Images are not showing up in production after initial upload.
 
 ********************************
 ANGULARjs
