@@ -159,12 +159,12 @@ class ContractsController < ApplicationController
 
   def self.download_pdf
     contract = Contract.find(params[:id])
-    send_data File.open(contract.attachment.path, 'r').read , :filename => "test", :type => "application/pdf", :disposition => "attachment"
+    send_data File.open(contract.attachment.path, 'r').read , :filename => contract.attachment_file_name, :type => "application/pdf", :disposition => "attachment"
   end
 
   def download_pdf
     contract = Contract.find(params[:id])
-    send_data File.open(contract.attachment.path, 'r').read , :filename => "test", :type => "application/pdf", :disposition => "attachment"
+    send_data File.open(contract.attachment.path, 'r').read , :filename => contract.attachment_file_name, :type => "application/pdf", :disposition => "attachment"
   end
 
   private
