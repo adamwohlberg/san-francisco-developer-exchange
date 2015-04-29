@@ -33,6 +33,7 @@ $ ->
         developer_id: developer_id
       }
     }
+    console.log(data)
     $.ajax({
         type: "POST",
         url: '/negotiations',
