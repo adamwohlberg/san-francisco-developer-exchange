@@ -2,6 +2,8 @@
 BUGS & FEATURES
 *******************************
 
+My negotiations are listing too many negotiations
+
 Limit negotiation create to only one negotiation with any given developer for one contract. "You already started a negotiation for this contract with this developer.  Please go to My Contracts to view the negotiation in process"
 
 Use case: users inflate contract to contact developer, then lower contract after contacting.s
