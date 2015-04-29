@@ -12,7 +12,10 @@ class ContractsController < ApplicationController
   end
 
   def my_contracts
-    @contracts = current_user.contracts
+    # if current_user.type == 'Employer'
+      @contracts = current_user.contracts
+    # elsif current_user.type == 'Developer'
+    #   @contracts = Contract.where(id: current_user.negotiations.map(&:contract_id))
   end
 
   def my_contracts_edit

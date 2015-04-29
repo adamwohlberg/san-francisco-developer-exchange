@@ -2,19 +2,7 @@
 BUGS & FEATURES
 *******************************
 
-My negotiations are listing too many negotiations
-
-Limit negotiation create to only one negotiation with any given developer for one contract. "You already started a negotiation for this contract with this developer.  Please go to My Contracts to view the negotiation in process"
-
-Use case: users inflate contract to contact developer, then lower contract after contacting.s
-
-Negotiations button margin not working
-
-Negotiation images are humongous in production...
-
-Need to remove mailer interceptor
-
-Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]
+Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]  Add tabs for Negotiation or Hired.
 
 Show image if video does not load
 
@@ -228,3 +216,14 @@ Contract skills are not displaying on index page
 
 My negotiations styling
 
+My negotiations are listing too many negotiations
+
+Limit negotiation create to only one negotiation with any given developer for one contract. "You already started a negotiation for this contract with this developer.  Please go to My Contracts to view the negotiation in process"
+
+Use case: users inflate contract to contact developer, then lower contract after contacting.s
+
+Negotiations button margin not working
+
+Negotiation images are humongous in production...
+
+Need to remove mailer interceptor
