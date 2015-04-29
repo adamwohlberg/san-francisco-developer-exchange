@@ -4,6 +4,6 @@ class DeveloperContactEmployer < ActionMailer::Base
   	@developer = developer
   	@contract = contract
   	@employer = contract.employer
-    mail(to: @employer.email, subject: "Yes, I'm Interested")
+    mail(to: @employer.email, subject: "Yes, I'm Interested", bcc: ENV["ADMINISTRATOR_EMAIL"])
   end
 end

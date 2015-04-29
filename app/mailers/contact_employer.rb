@@ -5,6 +5,6 @@ class ContactEmployer < ActionMailer::Base
   	@developer = @negotiation.developer
     @employer = @negotiation.employer
     @message = message
-    mail(to: @employer.email, subject: "Your Developer Responded")
+    mail(to: @employer.email, subject: "Your Developer Responded", bcc: ENV["ADMINISTRATOR_EMAIL"])
   end
 end

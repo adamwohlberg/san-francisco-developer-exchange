@@ -4,7 +4,7 @@ class DeveloperRejectsOffer < ActionMailer::Base
   	@developer = contract.developer
   	@contract = contract
   	@employer = contract.employer
-    mail(to: @employer.email, subject: "Your offer has been declined", bcc: ENV['ADMINISTRATOR_EMAIL'])
+    mail(to: @employer.email, subject: "Your offer has been declined", bcc: ENV["ADMINISTRATOR_EMAIL"])
   end
 end
 

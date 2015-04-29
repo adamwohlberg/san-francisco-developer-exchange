@@ -4,6 +4,6 @@ class DeveloperRequestsContractMarkedComplete < ActionMailer::Base
   	@developer = contract.developer
   	@contract = contract
   	@employer = contract.employer
-    mail(to: @employer.email, subject: "Congratulations. The contract is complete")
+    mail(to: @employer.email, subject: "Congratulations. The contract is complete", bcc: ENV["ADMINISTRATOR_EMAIL"])
   end
 end

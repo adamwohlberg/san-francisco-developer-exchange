@@ -6,9 +6,9 @@ class ContactDeveloper < ActionMailer::Base
   	@contract = @negotiation.contract
     @message = message
   	if @negotiation.negotiation_messages.employer_message.count == 1
-  	  mail(to: @developer.email, subject: "Someone Wants to Interview You")
+  	  mail(to: @developer.email, subject: "Someone Wants to Interview You", bcc: ENV["ADMINISTRATOR_EMAIL"])
   	else
-  	  mail(to: @developer.email, subject: "The Employer Responded")  	
+  	  mail(to: @developer.email, subject: "The Employer Responded", bcc: ENV["ADMINISTRATOR_EMAIL"])  	
 	  end
   end
 
