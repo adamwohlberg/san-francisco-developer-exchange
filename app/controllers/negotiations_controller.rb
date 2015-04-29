@@ -48,6 +48,9 @@ class NegotiationsController < ApplicationController
   def create
     contract = Contract.where(id: params["negotiation"]["contract_id"]).first
     developer = Developer.where(id: params["negotiation"]["developer_id"]).first
+    if current_user.negotiations.where(contract_id: contract.id, developer_id: developer.id).first.present?
+      return render json: 'You already have begun a negotiation with this developer for this contract.', status: :unprocessable_entity 
+    end
     @negotiation = current_user.negotiations.new(negotiation_params)
     contract_amount_is_greater_than_developers_minimum = contract.amount.to_f >= developer.min_contract_amount
     respond_to do |format|

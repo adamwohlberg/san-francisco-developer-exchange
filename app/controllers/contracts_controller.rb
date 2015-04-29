@@ -69,7 +69,10 @@ class ContractsController < ApplicationController
       @contract = current_user.contracts.find(params[:id])
       @skill_categories = SkillCategory.all.includes(:skills)
       respond_to do |format|
-        if @contract.update(contract_params)
+        if contract_params[:amount].to_f < @contract.amount.to_f 
+          flash[:alert] = 'Contract amount can not be reduced. Please create a new contract if you want to reduce the amount.'        
+          format.html { render :my_contracts_edit}
+        elsif @contract.update(contract_params)
           format.html { redirect_to '/developers#/list_developers/', notice: 'Contract was successfully updated.' }
           format.json { render :show, status: :ok, location: @contract }
         else

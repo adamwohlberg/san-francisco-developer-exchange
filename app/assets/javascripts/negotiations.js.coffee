@@ -41,7 +41,7 @@ $ ->
         success: (data) -> 
           window.location = '/negotiations/'+data.id
         error: (data) -> 
-          alert ('Contract amount must be greater than the developer\'s minimum contract amount')
+          alert(data.responseText)
       });   
 
 $ ->

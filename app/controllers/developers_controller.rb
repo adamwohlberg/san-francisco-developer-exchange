@@ -3,7 +3,7 @@ class DevelopersController < ApplicationController
   before_action :authenticate_developer!, only: [:new]
   before_action :set_developer, only: [:edit, :update, :destroy]
 
-  layout 'no_errors_layout'
+  layout 'application'
 
   def index
     @developers = Developer.near(Geocoder.coordinates(current_user.location),99999).page(params[:page]).per(10)
