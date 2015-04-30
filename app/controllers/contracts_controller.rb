@@ -152,9 +152,9 @@ class ContractsController < ApplicationController
   def check_developer_minimum
     contract = Contract.find(params[:contract][:contract_id])
     developer = Developer.find(params[:contract][:developer_id])
-    contract_amount_is_greater_than_developers_minimum = contract.amount.to_f >= developer.min_contract_amount
+    contract_amount_is_greater_than_or_equal_to_developers_minimum = contract.amount.to_f >= developer.min_contract_amount
     respond_to do |format|
-      if contract_amount_is_greater_than_developers_minimum      
+      if contract_amount_is_greater_than_or_equal_to_developers_minimum      
         format.json { render json: developer, status: :created }
       else
         errors = "Contract amount must be greater than the developer's required minimum contract amount"        
