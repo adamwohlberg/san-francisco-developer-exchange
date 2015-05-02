@@ -6,8 +6,6 @@ Check facebook location and geocoding
 
 Employers can't delete contracts (need the record), they can only hide the contract
 
-Check get users by profile name developers/adam_zuckerberg
-
 Show image if video does not load
 
 No video image on mobile
@@ -237,3 +235,5 @@ Developers can't get to "My Contracts" until they are hired, so how can they nav
 
 No Procfile detected, using the default web server (webrick)
 Images are not showing up in production after initial upload.
+
+Check get users by profile name developers/adam_zuckerberg

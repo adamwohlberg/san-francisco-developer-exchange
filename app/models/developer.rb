@@ -86,7 +86,7 @@ class Developer < User
 
   validates_numericality_of :min_contract_amount, presence: true, :on => :update,
             greater_than_or_equal_to: 500,
-            less_than_or_equal_to: 225001
+            less_than_or_equal_to: 225000
   validates :title, presence: true, :on => :update
   validates :username, presence: true, :on => :update,
                            uniqueness: true,

@@ -12,10 +12,7 @@ class ContractsController < ApplicationController
   end
 
   def my_contracts
-    # if current_user.type == 'Employer'
-      @contracts = current_user.contracts
-    # elsif current_user.type == 'Developer'
-    #   @contracts = Contract.where(id: current_user.negotiations.map(&:contract_id))
+      @contracts = current_user.contracts.visible
   end
 
   def my_contracts_edit
@@ -128,7 +125,7 @@ class ContractsController < ApplicationController
 
   def destroy
     if @contract.status == 'open' && @contract.paid == false 
-      @contract.destroy
+      @contract.update_attributes(visible: false)
       respond_to do |format|
         format.html { redirect_to my_contracts_path, notice: 'Contract was successfully destroyed.' }
         format.json { head :no_content }
