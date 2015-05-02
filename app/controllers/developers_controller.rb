@@ -11,7 +11,7 @@ class DevelopersController < ApplicationController
 
   def show
     # get user by profile name
-    @developer = Developer.find_by_username(params[:id]) || Developer.find_by_id(params[:id])
+    @developer = Developer.find_by_username(params[:id].strip) || Developer.find_by_id(params[:id].strip)
     @skill_categories = SkillCategory.all.includes(:skills)
       if @developer
         @skills = @developer.skills
@@ -25,7 +25,7 @@ class DevelopersController < ApplicationController
         end
         render action: "show"
       else
-        @developer = Developer.find_by_username(params[:id]) || Developer.find_by_id(params[:id])
+        @developer = Developer.find_by_username(params[:id].strip) || Developer.find_by_id(params[:id].strip)
         @skills = @developer.skills
         @skill = Skill.new
         @contracts = Contract.all.pluck(:id, :name)
