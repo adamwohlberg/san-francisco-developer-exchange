@@ -2,19 +2,9 @@
 BUGS & FEATURES
 *******************************
 
-Terms of use links in footer to redirects not popups per suggestion
-
-Change contract amount must be greater than or equal to
-
-Developers have a "My Negotiations" link listing all negotiations
-
 Employers can't delete contracts (need the record), they can only hide the contract
 
-Remove robots no follow
-
 Check get users by profile name developers/adam_zuckerberg
-
-Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]  Add tabs for Negotiation or Hired.
 
 Show image if video does not load
 
@@ -239,3 +229,13 @@ Negotiations button margin not working
 Negotiation images are humongous in production...
 
 Need to remove mailer interceptor
+
+Terms of use links in footer to redirects not popups per suggestion
+
+Change contract amount must be greater than or equal to
+
+Developers have a "My Negotiations" link listing all negotiations
+
+Remove robots no follow
+
+Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]  Add tabs for Negotiation or Hired.
