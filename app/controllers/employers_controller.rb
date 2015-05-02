@@ -10,7 +10,7 @@ class EmployersController < ApplicationController
   end
 
   def show
-    @employer =  Employer.find_by_username(params[:id]) 
+    @employer =  Employer.find_by_username(params[:id])
     respond_with(@employer)
   end
 
@@ -39,11 +39,12 @@ class EmployersController < ApplicationController
   end
 
   private
-    def set_employer
-      @employer = Employer.find(params[:id])
-    end
 
-    def employer_params
-      params.require(:employer).permit(:avatar, :location, :first_name, :name, :ein, :amount)
-    end
+  def set_employer
+    @employer = Employer.find(params[:id])
+  end
+
+  def employer_params
+    params.require(:employer).permit(:avatar, :location, :first_name, :name, :ein, :amount)
+  end
 end

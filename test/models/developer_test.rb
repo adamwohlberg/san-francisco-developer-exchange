@@ -59,9 +59,8 @@
 require 'test_helper'
 
 class DeveloperTest < ActiveSupport::TestCase
-
   test "that a developer's total payment is calculated" do
-  	developer = users(:jason)
+    developer = users(:jason)
     assert developer.save
     assert developer.earnings == 7000, developer.earnings
   end
@@ -69,91 +68,75 @@ class DeveloperTest < ActiveSupport::TestCase
   test "that a developer's service_fee is calculated" do
     developer = users(:jason)
     assert developer.save
-    assert developer.service_fee == 0, developer.service_fee  
+    assert developer.service_fee == 0, developer.service_fee
   end
 
   test "that a developer's earnings are calculated" do
     developer = users(:jason)
     assert developer.save
     assert developer.earnings == 7000, developer.earnings
-    assert developer.service_fee == 0, developer.service_fee     
+    assert developer.service_fee == 0, developer.service_fee
     assert developer.earnings == (developer.earnings - developer.service_fee)
   end
 
-  test "that a developer chooses her type form a drop down" do
-   user = Users(:developer)
-   user.title = "Foobar"
+  test 'that a developer chooses her type form a drop down' do
+    user = Users(:developer)
+    user.title = 'Foobar'
     assert !user.save
     assert !user.errors[:title].empty?
   end
 
-  test "that a user enters a username" do
+  test 'that a user enters a username' do
     user = User.new(
       first_name: 'Bob',
       location: 'San Francisco, CA',
       type: '',
-      email: "bob@facerbook.com",
-      password:'asdfjkl;',
-      password_confirmation:'asdfjkl;'
-      )
+      email: 'bob@facerbook.com',
+      password: 'asdfjkl;',
+      password_confirmation: 'asdfjkl;'
+    )
     user = User.update(
-      username: "Foobar"
-      )
+      username: 'Foobar'
+    )
     assert !user.save
     assert !user.errors[:username].empty?
   end
 
-  test "that a user should have a unique profile name" do
+  test 'that a user should have a unique profile name' do
     user = User.new(
       first_name: 'Bob',
       location: 'San Francisco, CA',
       type: 'Developer',
-      email: "bob@facerbook.com",
-      password:'asdfjkl;',
-      password_confirmation:'asdfjkl;'
-      )
-    user.username = "dev_flunkr"
+      email: 'bob@facerbook.com',
+      password: 'asdfjkl;',
+      password_confirmation: 'asdfjkl;'
+    )
+    user.username = 'dev_flunkr'
     assert !user.save
     assert !user.errors[:username].empty?
   end
 
-  test "that a developer must have a title selected from a list" do
-
+  test 'that a developer must have a title selected from a list' do
   end
 
-  test "that a developer must enter a professional summary description" do
-
+  test 'that a developer must enter a professional summary description' do
   end
 
-  test "that a developer must enter a minimum contract amount" do
-
+  test 'that a developer must enter a minimum contract amount' do
   end
 
-  test "that a developer must enter a cell phone number" do
-
+  test 'that a developer must enter a cell phone number' do
   end
 
-  test "that a developer must enter a PayPal email" do
-
+  test 'that a developer must enter a PayPal email' do
   end
 
-  test "that a developer can upload a profile image" do
-
+  test 'that a developer can upload a profile image' do
   end
 
-  test "that a developer must enter his skills from checkboxes" do
-
+  test 'that a developer must enter his skills from checkboxes' do
   end
 
-  test "that a developer must agree to terms and conditions before saving his profile" do
-
+  test 'that a developer must agree to terms and conditions before saving his profile' do
   end
 end
-
-
-
-
-
-
-
-

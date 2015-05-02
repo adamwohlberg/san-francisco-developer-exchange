@@ -39,9 +39,9 @@
 
 class Contract < ActiveRecord::Base
   has_attached_file :attachment
-  validates_attachment_content_type :attachment, :content_type => [ 'application/pdf', 'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ]
-  validates_with AttachmentSizeValidator, :attributes => :attachment, :less_than => 2.megabytes
+  validates_attachment_content_type :attachment, content_type: ['application/pdf', 'application/msword',
+                                                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+  validates_with AttachmentSizeValidator, attributes: :attachment, less_than: 2.megabytes
 
   belongs_to :employer
   belongs_to :developer
@@ -64,25 +64,24 @@ class Contract < ActiveRecord::Base
   scope :unpaid, -> { where(paid: false) }
   scope :open, -> { where(status: 'open') }
   scope :closed, -> { where(status: 'closed') }
-  scope :visible, -> { where(visible: true)}
+  scope :visible, -> { where(visible: true) }
 
   validates :title, presence: true
   validates :name, presence: true
   validates :description, presence: true
 
-
   validates_numericality_of :amount, presence: true,
-            greater_than_or_equal_to: 500,
-            less_than_or_equal_to: 225001
-  validates :ein, presence: true, 
-                           format:  {
-                             with: /[1-9]\d?-\d{7}/,
-                             message: 'please enter a valid employer identification number'
-                           }
+                                     greater_than_or_equal_to: 500,
+                                     less_than_or_equal_to: 225_001
+  validates :ein, presence: true,
+                  format:  {
+                    with: /[1-9]\d?-\d{7}/,
+                    message: 'please enter a valid employer identification number'
+                  }
 
   geocoded_by :location
-  after_validation :geocode, :if => :location_changed?
- 
+  after_validation :geocode, if: :location_changed?
+
   COMMISSION = 0.20
 
   def calculate_total_payment!
@@ -104,18 +103,18 @@ class Contract < ActiveRecord::Base
     self.balance = -(total_payment)
   end
 
-# after the PayPal payment callback the contract is updated with a developer_id. after_save this will be run
+  # after the PayPal payment callback the contract is updated with a developer_id. after_save this will be run
   # def assign_developer_level
   #   if developer.present?
-  #    developer.update_attributes(level: developer.calculate_level) 
+  #    developer.update_attributes(level: developer.calculate_level)
   #   end
   # end
 
   def paypal_url(amount, return_path, notify_url)
-    paypal_url = Rails.application.secrets[:paypal_host] || ENV["paypal_host"]
+    paypal_url = Rails.application.secrets[:paypal_host] || ENV['paypal_host']
     values = {
-      business: ENV["PAYPAL_BUSINESS_EMAIL"] || Rails.application.secrets[:PAYPAL_BUSINESS_EMAIL],
-      cmd: "_xclick",
+      business: ENV['PAYPAL_BUSINESS_EMAIL'] || Rails.application.secrets[:PAYPAL_BUSINESS_EMAIL],
+      cmd: '_xclick',
       upload: 1,
       return: return_path,
       invoice: id,
@@ -127,9 +126,3 @@ class Contract < ActiveRecord::Base
     "#{paypal_url}/cgi-bin/webscr?#{values.to_query}"
    end
 end
-
-
-
-
-
-

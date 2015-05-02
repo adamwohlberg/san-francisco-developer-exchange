@@ -5,7 +5,7 @@ class NegotiationsControllerTest < ActionController::TestCase
   #   @negotiation = negotiations(:one)
   # end
 
-  test "an employer must select a contract in order to disable to contact button and contact a developer" do
+  test 'an employer must select a contract in order to disable to contact button and contact a developer' do
     assert false
   end
 

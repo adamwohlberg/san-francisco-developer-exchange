@@ -38,11 +38,12 @@ class PaymentsController < ApplicationController
   end
 
   private
-    def set_payment
-      @payment = Payment.find(params[:id])
-    end
 
-    def payment_params
-      params[:payment]
-    end
+  def set_payment
+    @payment = Payment.find(params[:id])
+  end
+
+  def payment_params
+    params[:payment]
+  end
 end

@@ -57,41 +57,39 @@
 #
 
 class Employer < User
+  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/noface'
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_size :avatar, in: 0.megabytes..2.megabytes
 
-has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/noface"
-    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-    validates_attachment_size :avatar, :in => 0.megabytes..2.megabytes
+  scope :favorite, -> { where(:favorite == true) }
 
-    scope :favorite, -> { where(:favorite == true) } 
+  has_many :contracts
+  has_many :negotiations
+  has_many :developers, through: :contracts
+  has_many :ratings, through: :contracts
+  has_and_belongs_to_many :employer_favorites
+  has_and_belongs_to_many :employer_blocks
 
-	has_many :contracts
-	has_many :negotiations
-	has_many :developers, :through => :contracts
-	has_many :ratings, :through => :contracts
-	has_and_belongs_to_many :employer_favorites
-	has_and_belongs_to_many :employer_blocks
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 
-	geocoded_by :location
-  	after_validation :geocode, :if => :location_changed?
+  def all_contracts_total
+    contracts.sum(:amount)
+    end
 
-	def all_contracts_total
-		contracts.sum(:amount)
-	end
+  def employer_favorites
+    EmployerFavorite.where(employer: self)
+    end
 
-	def employer_favorites
-		EmployerFavorite.where( employer: self )
-	end
+  def make_payment(amount, contract)
+    Payment.create(amount: amount, contract_id: contract, employer_id: id)
+    end
 
-	def make_payment(amount, contract)
-		Payment.create(amount: amount, contract_id: contract, employer_id: self.id)
-	end
+  def stars
+    contracts.ratings.average(:employer)
+    end
 
-	def stars
-		contracts.ratings.average(:employer)
-	end
-
-	# def show_stars(ratings)
- #  		image_tag "#{review.rating}star.png"
-	# end
-
+  # def show_stars(ratings)
+  #  		image_tag "#{review.rating}star.png"
+  # end
 end

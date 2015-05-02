@@ -15,10 +15,9 @@ class Payment < ActiveRecord::Base
   belongs_to :developer
 
   def new
-  @payment = Payment.new 
+    @payment = Payment.new
   end
 
-  def update 
-
+  def update
   end
 end

@@ -20,5 +20,4 @@ class SkillsControllerTest < ActionController::TestCase
   #   get :delete
   #   assert_response :success
   # end
-
 end

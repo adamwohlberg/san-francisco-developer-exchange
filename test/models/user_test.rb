@@ -59,69 +59,68 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  # *********************************************************************************************************
+  # # Tests for initial REGISTRATION for devs or employers (if user does NOT login with the Facebook button)
+  # *********************************************************************************************************
 
-# *********************************************************************************************************
-# # Tests for initial REGISTRATION for devs or employers (if user does NOT login with the Facebook button)
-# *********************************************************************************************************
-
-  test "a user must select a user type as developer or employer unhappy path" do
+  test 'a user must select a user type as developer or employer unhappy path' do
     user = User.new(
       first_name: 'Bob',
       location: 'San Francisco, CA',
       type: '',
-      email: "bob@facerbook.com",
-      password:'asdfjkl;',
-      password_confirmation:'asdfjkl;'
-      )
+      email: 'bob@facerbook.com',
+      password: 'asdfjkl;',
+      password_confirmation: 'asdfjkl;'
+    )
     assert !user.save
     assert !user.errors[:type].empty?
   end
 
-  test "a user must select a user type as developer or employer happy path" do
+  test 'a user must select a user type as developer or employer happy path' do
     user = User.new(
       first_name: 'Bob',
       location: 'San Francisco, CA',
       type: 'Developer',
-      email: "bob@facerbook.com",
-      password:'asdfjkl;',
-      password_confirmation:'asdfjkl;'
-      )
+      email: 'bob@facerbook.com',
+      password: 'asdfjkl;',
+      password_confirmation: 'asdfjkl;'
+    )
     assert user.save
     assert user.errors[:type].empty?
   end
 
-  test "a user should enter a first name" do
+  test 'a user should enter a first name' do
     user = User.new
     assert !user.save
-  	assert !user.errors[:first_name].empty?
+    assert !user.errors[:first_name].empty?
   end
 
-  test "if a user does not add an email address the user cannot create a profile aka the unhappy path" do
+  test 'if a user does not add an email address the user cannot create a profile aka the unhappy path' do
     user = User.new(
       first_name: 'Bob',
       location: 'San Francisco, CA',
       type: 'Developer',
-      password:'asdfjkl;',
-      password_confirmation:'asdfjkl;'
-      )
+      password: 'asdfjkl;',
+      password_confirmation: 'asdfjkl;'
+    )
     assert !user.save
-  	assert !user.errors[:email].empty?
+    assert !user.errors[:email].empty?
   end
 
-  test "if a user does add an email address the user can create a profile aka the happy path" do
+  test 'if a user does add an email address the user can create a profile aka the happy path' do
     user = User.new(
       first_name: 'John',
       location: 'San Francisco, CA',
       type: 'Developer',
       email: 'foobar@barfoo.com',
-      password:'asdfjkl;',
-      password_confirmation:'asdfjkl;'
-      )
+      password: 'asdfjkl;',
+      password_confirmation: 'asdfjkl;'
+    )
     assert user.save
     assert user.errors[:email].empty?
   end
 
-  test "a user should enter a location" do
+  test 'a user should enter a location' do
     user = User.new
     user.type = 'Developer'
     user.first_name = users(:jason).first_name
@@ -130,73 +129,35 @@ class UserTest < ActiveSupport::TestCase
     user.password = 'asdfjkl;'
     user.password_confirmation = 'asdfjkl;'
     user.encrypted_password = users(:jason).encrypted_password
-  	assert user.errors[:location].empty?
+    assert user.errors[:location].empty?
   end
 
-  test "a user must enter a password" do
+  test 'a user must enter a password' do
     user = User.new(
       first_name: 'John',
       location: 'San Francisco, CA',
       type: 'Developer',
       email: 'foobar@barfoo.com',
-      password:'',
-      password_confirmation:'asdfjkl;'
-      )
-     assert !user.save
-     assert !user.errors[:password].empty?   
+      password: '',
+      password_confirmation: 'asdfjkl;'
+    )
+    assert !user.save
+    assert !user.errors[:password].empty?
   end
 
-  test "a user must confirm her password" do
+  test 'a user must confirm her password' do
     user = User.new(
       first_name: 'John',
       location: 'San Francisco, CA',
       type: 'Developer',
       email: 'foobar@barfoo.com',
-      password:'asdfjkl;',
-      password_confirmation:'foobar'
-      )
-     assert !user.save
-     assert !user.errors[:password_confirmation].empty?   
+      password: 'asdfjkl;',
+      password_confirmation: 'foobar'
+    )
+    assert !user.save
+    assert !user.errors[:password_confirmation].empty?
   end
 
-  test "new users are geocoded by location" do
-
+  test 'new users are geocoded by location' do
   end
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

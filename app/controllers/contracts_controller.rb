@@ -4,15 +4,15 @@ class ContractsController < ApplicationController
   before_action :set_contract, only: [:show, :edit, :update, :destroy, :my_contracts_edit]
 
   layout 'application'
-  
+
   # GET /contracts
   # GET /contracts.json
   def index
-    @contracts = Contract.near(Geocoder.coordinates(current_user.location), 9999999).page(params[:page]).per(3)
+    @contracts = Contract.near(Geocoder.coordinates(current_user.location), 9_999_999).page(params[:page]).per(3)
   end
 
   def my_contracts
-      @contracts = current_user.contracts.visible
+    @contracts = current_user.contracts.visible
   end
 
   def my_contracts_edit
@@ -24,9 +24,7 @@ class ContractsController < ApplicationController
   def show
     @developer = Developer.new
     @skill_categories = SkillCategory.all.includes(:skills)
-    if current_user.type == 'Employer'
-      redirect_to action: "index"
-    end
+    redirect_to action: 'index' if current_user.type == 'Employer'
     @contract = Contract.find(params[:id])
     @employer = @contract.employer
     @skills = @contract.skills
@@ -61,7 +59,6 @@ class ContractsController < ApplicationController
   end
 
   def new_contract_conversion
-
   end
 
   def update
@@ -69,9 +66,9 @@ class ContractsController < ApplicationController
       @contract = current_user.contracts.find(params[:id])
       @skill_categories = SkillCategory.all.includes(:skills)
       respond_to do |format|
-        if contract_params[:amount].to_f < @contract.amount.to_f 
-          flash[:alert] = 'Contract amount can not be reduced. Please create a new contract if you want to reduce the amount.'        
-          format.html { render :my_contracts_edit}
+        if contract_params[:amount].to_f < @contract.amount.to_f
+          flash[:alert] = 'Contract amount can not be reduced. Please create a new contract if you want to reduce the amount.'
+          format.html { render :my_contracts_edit }
         elsif @contract.update(contract_params)
           format.html { redirect_to '/developers#/list_developers/', notice: 'Contract was successfully updated.' }
           format.json { render :show, status: :ok, location: @contract }
@@ -86,45 +83,45 @@ class ContractsController < ApplicationController
   def update_contract_status_as_closed_and_pay_developer
     if current_user.type == 'Employer'
       @contract = current_user.contracts.find(params[:id])
-        if @contract.status == 'open' && @contract.paid == true 
-          @contract.update_attributes(status: 'closed')
-          ContactAdministrator.employer_marked_contract_closed_now_pay_the_developer(@contract).deliver 
-          flash[:notice] = "Congratulations! This contract is now closed and the developer will be paid."
-        else
-          flash[:alert] = "There is an error. This contract cannot be closed."
-        end
+      if @contract.status == 'open' && @contract.paid == true
+        @contract.update_attributes(status: 'closed')
+        ContactAdministrator.employer_marked_contract_closed_now_pay_the_developer(@contract).deliver
+        flash[:notice] = 'Congratulations! This contract is now closed and the developer will be paid.'
+      else
+        flash[:alert] = 'There is an error. This contract cannot be closed.'
+      end
     end
   end
 
   def developer_requests_contract_marked_complete
     @contract = current_user.contracts.find(params[:id])
     if current_user.type == 'Developer'
-        if @contract.status == 'open' && @contract.paid == true 
-          DeveloperRequestsContractMarkedComplete.please_mark_contract_complete(@contract).deliver 
-          flash[:notice] = "Congratulations! Your email has been sent to the employer"
-        else
-          flash[:alert] = "There is an error. Please contact your employer directly."
-        end
+      if @contract.status == 'open' && @contract.paid == true
+        DeveloperRequestsContractMarkedComplete.please_mark_contract_complete(@contract).deliver
+        flash[:notice] = 'Congratulations! Your email has been sent to the employer'
+      else
+        flash[:alert] = 'There is an error. Please contact your employer directly.'
+      end
     end
-    redirect_to  contract_path(@contract.id)
+    redirect_to contract_path(@contract.id)
   end
 
   def developer_rejects_contract_offer
     @contract = current_user.contracts.find(params[:id])
     if current_user.type == 'Developer'
-        if @contract.status == 'open' && @contract.paid == true 
-          @contract.update_attributes(developer_id: nil)
-          DeveloperRejectsOffer.developer_has_rejected_your_offer(@contract).deliver
-          flash[:notice] = "You have successfully rejected this offer.  We will notify the employer."
-        else
-          flash[:alert] = "There is an error. Please contact your employer directly."
-        end
+      if @contract.status == 'open' && @contract.paid == true
+        @contract.update_attributes(developer_id: nil)
+        DeveloperRejectsOffer.developer_has_rejected_your_offer(@contract).deliver
+        flash[:notice] = 'You have successfully rejected this offer.  We will notify the employer.'
+      else
+        flash[:alert] = 'There is an error. Please contact your employer directly.'
+      end
     end
-    redirect_to  contract_path(@contract.id)
+    redirect_to contract_path(@contract.id)
   end
 
   def destroy
-    if @contract.status == 'open' && @contract.paid == false 
+    if @contract.status == 'open' && @contract.paid == false
       @contract.update_attributes(visible: false)
       respond_to do |format|
         format.html { redirect_to my_contracts_path, notice: 'Contract was successfully destroyed.' }
@@ -132,8 +129,10 @@ class ContractsController < ApplicationController
       end
     elsif @contract.status == 'closed' || @contract.paid == true
       respond_to do |format|
-        format.html { redirect_to my_contracts_path, notice: 'You cannot delete a contract that is closed or if it has been paid - please contact support (via the contact support) link at the bottom of this page).
-        ' }
+        format.html do
+          redirect_to my_contracts_path, notice: 'You cannot delete a contract that is closed or if it has been paid - please contact support (via the contact support) link at the bottom of this page).
+        '
+        end
         format.json { head :no_content }
       end
     end
@@ -151,10 +150,10 @@ class ContractsController < ApplicationController
     developer = Developer.find(params[:contract][:developer_id])
     contract_amount_is_greater_than_or_equal_to_developers_minimum = contract.amount.to_f >= developer.min_contract_amount
     respond_to do |format|
-      if contract_amount_is_greater_than_or_equal_to_developers_minimum      
+      if contract_amount_is_greater_than_or_equal_to_developers_minimum
         format.json { render json: developer, status: :created }
       else
-        errors = "Contract amount must be greater than the developer's required minimum contract amount"        
+        errors = "Contract amount must be greater than the developer's required minimum contract amount"
         format.json { render json: errors, status: :unprocessable_entity }
       end
     end
@@ -162,28 +161,25 @@ class ContractsController < ApplicationController
 
   def self.download_pdf
     contract = Contract.find(params[:id])
-    send_data File.open(contract.attachment.path, 'r').read , :filename => contract.attachment_file_name, :type => "application/pdf", :disposition => "attachment"
+    send_data File.open(contract.attachment.path, 'r').read, filename: contract.attachment_file_name, type: 'application/pdf', disposition: 'attachment'
   end
 
   def download_pdf
     contract = Contract.find(params[:id])
-    send_data File.open(contract.attachment.path, 'r').read , :filename => contract.attachment_file_name, :type => "application/pdf", :disposition => "attachment"
+    send_data File.open(contract.attachment.path, 'r').read, filename: contract.attachment_file_name, type: 'application/pdf', disposition: 'attachment'
   end
 
   private
 
-    def authenticate_employer!
-      redirect_to :root unless current_user.is_a? Employer
-    end
+  def authenticate_employer!
+    redirect_to :root unless current_user.is_a? Employer
+  end
 
-    def set_contract
-      @contract = Contract.find(params[:id])
-    end
+  def set_contract
+    @contract = Contract.find(params[:id])
+  end
 
-    def contract_params
-      params.require(:contract).permit(:developer_id, :attachment, :relationship_type, :location, :latitude, :longitude, :status, :paid, :type, :name, :title, :document, :ein, :agree_to_terms, :description, :amount, :id, skill_ids: [])
-    end
-
-
+  def contract_params
+    params.require(:contract).permit(:developer_id, :attachment, :relationship_type, :location, :latitude, :longitude, :status, :paid, :type, :name, :title, :document, :ein, :agree_to_terms, :description, :amount, :id, skill_ids: [])
+  end
 end
-

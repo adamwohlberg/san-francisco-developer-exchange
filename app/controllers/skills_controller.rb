@@ -3,7 +3,7 @@ class SkillsController < ApplicationController
   end
 
   def new
-  	@skill = Skill.new
+    @skill = Skill.new
   end
 
   def edit
@@ -24,8 +24,6 @@ class SkillsController < ApplicationController
   private
 
   def skill_params
-     params.require(:skill).permit(:name, :developer_id, :contract_id, :verified)
+    params.require(:skill).permit(:name, :developer_id, :contract_id, :verified)
   end
-
 end
-

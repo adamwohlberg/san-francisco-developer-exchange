@@ -16,10 +16,8 @@
 #
 
 class Negotiation < ActiveRecord::Base
-	belongs_to :contract
-	belongs_to :developer
-	belongs_to :employer
-	has_many :negotiation_messages
-
-
+  belongs_to :contract
+  belongs_to :developer
+  belongs_to :employer
+  has_many :negotiation_messages
 end

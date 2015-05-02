@@ -60,15 +60,15 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauth_providers => [:facebook]
+         :recoverable, :rememberable, :trackable, :validatable, omniauth_providers: [:facebook]
 
   unless Rails.env.test?
     geocoded_by :location
-    #after_validation :geocode, :if => :location_changed?
+    # after_validation :geocode, :if => :location_changed?
   end
 
   validates :type, presence: true, inclusion: { in: %w(Employer Developer),
-    message: "%{value} is not a valid type of user" }, unless: -> { from_omniauth? }
+                                                message: '%{value} is not a valid type of user' }, unless: -> { from_omniauth? }
   validates :first_name, presence: true, unless: -> { from_omniauth? }
   # validates :email, presence: true, unless: -> { from_omniauth? }
   validates :location, presence: true, unless: -> { from_omniauth? }
@@ -85,18 +85,16 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
-    user.update_attributes(type: params["type"]) if params && params["type"].present?
-    return user
+    user.update_attributes(type: params['type']) if params && params['type'].present?
+    user
   end
 
-
-
   def self.new_with_session(params, session)
-    if session["devise.user_attributes"]
-       new(session["devise.user_attributes"], without_protection: true) do |user|
+    if session['devise.user_attributes']
+      new(session['devise.user_attributes'], without_protection: true) do |user|
         user.user_attributes = params
         user.valid?
-       end
+      end
     else
       super
     end
@@ -115,10 +113,9 @@ class User < ActiveRecord::Base
     end
   end
 
-private
+  private
 
-def from_omniauth?
-  provider && uid
-end
-
+  def from_omniauth?
+    provider && uid
+  end
 end

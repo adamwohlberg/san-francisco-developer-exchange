@@ -8,7 +8,7 @@ group :development, :test do
 end
 
 gem 'pg'
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov', require: false, group: :test
 gem 'simple_form'
 gem 'devise'
 gem 'sass-rails', '~> 4.0.3'
@@ -34,7 +34,7 @@ gem 'faker'
 gem 'omniauth-facebook', '1.4.0'
 gem 'koala', '~> 1.11.1'
 gem 'angular-rails-templates', '~> 0.1.4'
-gem "figaro"
+gem 'figaro'
 gem 'pry'
 gem 'quiet_assets'
 gem 'rails_12factor', group: :production
@@ -47,6 +47,7 @@ gem 'puma'
 gem 'foreman'
 gem 'aws-sdk', '< 2.0'
 gem 'byebug'
+gem 'rubocop'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
@@ -55,7 +56,3 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver', '~> 2.45.0'
 end
-
-
-
-

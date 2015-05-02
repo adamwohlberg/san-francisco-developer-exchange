@@ -7,6 +7,6 @@
 #
 
 class DeveloperFavorite < ActiveRecord::Base
-	belongs_to :developer
-	belongs_to :contract
+  belongs_to :developer
+  belongs_to :contract
 end

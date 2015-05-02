@@ -18,7 +18,7 @@ class NegotiationsController < ApplicationController
 
   def my_negotiations_edit
     @contract = current_user.contracts.find(params[:id])
-    @negotiations = @contract.negotiations  
+    @negotiations = @contract.negotiations
   end
 
   def show
@@ -35,7 +35,7 @@ class NegotiationsController < ApplicationController
     if current_user.type == 'Developer'
       @developer = current_user
       @employer = @contract.employer
-      DeveloperContactEmployer.developer_interested_in_contract(@developer,@contract).deliver    
+      DeveloperContactEmployer.developer_interested_in_contract(@developer, @contract).deliver
     elsif current_user.type == 'Employer'
       redirect_to 'index'
     end
@@ -46,10 +46,10 @@ class NegotiationsController < ApplicationController
   end
 
   def create
-    contract = Contract.where(id: params["negotiation"]["contract_id"]).first
-    developer = Developer.where(id: params["negotiation"]["developer_id"]).first
+    contract = Contract.where(id: params['negotiation']['contract_id']).first
+    developer = Developer.where(id: params['negotiation']['developer_id']).first
     if current_user.negotiations.where(contract_id: contract.id, developer_id: developer.id).first.present?
-      return render json: 'You already have begun a negotiation with this developer for this contract.', status: :unprocessable_entity 
+      return render json: 'You already have begun a negotiation with this developer for this contract.', status: :unprocessable_entity
     end
     @negotiation = current_user.negotiations.new(negotiation_params)
     contract_amount_is_greater_than_developers_minimum = contract.amount.to_f >= developer.min_contract_amount
@@ -78,32 +78,33 @@ class NegotiationsController < ApplicationController
   def send_email_to_developer
     @negotiation.negotiation_messages.create!(message: params[:message], is_employer: true)
     ContactDeveloper.new_negotiation_email(@negotiation, params[:message]).deliver
-    flash[:notice] = "Congratulations! Your message was sent to the developer."
+    flash[:notice] = 'Congratulations! Your message was sent to the developer.'
     redirect_to negotiation_path(@negotiation)
   end
 
   def send_email_to_employer
     @negotiation.negotiation_messages.create!(message: params[:message])
     ContactEmployer.new_negotiation_email(@negotiation, params[:message]).deliver
-    flash[:notice] = "Congratulations! Your message was sent to the employer."
+    flash[:notice] = 'Congratulations! Your message was sent to the employer.'
     redirect_to negotiation_path(@negotiation)
   end
 
   def download_pdf
     contract = current_user.negotiations.where(id: params[:id]).first.contract
-    send_data File.open(contract.attachment.path, 'r').read , :filename => "test", :type => "application/pdf", :disposition => "attachment"
+    send_data File.open(contract.attachment.path, 'r').read, filename: 'test', type: 'application/pdf', disposition: 'attachment'
   end
 
   private
-    def set_negotiation
-      @negotiation = Negotiation.find(params[:id])
-    end
 
-    def set_developer
-      @developer = Developer.find(params[:developer_id])
-    end
+  def set_negotiation
+    @negotiation = Negotiation.find(params[:id])
+  end
 
-    def negotiation_params 
-      params.require(:negotiation).permit(:employer_id, :developer_id, :contract_id)
-    end
+  def set_developer
+    @developer = Developer.find(params[:developer_id])
+  end
+
+  def negotiation_params
+    params.require(:negotiation).permit(:employer_id, :developer_id, :contract_id)
+  end
 end

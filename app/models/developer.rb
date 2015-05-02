@@ -57,46 +57,45 @@
 #
 
 class Developer < User
-
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/noface"
-    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-    validates_attachment_size :avatar, :in => 0.megabytes..2.megabytes
+  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/noface'
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_size :avatar, in: 0.megabytes..2.megabytes
 
   has_and_belongs_to_many :skills, join_table: :developers_skills
 
   has_many :contracts
   has_many :negotiations
-  has_many :employers, :through => :contracts
-  has_many :ratings, :through => :contracts
+  has_many :employers, through: :contracts
+  has_many :ratings, through: :contracts
   has_and_belongs_to_many :employer_favorites
   has_and_belongs_to_many :employer_blocks
-	has_and_belongs_to_many :developer_favorites
-
-	scope :php, -> { where(title: 'PHP Developer') }
-	scope :ruby, -> { where(title: 'Ruby Developer') }
-	scope :newest, -> { order('created_at DESC') }
-
-	geocoded_by :location
-  after_validation :geocode, :if => :location_changed?
+  has_and_belongs_to_many :developer_favorites
 
   scope :php, -> { where(title: 'PHP Developer') }
   scope :ruby, -> { where(title: 'Ruby Developer') }
   scope :newest, -> { order('created_at DESC') }
-  scope :favorite, -> { where(:favorite == true) } 
 
-  validates_numericality_of :min_contract_amount, presence: true, :on => :update,
-            greater_than_or_equal_to: 500,
-            less_than_or_equal_to: 225000
-  validates :title, presence: true, :on => :update
-  validates :username, presence: true, :on => :update,
-                           uniqueness: true,
-                           format:  {
-                             with: /[a-z0-9_-]{3,15}/,
-                             message: 'must be formatted correctly'
-                           }
-  validates :description, presence: true, :on => :update
-  validates :min_contract_amount, presence: true, :on => :update
-  validates :cell, presence: true, :on => :update
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
+
+  scope :php, -> { where(title: 'PHP Developer') }
+  scope :ruby, -> { where(title: 'Ruby Developer') }
+  scope :newest, -> { order('created_at DESC') }
+  scope :favorite, -> { where(:favorite == true) }
+
+  validates_numericality_of :min_contract_amount, presence: true, on: :update,
+                                                  greater_than_or_equal_to: 500,
+                                                  less_than_or_equal_to: 225_000
+  validates :title, presence: true, on: :update
+  validates :username, presence: true, on: :update,
+                       uniqueness: true,
+                       format:  {
+                         with: /[a-z0-9_-]{3,15}/,
+                         message: 'must be formatted correctly'
+                       }
+  validates :description, presence: true, on: :update
+  validates :min_contract_amount, presence: true, on: :update
+  validates :cell, presence: true, on: :update
 
   def skills_names
     skills.map &:name
@@ -110,22 +109,22 @@ class Developer < User
   def earnings
     total_payment = contracts.closed.sum(:total_payment)
     service_fee = contracts.closed.sum(:service_fee)
-    return total_payment - service_fee
+    total_payment - service_fee
   end
 
   def calculate_level
     case
-      when earnings.between?(0..24999.99)
+      when earnings.between?(0..24_999.99)
         level = 1
-      when earnings.between(25000..49999.99)
+      when earnings.between(25_000..49_999.99)
         level = 2
-      when earnings >= 50000
+      when earnings >= 50_000
         level = 3
     end
   end
 
   def developer_favorites
-    DeveloperFavorite.where( developer: self )
+    DeveloperFavorite.where(developer: self)
   end
 
   def stars
@@ -135,5 +134,4 @@ class Developer < User
   def projects
     contracts.closed.count(:id)
   end
-
 end

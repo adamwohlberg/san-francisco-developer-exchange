@@ -40,71 +40,33 @@
 require 'test_helper'
 
 class ContractTest < ActiveSupport::TestCase
-
-  test "that a contract must have a title" do
-
+  test 'that a contract must have a title' do
   end
 
-  test "that a contract must have a name" do
-
+  test 'that a contract must have a name' do
   end
 
-  test "that a contract must have a description" do
-
+  test 'that a contract must have a description' do
   end
 
-  test "that employers can upload a contract document" do
-
+  test 'that employers can upload a contract document' do
   end
 
-  test "that employers must enter an EIN number" do
-
+  test 'that employers must enter an EIN number' do
   end
 
-  test "that employers must enter a EIN number in a valid format" do
-
+  test 'that employers must enter a EIN number in a valid format' do
   end
 
-  test "that employers must enter a total contract amount" do
-
+  test 'that employers must enter a total contract amount' do
   end
 
-  test "that employers must enter a total contract amount great than $1000" do
-
+  test 'that employers must enter a total contract amount great than $1000' do
   end
 
-  test "that employers must enter required skills for the contract" do
-
+  test 'that employers must enter required skills for the contract' do
   end
 
-   test "that employers must agree to terms prior to submitting a contract" do
-
+  test 'that employers must agree to terms prior to submitting a contract' do
   end
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

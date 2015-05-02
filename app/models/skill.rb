@@ -12,9 +12,9 @@
 #
 
 class Skill < ActiveRecord::Base
-	# belongs_to :developer
+  # belongs_to :developer
   has_and_belongs_to_many :developers
-	belongs_to :skill_category
+  belongs_to :skill_category
 
   default_scope -> { order :position }
 

@@ -1,9 +1,9 @@
 class DeveloperContactEmployer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: 'from@example.com'
   def developer_interested_in_contract(developer, contract)
-  	@developer = developer
-  	@contract = contract
-  	@employer = contract.employer
-    mail(to: @employer.email, subject: "Yes, I'm Interested", bcc: ENV["ADMINISTRATOR_EMAIL"])
+    @developer = developer
+    @contract = contract
+    @employer = contract.employer
+    mail(to: @employer.email, subject: "Yes, I'm Interested", bcc: ENV['ADMINISTRATOR_EMAIL'])
   end
 end

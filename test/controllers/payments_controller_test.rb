@@ -1,11 +1,10 @@
 require 'test_helper'
 
 class PaymentsControllerTest < ActionController::TestCase
-
-  that "when an employer sends a payment to instant hire a developer, that the contract is updated with the developer_id and the status set to open WHEN THE DEVELOPER ACCEPTS THE hire????????" do
+  that 'when an employer sends a payment to instant hire a developer, that the contract is updated with the developer_id and the status set to open WHEN THE DEVELOPER ACCEPTS THE hire????????' do
     assert false
   end
-  
+
   # setup do
   #   @payment = payments(:one)
   # end
