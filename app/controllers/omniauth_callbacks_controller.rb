@@ -7,7 +7,6 @@ before_filter :check_user_exists
     user = User.from_omniauth(request.env["omniauth.auth"], request.env["omniauth.params"])
     if user.persisted?
       flash.notice = "Signed in!"
-      # sign_in_and_redirect user
       sign_in user
       redirect_to search_contracts_path
     else

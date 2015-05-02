@@ -70,10 +70,10 @@ $(document).ready(function(){
 
 function facebookPopUp(){
   if(window.opener) {
+    window.close();
     window.opener.location.reload(true);
-    window.close()
   }
-}
+};
 
 function facebookNewEmailConversion(){
     var _fbq = window._fbq || (window._fbq = []);
