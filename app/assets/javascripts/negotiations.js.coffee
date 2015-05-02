@@ -33,6 +33,7 @@ $ ->
         developer_id: developer_id
       }
     }
+    console.log(data)
     $.ajax({
         type: "POST",
         url: '/negotiations',
@@ -41,7 +42,7 @@ $ ->
         success: (data) -> 
           window.location = '/negotiations/'+data.id
         error: (data) -> 
-          alert ('Contract amount must be greater than the developer\'s minimum contract amount')
+          alert(data.responseText)
       });   
 
 $ ->

@@ -2,20 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-# $ ->
-#   $('#type_Developer[type="radio"]').click ->
-#     if $(this).is(':checked')
-#       $('#facebook_button_register_page').show()
-#     return
-#   return
-
-# $ ->
-#   $('#type_Employer[type="radio"]').click ->
-#     if $(this).is(':checked')
-#       $('#facebook_button_register_page').hide()
-#     return
-#   return
-
 $ ->
   $('#type_Developer[type="radio"]').click ->
     if $(this).is(':checked')

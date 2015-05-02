@@ -5,8 +5,8 @@
     <strong><h3>Contract Name: </strong><%= @contract.name.downcase.titleize %>
   <hr>
   <% if @negotiations.present? %>
+    <ol>
     <% @negotiations.each do |negotiation| %>
-      <ol>
         <li>
           <% if current_user.type == 'Employer' %>
             <%= link_to image_tag(negotiation.developer.avatar, :id => "developer_profile_image_my_negotiations_page",:alt => "developer image small"), negotiation_path(negotiation) %><br />
@@ -17,11 +17,15 @@
             <strong><h5><%= link_to negotiation.contract.title, negotiation_path(negotiation) %></h5></strong>   
           <% end %>
         </li>
-      </ol>
       <hr>
     <% end %>
+    </ol>
   <% else %>
-    <h5>You don't have any negotiations yet. <% link_to 'Find a developer now.', developers_path %></h5> 
+    <% if current_user.type == 'Employer' %>
+      <h5>You don't have any negotiations yet. <%= link_to 'Find a developer now.', developers_path %></h5> 
+    <% elsif current_user.type == 'Developer' %>  
+      <h5>You don't have any negotiations yet. <%= link_to 'Find a contract now.', contracts_path %></h5>    
+    <% end  %>   
   <% end %>
   </div>
   <div class="small-2 medium-2 large-2"></div>

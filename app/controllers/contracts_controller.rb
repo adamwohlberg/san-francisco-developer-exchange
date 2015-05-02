@@ -12,7 +12,7 @@ class ContractsController < ApplicationController
   end
 
   def my_contracts
-    @contracts = current_user.contracts
+      @contracts = current_user.contracts.visible
   end
 
   def my_contracts_edit
@@ -69,7 +69,10 @@ class ContractsController < ApplicationController
       @contract = current_user.contracts.find(params[:id])
       @skill_categories = SkillCategory.all.includes(:skills)
       respond_to do |format|
-        if @contract.update(contract_params)
+        if contract_params[:amount].to_f < @contract.amount.to_f 
+          flash[:alert] = 'Contract amount can not be reduced. Please create a new contract if you want to reduce the amount.'        
+          format.html { render :my_contracts_edit}
+        elsif @contract.update(contract_params)
           format.html { redirect_to '/developers#/list_developers/', notice: 'Contract was successfully updated.' }
           format.json { render :show, status: :ok, location: @contract }
         else
@@ -122,7 +125,7 @@ class ContractsController < ApplicationController
 
   def destroy
     if @contract.status == 'open' && @contract.paid == false 
-      @contract.destroy
+      @contract.update_attributes(visible: false)
       respond_to do |format|
         format.html { redirect_to my_contracts_path, notice: 'Contract was successfully destroyed.' }
         format.json { head :no_content }
@@ -146,9 +149,9 @@ class ContractsController < ApplicationController
   def check_developer_minimum
     contract = Contract.find(params[:contract][:contract_id])
     developer = Developer.find(params[:contract][:developer_id])
-    contract_amount_is_greater_than_developers_minimum = contract.amount.to_f >= developer.min_contract_amount
+    contract_amount_is_greater_than_or_equal_to_developers_minimum = contract.amount.to_f >= developer.min_contract_amount
     respond_to do |format|
-      if contract_amount_is_greater_than_developers_minimum      
+      if contract_amount_is_greater_than_or_equal_to_developers_minimum      
         format.json { render json: developer, status: :created }
       else
         errors = "Contract amount must be greater than the developer's required minimum contract amount"        

@@ -64,6 +64,7 @@ class Contract < ActiveRecord::Base
   scope :unpaid, -> { where(paid: false) }
   scope :open, -> { where(status: 'open') }
   scope :closed, -> { where(status: 'closed') }
+  scope :visible, -> { where(visible: true)}
 
   validates :title, presence: true
   validates :name, presence: true

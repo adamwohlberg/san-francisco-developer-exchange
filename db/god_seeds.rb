@@ -174,7 +174,7 @@ if Rails.env.development?
     'Backend Frameworks' =>
       ['Rails', 'Laravel', 'CakePHP', 'Wordpress'],
     'Other Coding SKills' =>
-      ['Git', 'GitHub', 'Coffeescript', 'Saas', 'LESS'],
+      ['Git', 'GitHub', 'Coffeescript', 'Sass', 'LESS'],
     'Design' =>
       ['Photoshop', 'Illustator'],
   }.each_with_index do |e, i|
@@ -222,7 +222,7 @@ if Rails.env.production?
     'Backend Frameworks' =>
       ['Rails', 'Laravel', 'CakePHP', 'Wordpress'],
     'Other Coding SKills' =>
-      ['Git', 'GitHub', 'Coffeescript', 'Saas', 'LESS'],
+      ['Git', 'GitHub', 'Coffeescript', 'Sass', 'LESS'],
     'Design' =>
       ['Photoshop', 'Illustator'],
   }.each_with_index do |e, i|

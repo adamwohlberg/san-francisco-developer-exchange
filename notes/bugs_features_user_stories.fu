@@ -2,19 +2,9 @@
 BUGS & FEATURES
 *******************************
 
-My negotiations are listing too many negotiations
+Check facebook location and geocoding
 
-Limit negotiation create to only one negotiation with any given developer for one contract. "You already started a negotiation for this contract with this developer.  Please go to My Contracts to view the negotiation in process"
-
-Use case: users inflate contract to contact developer, then lower contract after contacting.s
-
-Negotiations button margin not working
-
-Negotiation images are humongous in production...
-
-Need to remove mailer interceptor
-
-Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]
+Employers can't delete contracts (need the record), they can only hide the contract
 
 Show image if video does not load
 
@@ -22,14 +12,7 @@ No video image on mobile
 
 Reveal modals not working and error message on dev and contracts
 
-Facebook location get OKd
-
-Confirm geolocation after FB login
-
 Add TESTING!!!
-
-No Procfile detected, using the default web server (webrick)
-Images are not showing up in production after initial upload.
 
 ********************************
 ANGULARjs
@@ -228,3 +211,29 @@ Contract skills are not displaying on index page
 
 My negotiations styling
 
+My negotiations are listing too many negotiations
+
+Limit negotiation create to only one negotiation with any given developer for one contract. "You already started a negotiation for this contract with this developer.  Please go to My Contracts to view the negotiation in process"
+
+Use case: users inflate contract to contact developer, then lower contract after contacting.s
+
+Negotiations button margin not working
+
+Negotiation images are humongous in production...
+
+Need to remove mailer interceptor
+
+Terms of use links in footer to redirects not popups per suggestion
+
+Change contract amount must be greater than or equal to
+
+Developers have a "My Negotiations" link listing all negotiations
+
+Remove robots no follow
+
+Developers can't get to "My Contracts" until they are hired, so how can they navigate to Negotiations???  They can[t.]  Add tabs for Negotiation or Hired.
+
+No Procfile detected, using the default web server (webrick)
+Images are not showing up in production after initial upload.
+
+Check get users by profile name developers/adam_zuckerberg

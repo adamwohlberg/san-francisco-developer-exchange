@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-2 medium-2 large-2"></div>
+  <div class="small-10 medium-10 large-10">
+    <strong><h1>My Negotiations</h1></strong>
+  <hr>
+  <% if @negotiations.present? %>
+    <ol>
+    <% @negotiations.each do |negotiation| %>
+        <li>
+          <% if current_user.type == 'Employer' %>
+          <% elsif current_user.type == 'Developer' %>
+            <%= link_to image_tag(negotiation.contract.employer.avatar, :id => "developer_profile_image_my_negotiations_page",:alt => "developer image small") %><br />
+            <strong><h5><%= link_to negotiation.contract.title, negotiation_path(negotiation) %><span> | <%= negotiation.contract.name.titleize %> | <%= number_to_currency(negotiation.contract.amount, precision: 0) %></span></h5></strong> 
+              <strong><h5><%= negotiation.contract.description %></h5></strong>     
+          <% end %>
+        </li>
+      <hr>
+    <% end %>
+    </ol>
+  <% else %>
+    <h5>You don't have any negotiations yet. <%= link_to 'Find a contract now.', search_contracts_path %></h5> 
+  <% end %>
+  </div>
+  <div class="small-2 medium-2 large-2"></div>
+</div>
+
+

@@ -30,7 +30,7 @@
   </tr>
 </table>
 <!-- <p>By clicking on "Request to Hire" or  -->
-<p>By clicking on "Instant Hire" you agree to the <%= link_to 'Terms of Service', '/membership-terms.html', id: "membership-terms", :class => "popup", :"data-width" => 600, :"data-height" => 300 %> and to pay the total amount shown, which includes Service Fees.</p>
+<p>By clicking on "Instant Hire" you agree to the <%= link_to 'Terms of Service', '/legal/membership-terms.html', id: "membership-terms", :class => "popup", :"data-width" => 600, :"data-height" => 300 %> and to pay the total amount shown, which includes Service Fees.</p>
 <hr/>
 <%= link_to 'Instant Hire', @contract.paypal_url(@contract.total_payment, payment_notifications_url(developer_id: @developer.id), payment_notifications_url), :method => :post, class: "button large success" %>
 

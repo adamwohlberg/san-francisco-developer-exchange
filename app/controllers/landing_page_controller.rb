@@ -1,6 +1,4 @@
 class LandingPageController < ApplicationController
-  http_basic_authenticate_with :name => "admin", :password => "password"
-
   layout 'landing_page_with_video_attribution'
 
   def index
