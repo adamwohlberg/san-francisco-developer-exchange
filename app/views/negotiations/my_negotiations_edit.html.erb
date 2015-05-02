@@ -21,7 +21,11 @@
     <% end %>
     </ol>
   <% else %>
-    <h5>You don't have any negotiations yet. <% link_to 'Find a developer now.', developers_path %></h5> 
+    <% if current_user.type == 'Employer' %>
+      <h5>You don't have any negotiations yet. <%= link_to 'Find a developer now.', developers_path %></h5> 
+    <% elsif current_user.type == 'Developer' %>  
+      <h5>You don't have any negotiations yet. <%= link_to 'Find a contract now.', contracts_path %></h5>    
+    <% end  %>   
   <% end %>
   </div>
   <div class="small-2 medium-2 large-2"></div>
