@@ -1,7 +1,5 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-# skip_before_action :verify_authenticity_token
-# skip_before_filter :verify_authenticity_token
-before_filter :check_user_exists
+# before_filter :check_user_exists
 
   def all
     user = User.from_omniauth(request.env["omniauth.auth"], request.env["omniauth.params"])
@@ -16,11 +14,11 @@ before_filter :check_user_exists
   end
   alias_method :facebook, :all
 
-  private
+  # private
 
-  def check_user_exists
-    auth = request.env["omniauth.auth"]
-    u = User.where(provider: auth.provider, uid: auth.uid).first
-    redirect_to register_path if request.env["omniauth.auth"] && request.env["omniauth.params"].blank? && u.blank?
-  end
+  # def check_user_exists
+  #   auth = request.env["omniauth.auth"]
+  #   u = User.where(provider: auth.provider, uid: auth.uid).first
+  #   redirect_to register_path if request.env["omniauth.auth"] && request.env["omniauth.params"].blank? && u.blank?
+  # end
 end
