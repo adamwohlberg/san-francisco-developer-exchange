@@ -46,13 +46,13 @@ gem 'paypal-sdk-rest'
 gem 'puma'
 gem 'foreman'
 gem 'aws-sdk', '< 2.0'
+gem 'byebug'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'byebug'
   gem 'selenium-webdriver', '~> 2.45.0'
 end
 
