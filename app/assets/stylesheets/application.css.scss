@@ -102,6 +102,15 @@ height: 225px;
 .jqueryhover {
 -webkit-transform: rotate(3turn);
 }
+.throb {
+ -webkit-animation: throb 4.2s linear;
+}
+/* Developer Keyframes
+-------------------------------------------- */
+@-webkit-keyframes throb {
+	0%     { -webkit-transform: scale(14.0);}
+	100%     { -webkit-transform: scale(1.0);}
+}
 #pow {
 transition: 5s linear;
 /*display: none;*/

@@ -29,13 +29,14 @@ $(document).ajaxSend(function(e, xhr, options) {
 });
 
 
-function spinProfileImage() {
+function animateProfileImage() {
 	// alert('start searching?');
 	$('#profileImage').load('searching_for_developers.html.erb', function() {
     $('#profileImage').addClass('jqueryhover');
-    $('#pow').addClass('scaleUp');
+    $('#profileImage').addClass('throb');
+    // $('#pow').addClass('scaleUp');
     // $('#pow').addClass('scaleDown');
-    $('#pow2').addClass('scaleUp');
+    // $('#pow2').addClass('scaleUp');
     // $('#pow2').addClass('scaleDown');
 });
 
