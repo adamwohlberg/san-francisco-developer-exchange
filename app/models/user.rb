@@ -70,7 +70,6 @@ class User < ActiveRecord::Base
   validates :type, presence: true, inclusion: { in: %w(Employer Developer),
     message: "%{value} is not a valid type of user" }, unless: -> { from_omniauth? }
   validates :first_name, presence: true, unless: -> { from_omniauth? }
-  # validates :email, presence: true, unless: -> { from_omniauth? }
   validates :location, presence: true, unless: -> { from_omniauth? }
 
   def self.from_omniauth(auth, params)
@@ -83,7 +82,6 @@ class User < ActiveRecord::Base
       user.location = auth.info.location
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
     end
     user.update_attributes(type: params["type"]) if params && params["type"].present?
     return user
