@@ -74,7 +74,6 @@ class User < ActiveRecord::Base
   validates :location, presence: true, unless: -> { from_omniauth? }
 
   def self.from_omniauth(auth, params)
-    byebug
     user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
