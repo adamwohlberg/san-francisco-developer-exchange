@@ -2,6 +2,8 @@
 BUGS & FEATURES
 *******************************
 
+Prevent developers from applying more than once!!!
+
 If you delete an Employer how do you delete child contracts in Postgres? If not the site breaks. 
 
 If we allow deletion of employees how do we have a record for legal history, record of negotiations etc.?
