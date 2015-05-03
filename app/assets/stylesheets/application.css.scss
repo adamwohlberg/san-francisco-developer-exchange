@@ -103,13 +103,14 @@ height: 225px;
 -webkit-transform: rotate(3turn);
 }
 .throb {
- -webkit-animation: throb 4.2s linear;
+ -webkit-animation: throb 2.0s linear infinite;
 }
 /* Developer Keyframes
 -------------------------------------------- */
 @-webkit-keyframes throb {
-	0%     { -webkit-transform: scale(14.0);}
-	100%     { -webkit-transform: scale(1.0);}
+	0%     { -webkit-transform: rotateY(0deg);}
+	50%     { -webkit-transform: rotateY(-180deg);}	
+	100%     { -webkit-transform: rotateY(0deg);}
 }
 #pow {
 transition: 5s linear;

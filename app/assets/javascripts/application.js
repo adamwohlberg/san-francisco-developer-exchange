@@ -32,7 +32,7 @@ $(document).ajaxSend(function(e, xhr, options) {
 function animateProfileImage() {
 	// alert('start searching?');
 	$('#profileImage').load('searching_for_developers.html.erb', function() {
-    $('#profileImage').addClass('jqueryhover');
+    // $('#profileImage').addClass('jqueryhover');
     $('#profileImage').addClass('throb');
     // $('#pow').addClass('scaleUp');
     // $('#pow').addClass('scaleDown');
