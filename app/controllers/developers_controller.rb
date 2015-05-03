@@ -1,5 +1,5 @@
 class DevelopersController < ApplicationController
-  before_action :authenticate_user!,  only: [:new]
+  before_action :authenticate_user!
   before_action :authenticate_developer!, only: [:new]
   before_action :set_developer, only: [:edit, :update, :destroy]
 
