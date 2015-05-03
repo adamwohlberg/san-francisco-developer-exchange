@@ -2,6 +2,8 @@
 BUGS & FEATURES
 *******************************
 
+Soft delete if cancel my account and http://stackoverflow.com/questions/5140643/how-to-soft-delete-user-with-devise
+
 Prevent developers from applying more than once!!!
 
 If you delete an Employer how do you delete child contracts in Postgres? If not the site breaks. 
@@ -245,3 +247,5 @@ No Procfile detected, using the default web server (webrick)
 Images are not showing up in production after initial upload.
 
 Check get users by profile name developers/adam_zuckerberg
+
+Update style of "Forgot my Password" and "Change my Password" so it's centered.
