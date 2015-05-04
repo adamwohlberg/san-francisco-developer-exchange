@@ -2,10 +2,7 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-    # first-time users stay on page until confirmed
-    if user.confirmed?
-      redirect_to root_url
-    end
+    redirect_to root_url
   end
 
   def destroy

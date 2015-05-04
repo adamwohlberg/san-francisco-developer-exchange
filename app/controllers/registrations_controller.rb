@@ -1,6 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
  
   private
+
+  def after_sign_up_path_for(resource)
+      render 'devise/registrations#new'
+  end 
  
   def sign_up_params
     sign_up = params.require(:user).permit(:first_name, :last_name, :type, :email, :avatar, :location, :latitude, :longitude, :password, :password_confirmation)
