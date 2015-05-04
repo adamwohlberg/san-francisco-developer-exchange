@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action :authenticate_user!,  only: [:new]
+  before_action :authenticate_user!,  only: [:new, :index]
   before_action :authenticate_employer!, only: [:new]
   before_action :set_contract, only: [:show, :edit, :update, :destroy, :my_contracts_edit]
 
