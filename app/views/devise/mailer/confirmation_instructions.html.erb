@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<div class="row">
+  <div class="small-12 medium-6 large-6 columns">
+	<p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+	<p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+	<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+	<p>Thank you,<br>Adam, Founder - San Francisco Developer Exchange&trade;</p>
+  </div>

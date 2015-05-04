@@ -102,6 +102,17 @@ height: 225px;
 .jqueryhover {
 -webkit-transform: rotate(3turn);
 }
+.throb {
+border: 10px solid steelblue !important;
+ -webkit-animation: throb 2.175s linear infinite;
+}
+/* Developer Keyframes
+-------------------------------------------- */
+@-webkit-keyframes throb {
+	0%     { -webkit-transform: rotateY(0deg);}
+	50%     { -webkit-transform: rotateY(-180deg);}	
+	100%     { -webkit-transform: rotateY(0deg);}
+}
 #pow {
 transition: 5s linear;
 /*display: none;*/
@@ -501,18 +512,21 @@ XXLarge screens
  margin-bottom: 0px;
 }
 #headerProfileImage, #pagination_upper {
-	display: none;
+display: none;
 }
-
+#developer_title {
+user-select: none;	
+}
 #the_word_like, #the_word_liked {
-	display: none;
+display: none;
 }
 /*disable clicking on mobile.*/
 /*a {
 pointer-events: none;
 }*/
 .developer_container_each_developer a{
-pointer-events: none;	
+pointer-events: none;
+user-select: none;	
 }
 #like_unlike_buttons {
 position: relative;
@@ -532,6 +546,7 @@ button#unlike, button#rockstar{
 	margin-top: 170px;
 	height: 160px;
 	border-radius: 0px;
+	user-select: none;
 }
 #view_full_profile_text {
 	display: none;
@@ -556,9 +571,11 @@ margin-left: 0px;
 #developer_profile_image {
 transition-duration: 0s;
 border: none;
+user-select: none;
 }
 #developer_profile_image:hover {
 transition-duration: 0s;
+user-select: none;
 }
 #verified_section {
 display: flex;
@@ -614,6 +631,7 @@ width: 100%;
 	-webkit-backface-visibility: hidden;
 	margin: 0;
 	padding: 0;
+	user-select: none;
 }
 /*SIDE B*/
 .developer_stats_box {
@@ -625,6 +643,7 @@ width: 100%;
 	position:absolute;
 	-webkit-transform: rotateY(-180deg);
 	z-index: 99;
+	user-select: none;
 }
 #hire_now_button {
 	display: none;

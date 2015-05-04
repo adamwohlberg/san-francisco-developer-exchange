@@ -22,21 +22,15 @@
 //= require angular-animate
 //= require_tree .
 
-
 $(document).ajaxSend(function(e, xhr, options) {
   var token = $("meta[name='csrf-token']").attr("content");
   xhr.setRequestHeader("X-CSRF-Token", token);
 });
 
 
-function spinProfileImage() {
-	// alert('start searching?');
+function animateProfileImage() {
 	$('#profileImage').load('searching_for_developers.html.erb', function() {
-    $('#profileImage').addClass('jqueryhover');
-    $('#pow').addClass('scaleUp');
-    // $('#pow').addClass('scaleDown');
-    $('#pow2').addClass('scaleUp');
-    // $('#pow2').addClass('scaleDown');
+    $('#profileImage').addClass('throb');
 });
 
 }
@@ -115,9 +109,6 @@ function embedGoogleAnalyticsTrackingCode(){
 };
 
 
-function revealModal(){
-  $(document).ready(function(){
-    
-    $('#revealNewDeveloperForm').foundation('reveal', 'open');
-  });
-};
+
+
+

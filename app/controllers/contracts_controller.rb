@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action :authenticate_user!,  only: [:new, :index]
+  before_action :authenticate_user!
   before_action :authenticate_employer!, only: [:new]
   before_action :set_contract, only: [:show, :edit, :update, :destroy, :my_contracts_edit]
 
@@ -8,7 +8,7 @@ class ContractsController < ApplicationController
   # GET /contracts
   # GET /contracts.json
   def index
-    @contracts = Contract.near(Geocoder.coordinates(current_user.location), 9999999).page(params[:page]).per(3)
+    @contracts = Contract.near(Geocoder.coordinates(current_user.location), 9999999).visible.page(params[:page]).per(3)
   end
 
   def my_contracts

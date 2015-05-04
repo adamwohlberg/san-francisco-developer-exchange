@@ -91,13 +91,18 @@
   </div>
   <div class="small-0 medium-1 large-1 columns"></div>
   <!-- Modal window -->
-<div class="reveal-modal" id="revealNewDeveloperForm" data-reveal>
+<div id="myModal" class="reveal-modal">
       <h2>Complete Profile to Continue</h2>
         <%= render 'developers/form' %>
       <a class="close-reveal-modal">&#215;</a>
     </div>
 </div>
-  <% if current_user.type == 'Developer' && current_user.title.nil? %>
-    <%= javascript_tag "revealModal()" -%>
-  <% end %>
+  <%# if current_user.type == 'Developer' && current_user.title.nil? %>
+<script>
+  $(document).ready(function(){
+    alert('reveal the modal');
+    $('#developer-form').foundation('reveal', 'open');
+  });
+</script>
+  <%# end %>
 <!-- Modal window -->

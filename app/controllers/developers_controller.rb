@@ -1,17 +1,17 @@
 class DevelopersController < ApplicationController
-  before_action :authenticate_user!,  only: [:new]
+  before_action :authenticate_user!
   before_action :authenticate_developer!, only: [:new]
   before_action :set_developer, only: [:edit, :update, :destroy]
 
   layout 'application'
 
   def index
-    @developers = Developer.near(Geocoder.coordinates(current_user.location),99999).page(params[:page]).per(10)
+    @developers = Developer.near(Geocoder.coordinates(current_user.location),99999).complete.page(params[:page]).per(10)
   end
 
   def show
     # get user by profile name
-    @developer = Developer.find_by_username(params[:id]) || Developer.find_by_id(params[:id])
+    @developer = Developer.find_by_username(params[:id].strip) || Developer.find_by_id(params[:id].strip)
     @skill_categories = SkillCategory.all.includes(:skills)
       if @developer
         @skills = @developer.skills
@@ -25,7 +25,7 @@ class DevelopersController < ApplicationController
         end
         render action: "show"
       else
-        @developer = Developer.find_by_username(params[:id]) || Developer.find_by_id(params[:id])
+        @developer = Developer.find_by_username(params[:id].strip) || Developer.find_by_id(params[:id].strip)
         @skills = @developer.skills
         @skill = Skill.new
         @contracts = Contract.all.pluck(:id, :name)

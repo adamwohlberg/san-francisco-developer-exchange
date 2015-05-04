@@ -82,7 +82,8 @@ class Developer < User
   scope :php, -> { where(title: 'PHP Developer') }
   scope :ruby, -> { where(title: 'Ruby Developer') }
   scope :newest, -> { order('created_at DESC') }
-  scope :favorite, -> { where(:favorite == true) } 
+  scope :favorite, -> { where(:favorite == true) }
+  scope :complete, -> { where.not(:username => nil)}  
 
   validates_numericality_of :min_contract_amount, presence: true, :on => :update,
             greater_than_or_equal_to: 500,

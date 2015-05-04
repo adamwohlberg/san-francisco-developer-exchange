@@ -7,7 +7,7 @@
       <%= image_tag('noface.jpg', :id => 'developer_profile_image_show') %>
     <% end %>
     <h4><span><strong><%= @developer.title %></strong></h4></span>
-    </span>Codername: <%= @developer.username %></span>
+    </span>Codername: <%= @developer.username %></span><br>
       <section class="tabs" ng-controller="TabController as tab">
         <ul class="tabs" data-tab role="tablist">
           <li class="tab-title" ng-class="{ active: tab.isSet(1) }">
@@ -42,18 +42,20 @@
           <%= render 'developers/select_contract' %>
       </div>
       <!-- Modal window -->
-      <% if current_user.type == 'Employer' && current_user.contracts.empty? %>
-        <script>
-        $(document).ready(function(){
-          $('#NewContractModal').foundation('reveal', 'open');
-        });
-        </script>
-      <% end %>
-      <div id="NewContractModal" class="reveal-modal modal" data-reveal>
-          <a class="close-reveal-modal">&#215;</a>
-          <h2>Create a Contract to Hire a Developer</h2>
-          <%= render 'contracts/form' %>
-      </div>
+      <%# if current_user.type == 'Employer' && current_user.contracts.empty? %>
+          <div id="NewContractModal" class="reveal-modal">
+              <a class="close-reveal-modal">&#215;</a>
+              <h2>Create a Contract to Hire a Developer</h2>
+              <%= render 'contracts/form' %>
+          </div>
+          <script>
+            $(document).ready(function(){
+              $('#NewContractModal').foundation('reveal', 'close');
+              $('#NewContractModal').foundation('reveal', 'open');
+            });
+          </script>
+      <%# end %>
+
     </div>
   <!-- Modal window -->
   </div>
