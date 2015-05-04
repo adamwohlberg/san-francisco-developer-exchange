@@ -23,5 +23,9 @@
       <div class="show-for-medium-up medium-6 large-6 columns">
   </div>
 </div>
-
-
+<% if session[:errors].present? %>
+  <% flash[:alert] = session[:errors]
+     session[:errors] = nil 
+  %>
+<% end %>
+<%= javascript_tag "facebookPopUp()" -%>
