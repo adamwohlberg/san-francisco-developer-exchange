@@ -47,6 +47,7 @@ gem 'puma'
 gem 'foreman'
 gem 'aws-sdk', '< 2.0'
 gem 'byebug'
+gem "letter_opener", :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

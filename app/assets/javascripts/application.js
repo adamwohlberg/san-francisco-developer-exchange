@@ -118,7 +118,7 @@ function embedGoogleAnalyticsTrackingCode(){
 
 function revealModal(){
   $(document).ready(function(){
-    
+    alert('reveal the modal');
     $('#revealNewDeveloperForm').foundation('reveal', 'open');
   });
 };
