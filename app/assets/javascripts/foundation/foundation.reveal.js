@@ -46,7 +46,7 @@
           S = self.S;
 
       S(this.scope)
-        .off('.reveal')
+        // .off('.reveal')
         .on('click.fndtn.reveal', '[' + this.add_namespace('data-reveal-id') + ']:not([disabled])', function (e) {
           e.preventDefault();
 

@@ -103,7 +103,8 @@ height: 225px;
 -webkit-transform: rotate(3turn);
 }
 .throb {
- -webkit-animation: throb 2.0s linear infinite;
+border: 10px solid steelblue !important;
+ -webkit-animation: throb 2.175s linear infinite;
 }
 /* Developer Keyframes
 -------------------------------------------- */
