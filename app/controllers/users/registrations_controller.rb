@@ -6,6 +6,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def destroy
+    resource.destroy
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)s
+    set_flash_message :notice, :destroyed
+    redirect_to '/login'
+  end
 
   private 
 

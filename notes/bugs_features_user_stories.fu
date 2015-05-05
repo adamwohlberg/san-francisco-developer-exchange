@@ -2,8 +2,6 @@
 BUGS & FEATURES
 *******************************
 
-Cancel my account forwards to root page so you don't see the "Bye" message.
-
 After new sign up, keep them on page to see the flash message - don't redirect to root until user.confirmed?
 
 Soft delete if cancel my account and http://stackoverflow.com/questions/5140643/how-to-soft-delete-user-with-devise
