@@ -29,6 +29,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #       redirect_to URI(request.referer).path
   #     end
   #   end  
-  end
+  # end
 
 end

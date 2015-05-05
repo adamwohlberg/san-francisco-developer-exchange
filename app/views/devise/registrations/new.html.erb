@@ -12,7 +12,7 @@
             <%= label_tag(:type, "I'm a developer") %>
 
           <div id="facebook_button_register_page">
-            <%= link_to image_tag("facebook-buttons/facebook.jpg"), user_omniauth_authorize_path(:facebook, type: 'Developer'), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
+            <%= link_to image_tag("facebook-buttons/facebook_signup.jpg"), user_omniauth_authorize_path(:facebook, type: 'Developer'), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
           </div>
           <%= f.input :first_name, required: true, autofocus: true, :placeholder => "Barack" %>
           <%= f.input :email, required: true, autofocus: true, label:
