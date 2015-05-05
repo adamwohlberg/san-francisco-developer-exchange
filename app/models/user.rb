@@ -60,7 +60,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :confirmable, :trackable, :validatable, :omniauth_providers => [:facebook]
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable, :omniauth_providers => [:facebook]
 
   unless Rails.env.test?
     geocoded_by :location
@@ -74,7 +75,7 @@ class User < ActiveRecord::Base
   validates :location, presence: true, unless: -> { from_omniauth? }
 
   def self.from_omniauth(auth, params)
-    user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    user = where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.first_name = auth.info.first_name
@@ -83,14 +84,16 @@ class User < ActiveRecord::Base
       user.location = auth.info.location
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
+      user.skip_confirmation!
+      user.save
     end
-    user.update_attributes(type: params["type"]) if params && params["type"].present?
+    user.update_attributes(type: params["type"]) if user && params && params["type"].present?
     return user
   end
 
 
 
+=begin
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
        new(session["devise.user_attributes"], without_protection: true) do |user|
@@ -101,6 +104,8 @@ class User < ActiveRecord::Base
       super
     end
   end
+=end
+
 
   def password_required?
     # don't require password if signing in through omniauth

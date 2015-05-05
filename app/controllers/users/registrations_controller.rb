@@ -9,6 +9,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private 
 
+  def after_inactive_sign_up_path_for(resource)
+    register_path
+  end  
+
   def sign_up_params
     sign_up = params.require(:user).permit(
       :first_name,

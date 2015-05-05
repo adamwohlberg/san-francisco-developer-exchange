@@ -35,6 +35,12 @@
         <h3>Signing up is easy and fun.</h3>
   </div>
 </div>
+<% if session[:errors].present? %>
+  <% flash[:alert] = session[:errors]
+     session[:errors] = nil 
+  %>
+<% end %>
+<%= javascript_tag "facebookPopUp()" -%>
 
 
 
