@@ -2,17 +2,13 @@
 BUGS & FEATURES
 *******************************
 
-After new sign up, keep them on page to see the flash message - don't redirect to root until user.confirmed?
-
-Check facebook location and geocoding
+Reveal modals not working and error message on dev and contracts
 
 Employers can't delete contracts (need the record), they can only hide the contract
 
 Show image if video does not load
 
 No video image on mobile
-
-Reveal modals not working and error message on dev and contracts
 
 Add TESTING!!!
 
@@ -253,3 +249,7 @@ If you delete an Employer how do you delete child contracts in Postgres? If not 
 If we allow deletion of employees how do we have a record for legal history, record of negotiations etc.?
 
 Prevent employers from contacting developers twice until you get a response.
+
+After new sign up, keep them on page to see the flash message - don't redirect to root until user.confirmed?
+
+Check facebook location and geocoding
