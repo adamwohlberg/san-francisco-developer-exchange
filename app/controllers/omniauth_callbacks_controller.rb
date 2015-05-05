@@ -22,10 +22,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     u = User.where(provider: auth.provider, uid: auth.uid).first
     if request.env["omniauth.auth"] && request.env["omniauth.params"].blank? && u.blank?
       if URI(request.referer).path == '/login'
-        session[:errors] = "You need to register with facebook and need to select user-type. Because you are not registered user!"
+        session[:errors] = "You need to register a new account before you can sign in here."
         redirect_to URI(request.referer).path
       else
-        session[:errors] = "You can't login with facebook because you have already sign-up with this email id."
+        session[:errors] = "You have already signed up with this email."
         redirect_to URI(request.referer).path
       end
     end  
