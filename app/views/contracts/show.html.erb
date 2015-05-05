@@ -82,7 +82,7 @@
 </section>
 
 <div id='contracts_contact_button_container'>
-<%= link_to 'APPLY', new_negotiation_path(contract_id: @contract.id), class: "button large success", id: "contracts_request_interview_button" %>
+  <%= link_to 'APPLY', new_negotiation_path(contract_id: @contract.id), class: "button large success", id: "contracts_request_interview_button" %>
 </div>
 <% if current_user.type == "Employer" %> 
   <%= button_to 'Edit contract', edit_contract_path(@contract), :class => "button success", :action => :edit %>

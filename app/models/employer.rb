@@ -64,8 +64,8 @@ has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x10
 
     scope :favorite, -> { where(:favorite == true) } 
 
-	has_many :contracts
-	has_many :negotiations
+	has_many :contracts, :dependent => :destroy
+	has_many :negotiations, :dependent => :destroy
 	has_many :developers, :through => :contracts
 	has_many :ratings, :through => :contracts
 	has_and_belongs_to_many :employer_favorites

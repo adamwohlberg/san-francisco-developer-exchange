@@ -64,8 +64,8 @@ class Developer < User
 
   has_and_belongs_to_many :skills, join_table: :developers_skills
 
-  has_many :contracts
-  has_many :negotiations
+  has_many :contracts, :dependent => :destroy
+  has_many :negotiations, :dependent => :destroy
   has_many :employers, :through => :contracts
   has_many :ratings, :through => :contracts
   has_and_belongs_to_many :employer_favorites
