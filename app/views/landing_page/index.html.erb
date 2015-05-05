@@ -15,21 +15,27 @@
     </div>
     </div>
     <div class="text-center landing-page-buttons full-width border">
-    <% if (Time.now.to_i % 5) == 0 %>
+    <% if (Time.now.to_i % 7) == 0 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;I used to work corporate. Now I freelance from a beachhouse in Bali.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Nicholas Jones, PHP Developer, Bali, Indonesia</h5>
-    <% if (Time.now.to_i % 5) == 1 %>
+    <% elsif (Time.now.to_i % 7) == 1 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The fastest, easiest way to hire a local developer.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Patrick Murphy, CTO, Salt Lake City</h5>
-    <% elsif (Time.now.to_i % 5) == 2 %>
+    <% elsif (Time.now.to_i % 7) == 2 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Wow! I love tech recruiter spam. Said no one ever.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Jason Bloomberg, Ruby on Rails Developer, NY</h5>
-    <% else (Time.now.to_i % 5) == 3 %>
+    <% elsif (Time.now.to_i % 7) == 3 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Software developers flock to this app like files to git.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Peter Gregorian, Venture Capitalist - Silicon Valley</h5>
-    <% else (Time.now.to_i % 5) == 3 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Now I can freelance AND make a six-figure income.&rdquo;</h2>
+    <% elsif (Time.now.to_i % 7) == 4 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The 'four hour workweek' is now a reality.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Anonymous Coder</h5>
+    <% elsif (Time.now.to_i % 7) == 5 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Now I can freelance and make a high six-figure income.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Molly Zuckerberg, Front-End Developer, Williamsburgh, Brooklyn</h5>
+    <% elsif (Time.now.to_i % 7) == 6 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Tune in. Turn on. Drop out (of college and code).&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Mark Slater Leary, Tech Co-Founder & Dropout</h5>
     <% end %>
       <br>
       <%= link_to('GET STARTED', register_path, class: "button large [radius round] button_landing_page_right") %>
