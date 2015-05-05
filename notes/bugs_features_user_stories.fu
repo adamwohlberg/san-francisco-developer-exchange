@@ -2,13 +2,7 @@
 BUGS & FEATURES
 *******************************
 
-You can still contact employers multiple times
-
 Reveal modals not working and error message on dev and contracts
-
-Show image if video does not load
-
-No video image on mobile
 
 Add TESTING!!!
 
@@ -255,3 +249,9 @@ After new sign up, keep them on page to see the flash message - don't redirect t
 Check facebook location and geocoding
 
 Employers can't delete contracts (need the record), they can only hide the contract
+
+You can still contact employers multiple times
+
+Show image if video does not load
+
+No video image on mobile
