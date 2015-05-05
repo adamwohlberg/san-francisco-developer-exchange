@@ -75,17 +75,30 @@ class User < ActiveRecord::Base
   validates :location, presence: true, unless: -> { from_omniauth? }
 
   def self.from_omniauth(auth, params)
-    user = where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
+    user = where(email: auth.info.email).first
+    if user.present?
       user.provider = auth.provider
       user.uid = auth.uid
       user.first_name = auth.info.first_name
-      user.email = auth.info.email
       user.fb_image = auth.info.image
       user.location = auth.info.location
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.skip_confirmation!
       user.save
+    else
+      user = where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.first_name = auth.info.first_name
+        user.email = auth.info.email
+        user.fb_image = auth.info.image
+        user.location = auth.info.location
+        user.oauth_token = auth.credentials.token
+        user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+        user.skip_confirmation!
+        user.save
+      end
     end
     user.update_attributes(type: params["type"]) if user && params && params["type"].present?
     return user
