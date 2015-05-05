@@ -38,6 +38,7 @@
 #
 
 class Contract < ActiveRecord::Base
+  acts_as_paranoid
   has_attached_file :attachment
   validates_attachment_content_type :attachment, :content_type => [ 'application/pdf', 'application/msword',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ]
@@ -49,13 +50,13 @@ class Contract < ActiveRecord::Base
   has_and_belongs_to_many :skills
   has_and_belongs_to_many :developer_favorites
 
-  has_many :payments
-  has_many :payment_notifications
+  has_many :payments, :dependent => :destroy
+  has_many :payment_notifications, :dependent => :destroy
   # this is for after the paypal payment
   # after_save :assign_developer_level
 
-  has_many :ratings
-  has_many :negotiations
+  has_many :ratings, :dependent => :destroy
+  has_many :negotiations, :dependent => :destroy
 
   before_save :calculate_total_payment!
   before_save :calculate_service_fee!

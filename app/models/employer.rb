@@ -57,19 +57,18 @@
 #
 
 class Employer < User
-
-has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/noface"
-    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-    validates_attachment_size :avatar, :in => 0.megabytes..2.megabytes
+  	acts_as_paranoid
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/noface"
+    	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+    	validates_attachment_size :avatar, :in => 0.megabytes..2.megabytes
 
     scope :favorite, -> { where(:favorite == true) } 
 
-	has_many :contracts
-	has_many :negotiations
+	has_many :contracts, :dependent => :destroy
+	has_many :negotiations, :dependent => :destroy
 	has_many :developers, :through => :contracts
 	has_many :ratings, :through => :contracts
 	has_and_belongs_to_many :employer_favorites
-	has_and_belongs_to_many :employer_blocks
 
 	geocoded_by :location
   	after_validation :geocode, :if => :location_changed?

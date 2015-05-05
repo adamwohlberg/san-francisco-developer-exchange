@@ -15,9 +15,16 @@
     </div>
     </div>
     <div class="text-center landing-page-buttons full-width border">
-<!--       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The fastest, easiest way to hire a local developer.&rdquo;</h2> -->
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Premium software developers are going to flock to this app like files to git.&rdquo;</h2>
+    <% if (Time.now.to_i % 4) == 1 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The fastest, easiest way to hire a local developer.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Patrick Murphy, CTO, Salt Lake City</h5>
+    <% elsif (Time.now.to_i % 4) == 2 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Wow! I love tech recruiter spam. Said no one ever.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Jason Bloomberg, Ruby on Rails Developer, NY</h5>
+    <% else (Time.now.to_i % 4) == 3 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Software developers flock to this app like files to git.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Peter Gregorian, Venture Capitalist - Silicon Valley</h5>
+    <% end %>
       <br>
       <%= link_to('GET STARTED', register_path, class: "button large [radius round] button_landing_page_right") %>
     </div>
@@ -28,7 +35,7 @@
       <i class="fi-fast-forward foundation-icon"></i>
       <h4>IT'S FAST</h4>
       <p><strong>For Employers</strong>  - No more waiting around for recruiters.  Find and hire a local developer today.</p>
-      <p><strong>For Developers</strong>  - Get PAID UPFRONT up to 50% of the full contract value before you write your first line of code.</p><p>No more endless meetings, blogging, and online marketing to keep your pipeline of clients stocked - lock in a steady flow of clients to avoid the feast-or-famine experienced by freelancers.</p>
+      <p><strong>For Developers</strong>  - Get PAID UPFRONT up to 50% of the full contract value before you write your first line of code.</p><p>No more endless meetings, blogging, and online marketing to keep your pipeline of clients stocked - lock in a steady flow of clients to avoid the feast-or-famine experienced by other freelancers.</p>
     </div>
     
     <div class="large-4 columns">
