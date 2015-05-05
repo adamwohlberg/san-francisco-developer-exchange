@@ -69,7 +69,6 @@ class Developer < User
   has_many :employers, :through => :contracts
   has_many :ratings, :through => :contracts
   has_and_belongs_to_many :employer_favorites
-  has_and_belongs_to_many :employer_blocks
 	has_and_belongs_to_many :developer_favorites
 
 	scope :php, -> { where(title: 'PHP Developer') }

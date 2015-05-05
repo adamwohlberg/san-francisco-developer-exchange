@@ -69,7 +69,6 @@ class Employer < User
 	has_many :developers, :through => :contracts
 	has_many :ratings, :through => :contracts
 	has_and_belongs_to_many :employer_favorites
-	has_and_belongs_to_many :employer_blocks
 
 	geocoded_by :location
   	after_validation :geocode, :if => :location_changed?
