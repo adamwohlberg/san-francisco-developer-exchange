@@ -8,7 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def destroy
     resource.destroy
-    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)s
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
     set_flash_message :notice, :destroyed
     redirect_to '/login'
   end
@@ -29,7 +29,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :password_confirmation 
     )
     sign_up.merge!(type: params.require(:type))
-
   end
 
 end
