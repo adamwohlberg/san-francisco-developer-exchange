@@ -16,6 +16,7 @@
 #
 
 class Negotiation < ActiveRecord::Base
+	acts_as_paranoid
 	belongs_to :contract
 	belongs_to :developer
 	belongs_to :employer

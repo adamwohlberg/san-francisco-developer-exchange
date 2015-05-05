@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503230946) do
+ActiveRecord::Schema.define(version: 20150505014549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 20150503230946) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "visible",                                          default: true
+    t.datetime "deleted_at"
   end
 
+  add_index "contracts", ["deleted_at"], name: "index_contracts_on_deleted_at", using: :btree
   add_index "contracts", ["developer_id"], name: "index_contracts_on_developer_id", using: :btree
   add_index "contracts", ["employer_id"], name: "index_contracts_on_employer_id", using: :btree
 
@@ -96,7 +98,10 @@ ActiveRecord::Schema.define(version: 20150503230946) do
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
+
+  add_index "negotiation_messages", ["deleted_at"], name: "index_negotiation_messages_on_deleted_at", using: :btree
 
   create_table "negotiations", force: true do |t|
     t.datetime "created_at"
@@ -109,8 +114,10 @@ ActiveRecord::Schema.define(version: 20150503230946) do
     t.integer  "employer_id"
     t.string   "summary"
     t.integer  "contract_id"
+    t.datetime "deleted_at"
   end
 
+  add_index "negotiations", ["deleted_at"], name: "index_negotiations_on_deleted_at", using: :btree
   add_index "negotiations", ["developer_id", "employer_id"], name: "index_negotiations_on_developer_id_and_employer_id", using: :btree
 
   create_table "payment_notifications", force: true do |t|
@@ -121,14 +128,20 @@ ActiveRecord::Schema.define(version: 20150503230946) do
     t.string   "create"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
+
+  add_index "payment_notifications", ["deleted_at"], name: "index_payment_notifications_on_deleted_at", using: :btree
 
   create_table "payments", force: true do |t|
     t.decimal  "amount",      precision: 10, scale: 0
     t.integer  "contract_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
+
+  add_index "payments", ["deleted_at"], name: "index_payments_on_deleted_at", using: :btree
 
   create_table "ratings", force: true do |t|
     t.integer  "contract_id"
@@ -140,7 +153,10 @@ ActiveRecord::Schema.define(version: 20150503230946) do
     t.decimal  "employer_stars",           precision: 10, scale: 0
     t.string   "developer_reviewer_email"
     t.string   "employer_reviewer_email"
+    t.datetime "deleted_at"
   end
+
+  add_index "ratings", ["deleted_at"], name: "index_ratings_on_deleted_at", using: :btree
 
   create_table "searches", force: true do |t|
     t.datetime "created_at"
@@ -207,9 +223,11 @@ ActiveRecord::Schema.define(version: 20150503230946) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.datetime "deleted_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["deleted_at"], name: "index_users_on_deleted_at", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
