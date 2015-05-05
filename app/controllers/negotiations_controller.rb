@@ -35,7 +35,13 @@ class NegotiationsController < ApplicationController
     if current_user.type == 'Developer'
       @developer = current_user
       @employer = @contract.employer
-      DeveloperContactEmployer.developer_interested_in_contract(@developer,@contract).deliver    
+      if @contract.contacted
+        flash[:alert] = "You have already applied for this contract."
+        return redirect_to contract_path(@contract)
+      else
+        DeveloperContactEmployer.developer_interested_in_contract(@developer,@contract).deliver
+        @contract.update_attributes(:contacted => true)
+      end
     elsif current_user.type == 'Employer'
       redirect_to 'index'
     end
