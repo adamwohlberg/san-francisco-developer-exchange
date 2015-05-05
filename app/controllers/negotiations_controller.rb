@@ -35,12 +35,12 @@ class NegotiationsController < ApplicationController
     if current_user.type == 'Developer'
       @developer = current_user
       @employer = @contract.employer
-      if @contract.contacted
+      if current_user.job_applications.where(contract_id: @contract.id).first.present?
         flash[:alert] = "You have already applied for this contract."
-        return redirect_to contract_path(@contract)
+        return redirect_to contract_path(@contract.id)
       else
+        current_user.job_applications.create(contract_id: @contract.id)
         DeveloperContactEmployer.developer_interested_in_contract(@developer,@contract).deliver
-        @contract.update_attributes(:contacted => true)
       end
     elsif current_user.type == 'Employer'
       redirect_to 'index'

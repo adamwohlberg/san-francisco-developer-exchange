@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505160427) do
+ActiveRecord::Schema.define(version: 20150505192753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20150505160427) do
     t.float    "longitude"
     t.boolean  "visible",                                          default: true
     t.datetime "deleted_at"
-    t.boolean  "contacted",                                        default: false
   end
 
   add_index "contracts", ["deleted_at"], name: "index_contracts_on_deleted_at", using: :btree
@@ -92,6 +91,16 @@ ActiveRecord::Schema.define(version: 20150505160427) do
   end
 
   add_index "employer_favorites", ["employer_id", "developer_id"], name: "index_employer_favorites_on_employer_id_and_developer_id", unique: true, using: :btree
+
+  create_table "job_applications", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "developer_id"
+    t.integer  "contract_id"
+    t.datetime "deleted_at"
+  end
+
+  add_index "job_applications", ["deleted_at"], name: "index_job_applications_on_deleted_at", using: :btree
 
   create_table "negotiation_messages", force: true do |t|
     t.integer  "negotiation_id"

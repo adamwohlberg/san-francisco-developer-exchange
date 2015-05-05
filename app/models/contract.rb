@@ -50,6 +50,7 @@ class Contract < ActiveRecord::Base
   has_and_belongs_to_many :skills
   has_and_belongs_to_many :developer_favorites
 
+  has_many :job_applications, :dependent => :destroy
   has_many :payments, :dependent => :destroy
   has_many :payment_notifications, :dependent => :destroy
   # this is for after the paypal payment

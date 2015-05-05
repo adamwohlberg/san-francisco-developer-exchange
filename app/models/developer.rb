@@ -64,12 +64,14 @@ class Developer < User
 
   has_and_belongs_to_many :skills, join_table: :developers_skills
 
+  has_many :job_applications, :dependent => :destroy
   has_many :contracts, :dependent => :destroy
   has_many :negotiations, :dependent => :destroy
   has_many :employers, :through => :contracts
   has_many :ratings, :through => :contracts
   has_and_belongs_to_many :employer_favorites
 	has_and_belongs_to_many :developer_favorites
+
 
 	scope :php, -> { where(title: 'PHP Developer') }
 	scope :ruby, -> { where(title: 'Ruby Developer') }
