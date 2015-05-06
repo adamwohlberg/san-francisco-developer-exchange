@@ -22,7 +22,7 @@
 	font-size: 17px;
 	font-weight: 750;
 }
-#pagination_upper span:hover, #pagination_lower:hover span {
+#pagination_upper span:hover, #pagination_lower span:hover {
 	color: purple;
 }
 fieldset.form-group {
@@ -61,6 +61,7 @@ textarea.form-control {
 .pagination {
 text-align:right;
 margin-right: 60px;	
+cursor:pointer;
 }
 #super_powers {
 font-size: 1.2em;

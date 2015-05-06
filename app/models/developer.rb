@@ -85,6 +85,7 @@ class Developer < User
   scope :newest, -> { order('created_at DESC') }
   scope :favorite, -> { where(:favorite == true) }
   scope :complete, -> { where.not(:username => nil)}
+  scope :has_image, -> { where.not(:avatar => nil)}
 
   validates_numericality_of :min_contract_amount, presence: true, :on => :update,
             greater_than_or_equal_to: 500,
