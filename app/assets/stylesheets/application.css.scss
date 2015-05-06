@@ -71,8 +71,9 @@ background-image: radial-gradient(circle closest-corner at center bottom, #33333
 .alert, .notice {
 	margin-left: 20px;
 }
-.alert {
+.alert, .notice {
 	color:red;
+	font-size: 1.4em; 
 }
 .developer_ratings_section {
 	background: blue;
