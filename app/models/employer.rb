@@ -72,6 +72,7 @@ class Employer < User
 
 	geocoded_by :location
   	after_validation :geocode, :if => :location_changed?
+  	after_update :update_contracts_location
 
 	def all_contracts_total
 		contracts.sum(:amount)
@@ -88,6 +89,10 @@ class Employer < User
 	def stars
 		contracts.ratings.average(:employer)
 	end
+
+	def update_contracts_location
+		self.contracts.each {|c| c.update_attributes(location: self.location)}
+    end
 
 	# def show_stars(ratings)
  #  		image_tag "#{review.rating}star.png"
