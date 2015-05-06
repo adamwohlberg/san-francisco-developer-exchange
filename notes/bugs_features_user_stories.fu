@@ -2,10 +2,6 @@
 BUGS & FEATURES
 *******************************
 
-- As soon as I registered, a page came up with the following warning, "You are already signed in.".  Is this not being cleared somehow.
-
-Confirmation message (the devise check your email message) needs to be centered and have a eye catching background.
-
 Reveal modals not working and error message on dev and contracts
 
 Add TESTING!!!
@@ -259,3 +255,7 @@ You can still contact employers multiple times
 Show image if video does not load
 
 No video image on mobile
+
+- As soon as I registered, a page came up with the following warning, "You are already signed in.".  Is this not being cleared somehow.
+
+Confirmation message (the devise check your email message) needs to be centered and have a eye catching background.
