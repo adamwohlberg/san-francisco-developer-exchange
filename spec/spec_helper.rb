@@ -93,3 +93,4 @@ RSpec.configure do |config|
   ActionController::Base.asset_host = "http://localhost:3000"
   
 end
+
