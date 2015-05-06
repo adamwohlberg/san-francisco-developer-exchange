@@ -8,7 +8,7 @@ class ContractsController < ApplicationController
   # GET /contracts
   # GET /contracts.json
   def index
-    @contracts = Contract.near(Geocoder.coordinates(current_user.location), 9999999).visible.page(params[:page]).per(3)
+    @contracts = Contract.near(Geocoder.coordinates(current_user.location), 500).visible.page(params[:page]).per(3)
   end
 
   def my_contracts
