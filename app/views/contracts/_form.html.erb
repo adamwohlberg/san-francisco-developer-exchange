@@ -1,4 +1,4 @@
-<div id="contract_form">
+, 'Creative Director', 'UI UX Developer', 'Agency - we do it all!'<div id="contract_form">
         <%= simple_form_for(@contract, html: {multipart: true}) do |f| %>
           <% if @contract.errors.any? %>
             <div id="error_explanation">
@@ -14,7 +14,7 @@
 
           <div class="field">
             <%= f.label "Type of developer you are seeking:" %><br>
-            <%= f.select :title, ['PHP Developer', 'Ruby on Rails Developer', 'iOS Developer', 'Android Developer', 'Front End Developer'] %>
+            <%= f.select :title, ['PHP Developer', 'Ruby on Rails Developer', 'iOS Developer', 'Android Developer', 'Front End Developer', 'Creative Director', 'UI UX Developer', 'Full-Service Agency'] %>
           </div>
           <div class="field">
             <%= f.label "Your project's name:" %><br>
