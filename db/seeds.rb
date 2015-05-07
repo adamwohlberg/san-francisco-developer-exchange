@@ -224,7 +224,7 @@ if Rails.env.production?
     'Other Coding SKills' =>
       ['Git', 'GitHub', 'Coffeescript', 'Sass', 'LESS'],
     'Design' =>
-      ['Photoshop', 'Illustator'],
+      ['Photoshop', 'Illustrator'],
   }.each_with_index do |e, i|
     cat = SkillCategory.create name: e.first, position: i
     e.last.each_with_index { |s, p| cat.skills.create name: s, position: p }
