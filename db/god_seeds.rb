@@ -164,7 +164,7 @@ if Rails.env.development?
 
   {
     'Backend' =>
-      ['PHP', 'Ruby', 'Java', 'Objective-C', 'Swift', '.NET', 'Python'],
+      ['PHP', 'Ruby', 'Java', 'Objective-C', 'Swift', '.NET', 'Python', 'Golang'],
     'Frontend' =>
       ['HTML', 'CSS', 'Javascript', 'jQuery', 'AngularJS', 'BackboneJS', 'EmberJS'],
     'Frontend Frameworks' =>
