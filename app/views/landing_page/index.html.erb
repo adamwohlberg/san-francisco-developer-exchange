@@ -36,7 +36,8 @@
     <% elsif (Time.now.to_i % 10) == 6 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Tune in. Turn on. Drop out (of college and code).&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Mark Slater Leary, Tech Co-Founder & Dropout</h5>
-    <% elsif (Time.now.to_i % 10) == 7 %>
+<!--     else not elsif -->
+    <% else (Time.now.to_i % 10) == 7 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;We learned to hire slowly and fire quickly - we hire a developer on this site for a small contract; if they perform, we hire them full time.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Angela Fiarino, VP Human Resources</h5>
     <% end %>
