@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.my_contracts_body {
+  margin-bottom: 300px;
+}
 #contract_form {
   box-shadow: 1px 1px 2px rgba(182,182,182,0.75);
   padding: 24px 24px 0px 24px;
   background-color: #fff;
+  margin-bottom: 50px;
 }
 #contract_form h2, #contract_form h4 {
   margin: -22px -24px 24px -24px;

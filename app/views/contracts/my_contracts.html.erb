@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-2 medium-2 large-2"></div>
-  <div class="small-10 medium-10 large-10">
+  <div class="small-10 medium-10 large-10 my_contracts_body">
   	<strong><h1>My Contracts:</h1></strong>
  	<hr>
  	<% if @contracts.present? %>
@@ -23,15 +23,17 @@
 				</ul>
 		<% end %>
 	<% else %>
-		<br>
-		<br>
-		<br>
-		<br>
+	  	<br>
+  		<br>
+  		<br>
 		<h5>You don't have any contracts yet. <%= link_to ' Search for contracts near you now.', search_contracts_path %></h5> 
-		<br>
-		<br>
-		<br>
-		<br>
+	  	<br>
+  		<br>
+  		<br>
+  	  	<br>
+  		<br>
+  		<br>
+		<hr>
 	<% end %>
   </div>
   <div class="small-2 medium-2 large-2"></div>
