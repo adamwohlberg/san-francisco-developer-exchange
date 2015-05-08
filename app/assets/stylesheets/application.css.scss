@@ -140,7 +140,8 @@ border: 1px solid black;
 }
 .throb {
 border: 10px solid steelblue !important;
- -webkit-animation: throb 2.175s linear infinite;
+ -webkit-animation: throb 2.175s linear 0s infinite;
+ -moz-animation: rotate 2.175s linear 0s infinite;
 }
 .side-b {
 	-webkit-transform: rotateY(-180deg);
