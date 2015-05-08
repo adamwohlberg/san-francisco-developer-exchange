@@ -1,5 +1,6 @@
 <div id="developer_form">
-  <!-- sti so developer has already been created thus form submits to update action -->
+<h2>Post Your Profile Here</h2>
+<!-- <h4>...so employers can hire you</h4> -->
   <%= simple_form_for(@developer, :url => {:action => 'update', :id => @developer.id}, html: { multipart: true}) do |f| %>
     <% if @developer.errors.any? %>
       <div id="error_explanation">
@@ -18,8 +19,8 @@
       <%= f.select :title, ['PHP Developer', 'Ruby on Rails Developer', 'iOS Developer', 'Android Developer', 'Front End Developer', 'Creative Director', 'UI UX Developer', 'Project Manager','Full-Service Agency - we do it all!'] %>
     </div>
     <div class="field">
-      <%= f.label 'Choose your alter ego\'s username:' %><br>
-      <%= f.text_field :username, :placeholder => 'e.g. bruce_wayne'  %>
+      <%= f.label 'Choose your username:' %><br>
+      <%= f.text_field :username, :placeholder => 'e.g. rubyist_dev'  %>
     </div>
     <div class="field">
       <%= f.label :description, label: "What is your professional summary?" %><br>
@@ -30,12 +31,8 @@
       <%= f.input :min_contract_amount, label: false, :placeholder => '5000' %>
     </div>
     <div class="field">
-      <%= f.label :cell, label: "What is your cell phone # (to be provided to qualified employers)?" %><br>
-      <%= f.input :cell, as: :tel, label: false, placeholder: 'e.g. 3105551212' %>
-    </div>
-    <div class="field">
       <%= f.label :paypal_email, label: "What is your PayPal email (required if you would like direct PayPal payments)" %><br>
-      <%= f.input :paypal_email, label: false, placeholder: 'e.g. elon.musk@zmail.com' %>
+      <%= f.input :paypal_email, label: false, placeholder: 'e.g. info@example.com' %>
     </div>
     <div class="field image_upload_section">
         <%= f.label :avatar, label: "Upload a profile image:" %>

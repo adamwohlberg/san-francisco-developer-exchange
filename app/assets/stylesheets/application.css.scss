@@ -36,10 +36,16 @@ body {
 footer {
 	text-align: center;
 }
-#business_information p{
-font-size: 13px !important;
+.inline-list {
+	color: steelblue;
 }
-.top-bar, .bottom-bar {
+
+#business_information p, .footer_nav_bar p, #video_attribution p{
+text-align: left;
+font-size: 13px !important;
+color: #f1f1f1;
+}
+.top-bar, .footer_nav_bar, #video_attribution {
 /* IE10 Consumer Preview */ 
 background-image: -ms-radial-gradient(center bottom, circle closest-corner, #333333 0%, #000000 70%);
 

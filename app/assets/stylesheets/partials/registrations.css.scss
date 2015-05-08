@@ -19,13 +19,13 @@
 	opacity: 1.0;
 }
 
-.sign_up_form, .sign_in_form {
+.sign_up_form, .sign_in_form, .confirmation_form, .password_form {
   box-shadow: 1px 1px 2px rgba(182,182,182,0.75);
   padding: 24px 24px 0px 24px;
   background-color: #fff;
 }
 
-.sign_up_form h2, .sign_in_form h2{
+.sign_up_form h2, .sign_in_form h2, .confirmation_form h2, .password_form h2{
   margin: -22px -24px 24px -24px;
   padding: 6px 24px;
   font-size: 34px;
