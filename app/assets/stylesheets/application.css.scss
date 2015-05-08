@@ -30,13 +30,16 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+body {
+	background-color: #fafafa;
+}
 footer {
 	text-align: center;
 }
 #business_information p{
 font-size: 13px !important;
 }
-.top-bar {
+.top-bar, .bottom-bar {
 /* IE10 Consumer Preview */ 
 background-image: -ms-radial-gradient(center bottom, circle closest-corner, #333333 0%, #000000 70%);
 
@@ -231,7 +234,7 @@ margin-top: 90px !important;
   width: 100%;
 }
 .text-jumbo {
-	font-size: 3em;
+	font-size: 2.8em;
 	font-weight: 900;
 	color: white;
 }
