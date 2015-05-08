@@ -701,8 +701,11 @@ width: 100%;
 
 } /* min-width 641px, medium screens */
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+@media only screen and (max-width: 50em) { 
 #headerProfileImage {
+	display:none;
+}
+#register_and_login_links {
 	display:none;
 }
 
