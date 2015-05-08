@@ -1,46 +1,53 @@
 <div class="row">
   <div class="small-0 medium-1 large-1 columns"></div>
-  <div class="small-12 medium-10 large-10 columns">
-<% if @employer.avatar.exists? %>
-<%= image_tag(@employer.avatar, :id => 'developer_profile_image_show') %><br />
-<% else %>
-<%= image_tag('noface.jpg', :id => 'developer_profile_image_show') %><br />
-<% end %>
-<br/>
-<section class="tabs" ng-controller="TabController as tab">
-  <ul class="tabs" data-tab role="tablist">
-    <li class="tab-title" ng-class="{ active: tab.isSet(1) }">
-      <a href ng-click="tab.setTab(1)">Project Description</a></li>
-    <li class="tab-title"  ng-class="{ active: tab.isSet(2) }">
-      <a href ng-click="tab.setTab(2)">Required Skills</a></li>
-    <li class="tab-title"  ng-class="{ active: tab.isSet(3) }">
-      <a href ng-click="tab.setTab(3)">Project Documents</a></li>
-<!--     <li class="tab-title"  ng-class="{ active: tab.isSet(4) }">
-      <a href ng-click="tab.setTab(4)">Reviews</a></li> -->
-<!--     <li class="tab-title"  ng-class="{ active: tab.isSet(5) }">
-      <a href ng-click="tab.setTab(5)">Submit a Review</a></li> -->
-  </ul>
- <div class="tabs-content">
-  <section class="contents" ng-show="tab.isSet(1)">
-    <p><strong><%= (@contract.name).split.map(&:capitalize).join(' ') %></strong><span><strong>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp; Contract Amount: </strong><%= number_to_currency(@contract.amount, :precision => 0) %>
-</span>
-    <p id="contract_description_show_page"><%= @contract.description %></p>
-
-</section>
-<section class="contents" ng-show="tab.isSet(2)">
-    <br>    <br>
-      <% @skills.each do |skill| %>
-      <span class="skills_tag"><%= skill.name %></span>
+  <div class="large-11 columns">
+    <div class="large-4 columns">
+      <% if @employer.avatar.exists? %>
+      <%= image_tag(@employer.avatar, :id => 'developer_profile_image_show') %><br />
+      <% else %>
+      <%= image_tag('noface.jpg', :id => 'developer_profile_image_show') %><br />
       <% end %>
-</section>
-<section class="contents" ng-show="tab.isSet(3)">
-       <h5>Project Documents: 
-        <% if @contract.attachment.present? %>
-          <%= link_to image_tag("pdf_download.jpg", id: "pdf_download_image"), download_pdf_contract_path(@contract) %></h5>  
-        <% else %>
-          <h4>No project documents have been uploaded for this contract.</h4>
+    </div>
+    <div class="large-7 columns">
+        <%= image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=9&markers=#{@employer.latitude}%2C#{@employer.longitude}", :id => 'google_map_show') %>
+    </div>
+  </div>
+<div class="small-12 medium-10 large-10 columns">
+  <br>
+  <section class="tabs" ng-controller="TabController as tab">
+    <ul class="tabs" data-tab role="tablist">
+      <li class="tab-title" ng-class="{ active: tab.isSet(1) }">
+        <a href ng-click="tab.setTab(1)">Project Description</a></li>
+      <li class="tab-title"  ng-class="{ active: tab.isSet(2) }">
+        <a href ng-click="tab.setTab(2)">Required Skills</a></li>
+      <li class="tab-title"  ng-class="{ active: tab.isSet(3) }">
+        <a href ng-click="tab.setTab(3)">Project Documents</a></li>
+  <!--     <li class="tab-title"  ng-class="{ active: tab.isSet(4) }">
+        <a href ng-click="tab.setTab(4)">Reviews</a></li> -->
+  <!--     <li class="tab-title"  ng-class="{ active: tab.isSet(5) }">
+        <a href ng-click="tab.setTab(5)">Submit a Review</a></li> -->
+    </ul>
+   <div class="tabs-content">
+    <section class="contents" ng-show="tab.isSet(1)">
+      <p><strong><%= (@contract.name).split.map(&:capitalize).join(' ') %></strong><span><strong>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp; Contract Amount: </strong><%= number_to_currency(@contract.amount, :precision => 0) %>
+  </span>
+      <p id="contract_description_show_page"><%= @contract.description %></p>
+
+  </section>
+  <section class="contents" ng-show="tab.isSet(2)">
+      <br>    <br>
+        <% @skills.each do |skill| %>
+        <span class="skills_tag"><%= skill.name %></span>
         <% end %>
-</section>
+  </section>
+  <section class="contents" ng-show="tab.isSet(3)">
+         <h5>Project Documents: 
+          <% if @contract.attachment.present? %>
+            <%= link_to image_tag("pdf_download.jpg", id: "pdf_download_image"), download_pdf_contract_path(@contract) %></h5>  
+          <% else %>
+            <h4>No project documents have been uploaded for this contract.</h4>
+          <% end %>
+  </section>
   <section class="developer-reviews-body" ng-show="tab.isSet(4)">
 <!-- LOOP THROUGH THE EMPLOYER'S REVIEWS AND PRINT THE STARS, REVIEWS, REVIEWER EMAIL -->
 <% @contract.ratings.each do |rating| %>
@@ -88,6 +95,8 @@
   <%= button_to 'Edit contract', edit_contract_path(@contract), :class => "button success", :action => :edit %>
 <% end %>
 <%= link_to '<< Back to all contracts', '/contracts#/list_contracts' %>
+  <br>  
+  <br>
   </div>
   <div class="small-0 medium-1 large-1 columns"></div>
   <!-- Modal window -->

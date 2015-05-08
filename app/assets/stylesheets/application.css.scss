@@ -30,6 +30,15 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+#google_map_show {
+  box-shadow: 4px 4px 8px rgba(182,182,182,0.75);
+  width: 900px;
+  height: 290px;
+  margin-left: -75px;
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
 body {
 	background-color: #fafafa;
 }
