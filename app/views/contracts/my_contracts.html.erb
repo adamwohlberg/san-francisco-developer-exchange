@@ -26,7 +26,11 @@
 	  	<br>
   		<br>
   		<br>
-		<h5>You don't have any contracts yet. <%= link_to ' Search for contracts near you now.', search_contracts_path %></h5> 
+  		<% if current_user.type == 'Employer' %>
+		<h5>You don't have any contracts yet. <%= link_to ' Search for developers near you now.', search_developers_path %></h5>
+		<% elsif current_user.type == 'Developer' %>
+		<h5>You don't have any contracts yet. <%= link_to ' Search for contracts near you now.', search_contracts_path %></h5>
+		<% end %>
 	  	<br>
   		<br>
   		<br>
