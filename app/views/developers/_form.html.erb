@@ -38,7 +38,7 @@
         <%= f.label :avatar, label: "Upload a profile image:" %>
         <%= f.file_field :avatar %>
     </div>
-    <h4>In which of these skills can you demonstrate proficiency?</h4>
+    <h5>In which of these skills can you demonstrate proficiency?</h5>
       <div class="field form-actions" id="skills_section_of_new_developer_form">
         <%= render partial: 'skill_category', collection: @skill_categories, locals: {form: f} %>
       </div>
