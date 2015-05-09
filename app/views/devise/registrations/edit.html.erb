@@ -20,11 +20,11 @@
       <% end %>
 
     <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :location, label: "City, State", :placeholder => "e.g.San Francisco, CA or Mumbai, India" %>
+    <%= f.input :location, label: "City, State", :placeholder => "San Francisco, CA or Mumbai, India" %>
     <% if current_user.type == 'Developer' %>
-      <%= f.input :paypal_email, label: "Paypal email", placeholder: 'e.g. elon.musk@zmail.com' %>
+      <%= f.input :paypal_email, label: "Paypal email", placeholder: 'info@example.com' %>
     <% end %>
-    <%= f.input :first_name, required: true, autofocus: true, :placeholder => "Barack" %>
+    <%= f.input :first_name, required: true, autofocus: true, :placeholder => "Jason" %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
