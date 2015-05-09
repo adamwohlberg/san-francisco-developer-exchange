@@ -32,7 +32,6 @@ function animateProfileImage() {
 	$('#profileImage').load('searching_for_developers.html.erb', function() {
     $('#profileImage').addClass('throb');
 });
-
 }
 
 
