@@ -212,9 +212,13 @@ position: absolute;
 }
 #searching_headline {
 margin-top: 150px;
+margin-left:25%;
+max-width: 50%;
 z-index: 999 !important;
 position: relative;
-font-weight: 500;
+color: #808080;
+background-color: #fafafa;
+border-radius: 20px;
 }
 body {
 margin-top: 90px !important;
