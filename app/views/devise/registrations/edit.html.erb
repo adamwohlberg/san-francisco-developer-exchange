@@ -20,7 +20,7 @@
       <% end %>
 
     <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :location, label: "City, State", :placeholder => "e.g.Beverly Hills, CA" %>
+    <%= f.input :location, label: "City, State", :placeholder => "e.g.San Francisco, CA or Mumbai, India" %>
     <% if current_user.type == 'Developer' %>
       <%= f.input :paypal_email, label: "Paypal email", placeholder: 'e.g. elon.musk@zmail.com' %>
     <% end %>
