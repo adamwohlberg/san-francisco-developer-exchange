@@ -4,7 +4,7 @@ json.array!(@contracts) do |contract|
   json.avatar contract.employer.avatar.url
   json.description contract.description
   json.location contract.location
-  json.distance contract.distance
+  # json.distance contract.distance
   json.amount contract.amount
   json.title contract.title
   json.skills contract.skills_names

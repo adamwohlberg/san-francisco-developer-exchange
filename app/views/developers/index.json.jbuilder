@@ -5,7 +5,7 @@ json.array!(@developers) do |developer|
   json.location developer.location
   json.description developer.description
   json.min_contract_amount developer.min_contract_amount
-  json.distance developer.distance.round(2)
+  # json.distance developer.distance.round(2)
   json.username developer.username
   json.title developer.title
   json.skills developer.skills_names
