@@ -54,12 +54,10 @@
           <%= render 'developers/terms' %>
           </div>
 
-          <div class="field" id="agree_to_terms">
-              <%# f.label :agree_to_terms %>
-              <%# f.check_box :agree_to_terms,  %>
-              <input type="checkbox" ng-model="checked">
-            <span>I have read and agree to the <span><%= link_to "terms and conditions.", "/legal/membership-terms", :class => "popup", :"data-width" => 600, :"data-height" => 300 %> </span>
-          </div>
+        <div id="agree_to_terms">
+          <input type="checkbox" ng-model="checked">
+          <span>I agree to the <span><%= link_to "terms of use", "/legal/terms-of-use", :class => "popup", :"data-width" => 600, :"data-height" => 300 %> and <%= link_to "membership terms and conditions", "/legal/membership-terms", :class => "popup", :"data-width" => 600, :"data-height" => 300 %>.</span>
+        </div>
 
           <div class="actions" id="contract_submit_button">
             <input type="submit" class="button actions" id="contract_submit_button" ng-disabled="!checked">
