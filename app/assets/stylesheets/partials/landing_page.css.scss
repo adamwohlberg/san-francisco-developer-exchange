@@ -2,6 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.testimonial blockquote{
+    font-size: 1.5em;
+    margin-top: 35px;
+}
+.testimonial cite{
+    font-size: 0.9em;
+}
+#testimonial_1 {
+    border-radius: 50%;
+    border: 1px solid black;
+    opacity: 1.0;
+    margin-left: 50px;
+    margin-top: 46px;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+#testimonial_1:hover {
+    opacity: 0.8;
+transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-webkit-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-moz-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-o-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-ms-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+}
 .bg-content-wrapper {
     position: absolute;
     width: 100%;
