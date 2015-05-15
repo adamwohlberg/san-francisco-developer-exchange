@@ -219,8 +219,10 @@ margin-left:25%;
 max-width: 50%;
 z-index: 999 !important;
 position: relative;
-color: #808080;
-background-color: #fafafa;
+color: #000;
+-moz-box-shadow:    2px 2px 3px 2px #ccc;
+-webkit-box-shadow: 2px 2px 3px 2px #ccc;
+box-shadow:         2px 2px 3px 2px #ccc;
 border-radius: 20px;
 }
 body {
