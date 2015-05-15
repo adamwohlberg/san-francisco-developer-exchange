@@ -6,7 +6,6 @@ $ ->
   $('#type_Developer[type="radio"]').click ->
     if $(this).is(':checked')
       $('#facebook_button_register_page a').attr('href','/users/auth/facebook' + '?type=Developer')
-      $('#facebook_button_register_page').show()
     return
   return
 
@@ -14,6 +13,5 @@ $ ->
   $('#type_Employer[type="radio"]').click ->
     if $(this).is(':checked')
       $('#facebook_button_register_page a').attr('href','/users/auth/facebook' + '?type=Employer')
-      $('#facebook_button_register_page').hide()
     return
   return
