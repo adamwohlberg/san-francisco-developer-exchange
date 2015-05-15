@@ -33,19 +33,18 @@
     <% elsif (Time.now.to_i % 10) == 5 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Now I can freelance and still make a high six-figure income.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - David Zuckerman, Front-End Developer, Williamsburgh, Brooklyn</h5>
-    <%# elsif (Time.now.to_i % 10) == 6 %>
-<!--       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Such a more personal way to browse candidates - I love seeing their profiles sort of like dating profiles.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Eve Peters, Founder - Whim&trade;</h5> -->
-<!--     else not elsif -->
-    <% elsif (Time.now.to_i % 10) == 7 %>
+    <% elsif (Time.now.to_i % 10) == 6 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;We hire slowly and fire quickly...always for a contract first.  Only after a successful contract, will we extend a full-time offer.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Angela Fiarino, VP Human Resources</h5>
+    <% elsif (Time.now.to_i % 10) == 7 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Recruiters only wanted to place me in full-time positions; I wanted my freedom to travel while working from my laptop.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveller, Developer</h5>
     <% elsif (Time.now.to_i % 10) == 8 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Recruiters only wanted to place me in full-time positions; I wanted my freedom to travel while working from my laptop.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveller, Developer</h5>
     <% else  %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The smartest developers don't take corporate positions; they work from home so they don't have to wear pants.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - John Steinberger, Remote PHP Developer</h5>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;It's like the New York Stock Exchange for developers.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Christopher Perry, Equity Trader - NYSE</h5>
     <% end %>
       <br>
       <%= link_to('GET STARTED', register_path, class: "button large [radius round] button_landing_page_right") %>
@@ -56,7 +55,7 @@
       <%= image_tag('whim.jpg', :id => 'testimonial_1') %>
     </div>
     <div class="large-9 columns testimonial">
-      <blockquote>&ldquo;San Francisco Developer Exchange&trade; is a more personal way to browse candidates - I love seeing their profiles in a similar format to those on dating apps.&rdquo;<cite>Eve Peters - Founder, Whim&reg;</cite><p><%= link_to('...on the lookout for a great iOS/Golang developer.', contracts_path) %></p></blockquote> 
+      <blockquote>&ldquo;[San Francisco Developer Exchange&trade;] is a more personal way to browse candidates - I love seeing their profiles in a similar format to those on dating apps.&rdquo;<cite>Eve Peters - Founder, Whim&reg;</cite><p><%= link_to('...on the lookout for a great iOS/Golang developer.', contracts_path) %></p></blockquote> 
         <br>
     </div>
     <hr>
