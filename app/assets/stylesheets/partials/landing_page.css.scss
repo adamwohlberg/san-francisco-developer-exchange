@@ -2,12 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.testimonial blockquote{
+/*.testimonial blockquote{
     font-size: 1.5em;
     margin-top: 35px;
-}
+}*/
 .testimonial cite{
     font-size: 0.9em;
+}
+.testimonial blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 2.0em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+.testimonial blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+.testimonial blockquote p {
+  display: inline;
 }
 #testimonial_1 {
     border-radius: 50%;
