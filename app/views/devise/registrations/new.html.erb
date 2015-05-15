@@ -18,11 +18,10 @@
               <%= radio_button_tag(:type, "Developer", {:checked => true}) %>
               <%= label_tag(:type, "I'm a dev (or agency)") %>
           <% end %>        
-          <% if params[:type] != 'Employer' %>
             <div id="facebook_button_register_page">
                 <%= link_to image_tag("facebook-buttons/facebook_signup.jpg"), user_omniauth_authorize_path(:facebook, type: 'Developer'), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
+                <p>...or login with the form:</p>
             </div>
-          <% end %>
           <%= f.input :first_name, required: true, autofocus: true, :placeholder => "First name", label: false %>
           <%= f.input :email, required: true, autofocus: true, label:
           "Primary email", :placeholder => "info@example.com", label: false %>
