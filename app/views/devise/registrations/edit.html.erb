@@ -1,22 +1,16 @@
-<div class="row full_vertical_height">
+<div class="row">
   <div class="large-6 large-centered columns sign_in_form">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%# radio_button_tag(:type, "Employer") %>
-      <%# label_tag(:type, "I'm an employer") %>
-    <%# radio_button_tag(:type, "Developer") %>
-      <%# label_tag(:type, "I'm a developer") %>
 
-    <div id="facebook_button">
       <% if current_user %>
-        Signed in as strong<%= current_user.name %></strong>!
+        Signed in as <strong><%= current_user.first_name %></strong>!
         <%= link_to "Sign out", signout_path, id: "sign_out" %>
       <% else %>
         <%= link_to image_tag("facebook-buttons/facebook.jpg"), user_omniauth_authorize_path(:facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
-    </div>
       <% end %>
 
     <%= f.input :email, required: true, autofocus: true %>
@@ -51,6 +45,8 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+<br>
+<br>
   </div>
 </div>
 

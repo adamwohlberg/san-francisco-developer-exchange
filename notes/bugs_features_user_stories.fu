@@ -2,6 +2,12 @@
 BUGS & FEATURES
 *******************************
 
+Add a big button for create a contract or add New Contract
+
+Allow users to see other side of the transaction (contract creaters want to see contracts). :(
+
+Client-side form validation w/ Javascript!!!!
+
 CSS animation doesn't work in Firefox.
 
 Geocode on the client side
