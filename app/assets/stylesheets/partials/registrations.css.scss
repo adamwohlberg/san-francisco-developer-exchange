@@ -23,7 +23,8 @@
   box-shadow: 1px 1px 2px rgba(182,182,182,0.75);
   padding: 24px 24px 0px 24px;
   background-color: #fff;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
+  margin-top: 40px;
 }
 
 .sign_up_form h2, .sign_in_form h2, .confirmation_form h2, .password_form h2{
@@ -35,4 +36,13 @@
   border-bottom: 1px solid #FFF;
   box-shadow: 0 1px 0 #d4d4d4;
   background: linear-gradient(to bottom, #ffffff 50%,#f6f6f6 100%);
+}
+
+input.button {
+width:100%;
+font-size: 1.4em;
+}
+
+input.string, input.password {
+  font-size: 1.0em;
 }

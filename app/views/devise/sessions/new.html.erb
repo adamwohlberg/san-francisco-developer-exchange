@@ -9,12 +9,12 @@
       <%= link_to image_tag("facebook-buttons/facebook.jpg"), user_omniauth_authorize_path(:facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
       <p>...or login with your email and password.</p>
     </div>
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
+    <%= f.input :email, required: false, autofocus: true, label: false, placeholder: 'info@example.com' %>
+    <%= f.input :password, required: false, label: false, placeholder: 'password' %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions" id="full_width">
     <%= f.button :submit, "Log in" %>
   </div>
 <% end %>

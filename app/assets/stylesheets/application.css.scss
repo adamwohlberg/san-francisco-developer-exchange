@@ -30,6 +30,12 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+.form-actions {
+	width: 100%;
+}
+#full_width_button {
+width: 100% !important;
+}
 .full_vertical_height {
 	height: 100vh;
 }
@@ -370,6 +376,11 @@ width: 100%;
 }
 .button_landing_page_left {
 	margin-right: 40px;
+	min-width: 190px;
+}
+.button_landing_page_right {
+	margin-right: 40px;
+	min-width: 190px;
 }
 #youtube_video {
 /*position: fixed; 

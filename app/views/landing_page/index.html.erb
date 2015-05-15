@@ -41,13 +41,14 @@
       <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveller, Developer</h5>
     <% elsif (Time.now.to_i % 10) == 8 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Recruiters only wanted to place me in full-time positions; I wanted my freedom to travel while working from my laptop.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveller, Developer</h5>
+      <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveler, Developer</h5>
     <% else  %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;It's like the New York Stock Exchange for developers.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Christopher Perry, Equity Trader - NYSE</h5>
     <% end %>
       <br>
-      <%= link_to('GET STARTED', register_path, class: "button large [radius round] button_landing_page_right") %>
+      <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
+      <%= link_to('GET HIRED', register_path(:type => 'Developer'), class: "button large [radius round] button_landing_page_right") %>
     </div>
   </div>
     <div class="row">

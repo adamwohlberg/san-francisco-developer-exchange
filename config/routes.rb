@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 devise_for :users,
     controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: 'users/registrations'}
 
-devise_scope :user do
+devise_scope :user do  
   get 'register', to: 'devise/registrations#new', as: :register
   get 'login', to: 'devise/sessions#new', as: :login
   get 'logout', to: 'devise/sessions#destroy', as: :logout
