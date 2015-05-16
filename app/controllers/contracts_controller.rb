@@ -24,9 +24,9 @@ class ContractsController < ApplicationController
   def show
     @developer = Developer.new
     @skill_categories = SkillCategory.all.includes(:skills)
-    if current_user.type == 'Employer'
-      redirect_to action: "index"
-    end
+    # if current_user.type == 'Employer'
+    #   redirect_to action: "index"
+    # end
     @contract = Contract.find(params[:id])
     @employer = @contract.employer
     @skills = @contract.skills

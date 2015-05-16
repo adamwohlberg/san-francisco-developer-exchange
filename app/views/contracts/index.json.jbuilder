@@ -8,5 +8,7 @@ json.array!(@contracts) do |contract|
   json.amount contract.amount
   json.title contract.title
   json.skills contract.skills_names
-  json.favorited current_user.developer_favorites.pluck(:contract_id).include? contract.id
+  if current_user.type == 'Developer'
+    json.favorited current_user.developer_favorites.pluck(:contract_id).include? contract.id
+  end
 end
