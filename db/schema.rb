@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507165645) do
+ActiveRecord::Schema.define(version: 20150516220037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150507165645) do
   create_table "contracts", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "amount",                  precision: 10, scale: 2
+    t.decimal  "amount",                       precision: 10, scale: 2
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 20150507165645) do
     t.string   "relationship_type"
     t.string   "image"
     t.string   "ein"
-    t.decimal  "balance",                 precision: 10, scale: 2
-    t.decimal  "total_payment",           precision: 10, scale: 2
-    t.decimal  "service_fee",             precision: 10, scale: 2
-    t.string   "status",                                           default: "open"
+    t.decimal  "balance",                      precision: 10, scale: 2
+    t.decimal  "total_payment",                precision: 10, scale: 2
+    t.decimal  "service_fee",                  precision: 10, scale: 2
+    t.string   "status",                                                default: "open"
     t.integer  "document_id"
-    t.boolean  "paid",                                             default: false
+    t.boolean  "paid",                                                  default: false
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
@@ -44,8 +44,12 @@ ActiveRecord::Schema.define(version: 20150507165645) do
     t.string   "location"
     t.float    "latitude"
     t.float    "longitude"
-    t.boolean  "visible",                                          default: true
+    t.boolean  "visible",                                               default: true
     t.datetime "deleted_at"
+    t.string   "contract_avatar_file_name"
+    t.string   "contract_avatar_content_type"
+    t.integer  "contract_avatar_file_size"
+    t.datetime "contract_avatar_updated_at"
   end
 
   add_index "contracts", ["deleted_at"], name: "index_contracts_on_deleted_at", using: :btree

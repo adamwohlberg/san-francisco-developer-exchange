@@ -8,6 +8,14 @@
 	border-radius: 50%;
 	border: 2px solid steelblue;
 }
+#contractProfileImage {
+	width: 90px;
+	height: 90px;
+	z-index: 100;
+	margin-top: 4px;
+	border-radius: 50%;
+	border: 2px solid steelblue;
+}
 #the_logo {
 /*    font-family: Bree Serif, serif;*/
 	font-size: 2.0em;
@@ -40,11 +48,12 @@ a#register_name {
 	margin-top: -60px;
 	margin-right: 12px;
 	margin-bottom: 20px;
-	font-size: 1.5em;
+	font-size: 1.4em;
 }
 #landing_page_login_and_register_links_in_header {
 	font-size: 18px !important;
 	margin-right: 20px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 #hidden-register-name-dropdown-links {
 	display: none;

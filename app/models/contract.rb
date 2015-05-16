@@ -44,6 +44,10 @@ class Contract < ActiveRecord::Base
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ]
   validates_with AttachmentSizeValidator, :attributes => :attachment, :less_than => 2.megabytes
 
+  has_attached_file :contract_avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/noface"
+    validates_attachment_content_type :contract_avatar, :content_type => /\Aimage\/.*\Z/
+    validates_attachment_size :contract_avatar, :in => 0.megabytes..3.megabytes
+
   belongs_to :employer
   belongs_to :developer
 

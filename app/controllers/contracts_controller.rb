@@ -181,7 +181,7 @@ class ContractsController < ApplicationController
     end
 
     def contract_params
-      params.require(:contract).permit(:developer_id, :attachment, :relationship_type, :location, :latitude, :longitude, :status, :paid, :type, :name, :title, :document, :ein, :agree_to_terms, :description, :amount, :id, skill_ids: [])
+      params.require(:contract).permit(:developer_id, :attachment, :relationship_type, :location, :latitude, :longitude, :status, :paid, :type, :name, :title, :document, :ein, :agree_to_terms, :description, :amount, :id, :contract_avatar, skill_ids: [])
     end
 
 

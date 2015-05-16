@@ -29,6 +29,19 @@
           </div>
 
           <div class="field">
+            <%= f.label "This is your default employer image:" %><br>
+            <% if current_user && current_user.avatar_file_name? %>
+              <%= image_tag(current_user.avatar, :id => 'contractProfileImage', alt: "profile") %><br />
+            <% elsif current_user && current_user.fb_image.present? %>
+              <%= image_tag(current_user.fb_image, :id => 'contractProfileImage', alt: "profile image") %><br/>
+            <% else %>
+              <%= image_tag('noface.jpg', :id => 'contractProfileImage', alt: "profile image")  %><br />
+            <% end %>
+            <%= f.label :contract_avatar, label: "Upload a different image (optional)" %><br>
+            <%= f.file_field :contract_avatar, as: :file %>
+          </div>
+
+          <div class="field">
             <%= f.label :attachment, label: "Upload a scope document (optional)" %><br>
             <%= f.file_field :attachment, as: :file %>
           </div>
@@ -38,15 +51,15 @@
             <%# f.input :ein, label: false, placeholder: 'e.g. 27-3537698' %>
           </div> -->
 
+<!--           Do not remove this line -->
+          <%= f.hidden_field :location, :value => current_user.location %>
+
           <div class="field">
             <%= f.label "Total Contract Amount in $USD (contract minimum is $500):" %>
             <br>
-            <%= f.select :amount, [500,1000,1500,2000,2500,3000,3500,4000,4500,5000,6000,7000,8000,9000,10000,12000,15000,17500,20000,25000,30000,40000,50000,60000,70000,80000,90000,100000,110000,120000,130000,140000,15000,160000,170000,180000,190000,200000,210000,215000,220000,225000], placeholder: '12000', label: false %>
+            <%= f.select :amount, [['$500',500],['$1,000',1000],['$1,500',1500],['$2,000',2000],['$2,500',2500],['$3,000',3000],['$4,000',4000],['$5,000',5000],['$6,000',6000],['$7,000',7000],['$8,000',8000],['$9,000',9000],['$10,000',10000],['$12,500',12500],['$15,000',15000],['$20,000',20000],['$25,000',25000],['$30,000',30000],['$35,000',35000],['$40,000',40000],['$45,000',45000],['$50,000',50000],['$60,000',60000],['$70,000',70000],['$80,000',80000],['$90,000',1500],['$100,000',100000],['$125,000',125000],['$150,000',150000],['$175,000',175000],['$200,000',200000],['$250,000',200000]], placeholder: '$10,000', label: false %>
             <br>  
           </div>
-
-
-            <%# f.hidden_field :location, :value => current_user.location %>
 
           <h4>What skills are required for this project?</h4>
             <div class="field form-actions" id="skills_section_of_new_developer_form">
@@ -64,10 +77,7 @@
 
           <div class="actions" id="contract_submit_button">
             <input type="submit" class="button actions" id="contract_submit_button" ng-disabled="!checked">
-            <%# f.button :submit %>
           </div>
-
-
 
         <% end %>
 
