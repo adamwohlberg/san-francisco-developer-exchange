@@ -44,8 +44,10 @@ else window.addEventListener('load', __ldinsp, false);
       <% if user_signed_in? %>
         <li><%= link_to 'Hi ' + current_user.first_name.capitalize, edit_user_registration_path, id: "register_name" %></li>
       <% else %>
-        <li><%= link_to 'Already a Member? Sign In', login_path %></li>
-        <li id="register"><%= link_to 'Register', register_path %></li>
+        <div id="landing_page_login_and_register_links_in_header">
+          <li><%= link_to('Already a Member? Sign In', login_path) %></li>
+          <li><%= link_to('Register', register_path) %></li>
+        </div>
       <% end %>
         <div id="hidden-register-name-dropdown-links">
           <li><%= link_to 'LOG OUT', logout_path %></li>

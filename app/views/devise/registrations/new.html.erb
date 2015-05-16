@@ -1,7 +1,7 @@
 
 
 <div class="row">
-  <div class="large-7 large-centered columns sign_up_form">
+  <div class="large-7 large-centered columns sign_up_form" id="form">
     <h2>Sign up</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= resource.errors.full_messages.join(", ") %>
@@ -22,14 +22,23 @@
                 <%= link_to image_tag("facebook-buttons/facebook_signup.jpg"), user_omniauth_authorize_path(:facebook, type: 'Developer'), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
                 <p>...or sign up with the form:</p>
             </div>
+
           <%= f.input :first_name, required: true, autofocus: true, :placeholder => "First name", label: false %>
+          <span class="hint">Please enter your name</span>
+
           <%= f.input :email, required: true, autofocus: true, label:
           "Primary email", :placeholder => "info@example.com", label: false %>
-          <%= f.input :location, label: "City, State", :placeholder => "City, State (e.g. San Francisco, CA)", label: false %>
+          <span>Please enter a valid email address</span>
+
+          <%= f.input :location, label: "City, State", :placeholder => "San Francisco, CA", label: false %>
+          <span>Please enter your location in city, state format</span>
           
           <% if f.object.password_required? %>
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable), :placeholder => "Password", label: false %>
-            <%= f.input :password_confirmation, required: true, :placeholder => "Confirm password", label: false %>
+          <span>Please enter your password</span>
+
+          <%= f.input :password_confirmation, required: true, :placeholder => "Confirm password", label: false %>
+          <span>Please confirm your password</span>
           <% end %>
 
         </div>
