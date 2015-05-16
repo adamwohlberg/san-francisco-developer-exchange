@@ -11,12 +11,12 @@
               <%= label_tag(:type, "I'm a developer (or an agency)") %>
           <% elsif params[:type] == 'Employer' %>
               <%= radio_button_tag(:type, "Employer", {:checked => true}) %>
-              <%= label_tag(:type, "I'm an employer (or recruiter)") %>
+              <%= label_tag(:type, "I'm an employer") %>
           <% elsif params[:type] == nil %>
               <%= radio_button_tag(:type, "Employer")%>
               <%= label_tag(:type, "I'm an employer") %>
               <%= radio_button_tag(:type, "Developer", {:checked => true}) %>
-              <%= label_tag(:type, "I'm a developer") %>
+              <%= label_tag(:type, "I'm a developer or agency") %>
           <% end %>        
             <div id="facebook_button_register_page">
                 <%= link_to image_tag("facebook-buttons/facebook_signup.jpg"), user_omniauth_authorize_path(:facebook, type: 'Developer'), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
