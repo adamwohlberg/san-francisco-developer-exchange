@@ -5,12 +5,16 @@
 #linkedin_button {
 	margin: 20px;
 }
-#facebook_button, #facebook_button_register_page {
-	margin: 15px 0px 15px 55px;
+#facebook_button {
+	margin: 5px 0px 5px 15%;
 	width: 300px;
-	opacity: 0.8;
+	opacity: 0.9;
 }
-
+#facebook_button_register_page {
+  margin: 5px 0px 5px 22%;
+  width: 300px;
+  opacity: 0.9;
+}
 #facebook_button:hover {
 	opacity: 1.0;
 }
@@ -24,7 +28,7 @@
   padding: 24px 24px 0px 24px;
   background-color: #fff;
   margin-bottom: 100px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .sign_up_form h2, .sign_in_form h2, .confirmation_form h2, .password_form h2{
@@ -41,8 +45,26 @@
 input.button {
 width:100%;
 font-size: 1.4em;
+height: 3em;
 }
 
 input.string, input.password {
-  font-size: 1.0em;
+  font-size: 1.6em;
+  height: 1.6em;
+}
+label {
+  font-size: 1.4em;
+}
+/*input#type_Developer {
+  margin-left: 11%;
+}
+input#type_Employer {
+  margin-left: 7%;
+}*/
+input#user_email, input#user_password, input#user_email, input#location, input#user_confirm_password {
+  height: 1.6em;
+  font-size: 1.6em;
+}
+input#user_remember_me {
+  margin-right: 15px;
 }
