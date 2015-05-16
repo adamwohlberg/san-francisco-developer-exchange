@@ -30,6 +30,12 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+#skills_section_of_new_developer_form {
+font-size: 1.3em;
+}
+span#skills_section_of_new_developer_form {
+margin-left: 10px;
+}
 .form-actions {
 	width: 100%;
 }
