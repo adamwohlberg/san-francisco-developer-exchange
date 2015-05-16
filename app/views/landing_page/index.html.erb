@@ -69,37 +69,60 @@
       <blockquote>What AirBNB&trade; did for unused room capacity, San Francisco Developer Exchange&trade; is going to do for unused talent capacity - namely give you efficient access to it on an as-needed basis. If I wasn't already the founder, I'd be an investor!<cite>Adam Wohlberg - Ruby on Rails Developer & Founder</cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
         <br>
     </div>
+  </div>
     <hr>
-  </div>
-  <div class="row" id="landing_page_benefits_section">
-    <div class="large-12 columns">
-      <h1 id="why_should_i_sign_up_headline">Why Should I Sign Up?</h1>
+  <div id="landing_page_benefits_section">
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 id="why_should_i_sign_up_headline">Why Are The Benefits for Employers?</h1>
+      </div>
+      <div class="large-4 columns">
+        <i class="fi-fast-forward foundation-icon"></i>
+        <h4>IT'S FAST</h4>
+        <p>No more waiting around for recruiters.  Find and hire a local developer today.</p>
+      </div>
+      
+      <div class="large-4 columns">
+        <i class="fi-compass foundation-icon"></i>
+        <h4>IT'S LOCAL</h4>
+        <p>Find a great, local developer who you can meet with in person when needed. No more miscommunication across timezones and cultures. Sometimes offshoring is the right choice, but when you need a talented, local developer to join your team, we're here for you.  And know that your developer is part of our community, a local resource whenever you need to scale up quickly.</p>
+      </div>
+      
+      <div class="large-4 columns">
+        <i class="fi-cloud foundation-icon"></i>
+        <h4>IT'S SAFE</h4>
+        <p>Know that your project is going to get done right.  We hold your balance (minus any upfront payment to the developer) in an FDIC-insured escrow account until you sign off on the final deliverable.</p>
+      </div>
     </div>
-    <div class="large-4 columns">
-      <i class="fi-fast-forward foundation-icon"></i>
-      <h4>IT'S FAST</h4>
-      <p><strong>For Employers</strong>  - No more waiting around for recruiters.  Find and hire a local developer today.</p>
-      <p><strong>For Developers</strong>  - Get PAID UPFRONT up to 50% of the full contract value before you write your first line of code.</p><p>No more endless meetings, blogging, and online marketing to keep your pipeline of clients stocked - lock in a steady flow of clients to avoid the feast-or-famine experienced by other freelancers.</p>
+    <hr>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 id="why_should_i_sign_up_headline">Why Are The Benefits for Developers?</h1>
+      </div>
+      <div class="large-4 columns">
+        <i class="fi-fast-forward foundation-icon"></i>
+        <h4>IT'S FAST</h4>
+        <p>Get PAID UPFRONT up to 50% of the full contract value before you write your first line of code.</p><p>No more endless meetings, blogging, and online marketing to keep your pipeline of clients stocked - lock in a steady flow of clients to avoid the feast-or-famine experienced by other freelancers.</p>
+      </div>
+      
+      <div class="large-4 columns">
+        <i class="fi-compass foundation-icon"></i>
+        <h4>IT'S LOCAL</h4>
+        <p>Make a corporate salary while living a freedom-based, remote lifestyle. You can find a short-term project or meet once or twice a month in person, and work from your laptop the rest of the time - it's up to you and the employer to neogotiate your preferred terms. And no more competing with offshore developers charging six dollars per hour on those other freelance websites - that endless race to the bottom stops here.</p>
+      </div>
+      
+      <div class="large-4 columns">
+        <i class="fi-cloud foundation-icon"></i>
+        <h4>IT'S SAFE</h4>
+        <p>Anyone who contacts you through our app means business - each employer must deposit the full amount of the contract before you write the first line of code. And <strong>developers can earn up to 50% of the contracted amount upfront</strong> <%= link_to '(view details).', 'payouts.html', :class => "popup", :"data-width" => 600, :"data-height" => 400 %></p><p>You can even set a minimum contract amount - so no one can contact you unless they're legit.</p>
+      </div>
     </div>
-    
-    <div class="large-4 columns">
-      <i class="fi-compass foundation-icon"></i>
-      <h4>IT'S LOCAL</h4>
-      <p><strong>For Employers</strong>  - Find a great, local developer who you can meet with in person when needed. No more miscommunication across timezones and cultures. Sometimes offshoring is the right choice, but when you need a talented, local developer to join your team, we're here for you.  And know that your developer is part of our community, a local resource whenever you need to scale up quickly.</p>
-      <p><strong>For Developers</strong>  - Make a corporate salary while living a freedom-based, remote lifestyle. You can find a short-term project or meet once or twice a month in person, and work from your laptop the rest of the time - it's up to you and the employer to neogotiate your preferred terms. And no more competing with offshore developers charging six dollars per hour on those other freelance websites - that endless race to the bottom stops here.</p>
-    </div>
-    
-    <div class="large-4 columns">
-      <i class="fi-cloud foundation-icon"></i>
-      <h4>IT'S SAFE</h4>
-      <p><strong>For Employers</strong> - Know that your project is going to get done right.  We hold your balance (minus any upfront payment to the developer) in an FDIC-insured escrow account until you sign off on the final deliverable.</p>
-      <p><strong>For Developers</strong>  - Anyone who contacts you through our app means business - each employer must deposit the full amount of the contract before you write the first line of code. And <strong>developers can earn up to 50% of the contracted amount upfront</strong> <%= link_to '(view details).', 'payouts.html', :class => "popup", :"data-width" => 600, :"data-height" => 400 %></p><p>You can even set a minimum contract amount - so no one can contact you unless they're legit.</p>
-    </div>
-  </div>
+  </div> 
   <div class="row">
     <div class="large-12 columns">
-  <h4 id="and_its_always_free_tagline" class="text-center">...and it's <strong><em>always free </em></strong>for developers.</h4>
+        <hr>
+  <h2 id="and_its_always_free_tagline" class="text-center">...and it's <strong><em>always free </em></strong>for developers. Snap!</em></h2>
     </div>
   </div>
- 
+     <hr>
 <%= javascript_tag "facebookPopUp()" -%>
