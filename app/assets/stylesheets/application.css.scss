@@ -30,6 +30,10 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+#see_the_developers_view_link, #see_the_employers_view_link {
+	margin-left: 10px;
+}
+
 #create_a_new_contract, #create_a_profile {
  position: relative;
  margin-left: -220px;

@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 	before_action  :authenticate_user!
-	before_action  :authorize_employer!, only: [:searching_for_developers]
-	before_action  :authorize_developer!, only: [:searching_for_contracts]
+	# before_action  :authorize_employer!, only: [:searching_for_developers]
+	# before_action  :authorize_developer!, only: [:searching_for_contracts]
 
  layout 'no_errors_layout'
 
@@ -15,12 +15,12 @@ class SearchController < ApplicationController
 
   private
 
-  def authorize_employer!
-  	redirect_to :root unless current_user.is_a? Employer
-  end
+  # def authorize_employer!
+  # 	redirect_to :root unless current_user.is_a? Employer
+  # end
 
-  def authorize_developer!
-  	redirect_to :root unless current_user.is_a? Developer
-  end
+  # def authorize_developer!
+  # 	redirect_to :root unless current_user.is_a? Developer
+  # end
 
 end

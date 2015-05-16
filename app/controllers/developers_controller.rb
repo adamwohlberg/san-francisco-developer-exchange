@@ -18,11 +18,11 @@ class DevelopersController < ApplicationController
         @skill = Skill.new
         @contracts = Contract.all.pluck(:id, :name)
         @contract = Contract.new
-        if current_user.type == 'Developer'
-          redirect_to action: "index"
-        elsif current_user.type == 'Employer'
+        # if current_user.type == 'Developer'
+        #   redirect_to action: "index"
+        # elsif current_user.type == 'Employer'
           @negotiation = @developer.negotiations.where(employer_id = current_user.id)
-        end
+        # end
         render action: "show"
       else
         @developer = Developer.find_by_username(params[:id].strip) || Developer.find_by_id(params[:id].strip)
@@ -30,11 +30,11 @@ class DevelopersController < ApplicationController
         @skill = Skill.new
         @contracts = Contract.all.pluck(:id, :name)
         @contract = Contract.new
-        if current_user.type == 'Developer'
-          redirect_to action: "index"
-        elsif current_user.type == 'Employer'
+        # if current_user.type == 'Developer'
+        #   redirect_to action: "index"
+        # elsif current_user.type == 'Employer'
           @negotiation = @developer.negotiations.where(employer_id = current_user.id)
-        end
+        # end
         render layout: 'application'
       end
   end

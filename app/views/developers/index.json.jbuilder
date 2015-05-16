@@ -10,5 +10,7 @@ json.array!(@developers) do |developer|
   json.title developer.title
   json.skills developer.skills_names
   json.earnings developer.earnings
-  json.favorited current_user.employer_favorites.pluck(:developer_id).include? developer.id
+  if current_user.type == 'Employer'
+    json.favorited current_user.employer_favorites.pluck(:developer_id).include? developer.id
+  end
 end

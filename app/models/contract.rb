@@ -76,11 +76,11 @@ class Contract < ActiveRecord::Base
   validates_numericality_of :amount, presence: true,
             greater_than_or_equal_to: 500,
             less_than_or_equal_to: 225001
-  validates :ein, presence: true, 
-                           format:  {
-                             with: /[1-9]\d?-\d{7}/,
-                             message: 'please enter a valid employer identification number'
-                           }
+  # validates :ein, presence: true, 
+  #                          format:  {
+  #                            with: /[1-9]\d?-\d{7}/,
+  #                            message: 'please enter a valid employer identification number'
+  #                          }
 
   geocoded_by :location
   after_validation :geocode, :if => :location_changed?
