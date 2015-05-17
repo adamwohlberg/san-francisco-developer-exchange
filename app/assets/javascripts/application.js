@@ -107,16 +107,16 @@ function embedGoogleAnalyticsTrackingCode(){
   ga('send', 'pageview');
 };
 
-$('document').ready(function(){
-  $("#form span").hide();
-});
+// $('document').ready(function(){
+//   $("#form span").hide();
+// });
 
-$('document').ready(function(){ 
-  $("input,textarea").focus(function(){
-    console.log('help');
-    // $("#form span").next.fadeIn("slow");
-  });
-});
+// $('document').ready(function(){ 
+//   $("input").focus(function(){
+//     var field = $(this);
+//     field.next('span').fadeIn('slow');
+//   });
+// });
 
 
 

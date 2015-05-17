@@ -30,6 +30,21 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+.simple_form .field_with_hint input{
+  margin-bottom: 15px;
+  &:focus~.hint{
+    display: block;
+  }
+}
+.simple_form .hint {
+display: none;
+border-radius: 20px;
+padding: 8px 35px;
+background: #faf3bc;
+color:#420600;
+font-size: 1.3em;
+}
+
 #see_the_developers_view_link, #see_the_employers_view_link {
 	margin-left: 10px;
 }

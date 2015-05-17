@@ -2,23 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-  #form span {
-    border-radius: 20px;
-    margin-left: 0px;
-    padding: 8px 35px;
-    background: #faf3bc;
-    color:#420600;
-    font-size: 1.3em;
-  }
-  #form span.valid {
-    background-color :#c0ce51;
-    color: #faf3bc;
-  }
-  #form span.error {
-    background-color:#b0240f;
-    color: #faf3bc;
-  }
-
 #linkedin_button {
 	margin: 20px;
 }
