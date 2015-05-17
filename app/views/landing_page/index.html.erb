@@ -42,9 +42,12 @@
     <% elsif (Time.now.to_i % 10) == 10 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Recruiters only wanted to place me in full-time positions; I wanted my freedom to travel while working from my laptop.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveler, Developer</h5>
-    <% else  %>
+    <% elsif (Time.now.to_i % 10) == 10 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The New York Stock Exchange of developer contracts.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Christopher Perry, VC - Private Equity Fund</h5>
+    <% else %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Where the smartest entrepreneurs and developers in Silicon Valley connect to build great apps.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Alexander Johnson, Freelance App Developer - San Francisco</h5>
     <% end %>
       <br>
       <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
@@ -66,7 +69,7 @@
       <%= image_tag('adam.jpg', :class => 'testimonial_image') %>
     </div>
     <div class="large-9 columns testimonial">
-      <blockquote>What AirBNB&trade; did for unused room capacity, San Francisco Developer Exchange&trade; is going to do for unused talent capacity - namely give you efficient access to it on an as-needed basis. If I wasn't already the founder, I'd be an investor!<cite>Adam Wohlberg - Ruby on Rails Developer & Founder</cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
+      <blockquote>What AirBNB&trade; did for unused room capacity, San Francisco Developer Exchange&trade; accomplishes for unused talent capacity - it gives you efficient access to it on an as-needed basis. The founder must be a genius - I want to invest! <cite>Adam Wohlberg - Ruby on Rails Developer & Founder</cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
         <br>
     </div>
   </div>

@@ -30,6 +30,9 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+#small_button {
+	max-width: 130px;
+}
 .simple_form .field_with_hint input{
   margin-bottom: 15px;
   &:focus~.hint{
