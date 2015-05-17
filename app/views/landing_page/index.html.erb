@@ -45,16 +45,24 @@
     <% elsif (Time.now.to_i % 10) == 10 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The New York Stock Exchange of developer contracts.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Christopher Perry, VC - Private Equity Fund</h5>
-    <% else %>
+    <% elsif (Time.now.to_i % 10) == 10 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Where the smartest entrepreneurs and developers in Silicon Valley connect to build great apps.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Alexander Johnson, Freelance App Developer - San Francisco</h5>
+    <% elsif (Time.now.to_i % 10) == 10 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Make Money. Code Remotely.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Alexander Johnson, Freelance App Developer - San Francisco</h5>
+    <% else %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;We found our <em>Winston Wolf</em>- the professional fixer - on the exchange.  We call him in when we need to scale up or clean up a mess we made.&rdquo;</h2>
+      <h5 id="subtitle" class="text-center"> - Alexander Johnson, CTO </h5>
+
     <% end %>
       <br>
       <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
       <%= link_to('GET HIRED', register_path(:type => 'Developer'), class: "button large [radius round] button_landing_page_right success") %>
     </div>
   </div>
-    <div class="row">
+
+  <div class="row">
     <div class="large-3 columns">
       <%= image_tag('whim.jpg', :class => 'testimonial_image') %>
     </div>
@@ -64,6 +72,7 @@
     </div>
     <hr>
   </div>
+
   <div class="row">
     <div class="large-3 columns">
       <%= image_tag('adam.jpg', :class => 'testimonial_image') %>
@@ -72,8 +81,32 @@
       <blockquote>What Airbnb&trade; did for unused room capacity, San Francisco Developer Exchange&trade; accomplishes for unused talent capacity - it gives you efficient access to tech talent on an as-needed basis.<cite>Adam Wohlberg - Ruby on Rails Developer & Founder</cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
         <br>
     </div>
-  </div>
     <hr>
+  </div>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <%= image_tag('face_4.png', :class => 'testimonial_image') %>
+    </div>
+    <div class="large-9 columns testimonial">
+      <blockquote>I wanted to live the freelance lifestyle and still afford a Tesla&reg;. <cite>Joshua Busby - Freelance Developer </cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
+      <br>
+                <br>
+    </div>
+    <hr>
+  </div>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <%= image_tag('face_3.png', :class => 'testimonial_image') %>
+    </div>
+    <div class="large-9 columns testimonial">
+      <blockquote>'Tune In. Turn On. Drop Out of College and Code.' That was my mantra and now I make more money coding remotely than both my parents make <em>combined</em>. <cite>Joshua Busby - Freelance Developer </cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
+        <br>
+    </div>
+    <hr>
+  </div>
+
   <div id="landing_page_benefits_section">
     <div class="row">
       <div class="large-12 columns">
@@ -90,7 +123,7 @@
         <h4>IT'S LOCAL</h4>
         <p>Find a great, local developer who you can meet with in person when needed. No more miscommunication across timezones and cultures. Sometimes offshoring is the right choice, but when you need a talented, local developer to join your team, we're here for you.  And know that your developer is part of our community, a local resource whenever you need to scale up quickly.</p>
       </div>
-      
+  
       <div class="large-4 columns">
         <i class="fi-cloud foundation-icon"></i>
         <h4>IT'S SAFE</h4>
