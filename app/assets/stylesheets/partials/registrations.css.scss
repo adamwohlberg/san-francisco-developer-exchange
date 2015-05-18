@@ -51,6 +51,7 @@ height: 3em;
 input.string, input.password {
   font-size: 1.6em;
   height: 1.6em;
+  padding: 5px 5px 5px 5px;
 }
 label {
   font-size: 1.4em;
@@ -61,9 +62,11 @@ label {
 input#type_Employer {
   margin-left: 7%;
 }*/
+
 input#user_email, input#user_password, input#user_email, input#location, input#user_confirm_password {
   height: 1.6em;
   font-size: 1.6em;
+  padding: 5px 5px 5px 5px;
 }
 input#user_remember_me {
   margin-right: 15px;
