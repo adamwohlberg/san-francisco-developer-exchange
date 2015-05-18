@@ -28,7 +28,7 @@
           <%= f.input :email, required: true, autofocus: true, label:
           "Primary email", :placeholder => "info@example.com", label: false, hint: "Please enter a valid email address" %>
 
-          <%= f.input :location, label: "City, State", :placeholder => "San Francisco, CA", label: false, hint: "Please enter your location in City, State format" %>
+          <%= f.input :location, label: "City, State", :placeholder => "San Francisco, CA", label: false, hint: "Please enter your location in city, state format" %>
           
           <% if f.object.password_required? %>
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable), :placeholder => "Password", label: false %>
