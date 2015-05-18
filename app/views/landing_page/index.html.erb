@@ -51,9 +51,12 @@
     <% elsif (Time.now.to_i % 10) == 10 %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Make Money. Code Remotely.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Alexander Johnson, Freelance App Developer - San Francisco</h5>
-    <% else %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">ATTENTION DEVELOPERS:<br>Make Money. Code Remotely.</h2>
+    <% elsif (Time.now.to_i % 10) == 10 %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">Make Money. Code Remotely.</h2>
       <h5 id="subtitle" class="text-center"> Get Paid Upfront | Find Local Developer Contracts | Set Your Own Rate </h5>
+    <% else %>
+      <h2 id="landing-page-headline" class="text-center text-jumbo">Welcome to the NYSE for tech talent</h2>
+      <h5 id="subtitle" class="text-center"> Instantly Find and Hire the Best Local Developers </h5>
     <% end %>
       <br>
       <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
