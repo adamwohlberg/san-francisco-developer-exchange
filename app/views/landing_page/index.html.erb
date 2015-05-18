@@ -52,9 +52,8 @@
       <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Make Money. Code Remotely.&rdquo;</h2>
       <h5 id="subtitle" class="text-center"> - Alexander Johnson, Freelance App Developer - San Francisco</h5>
     <% else %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;We found our <em>Winston Wolf</em>- the professional fixer - on the exchange.  We call him in when we need to scale up or clean up a mess we made.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Alexander Johnson, CTO </h5>
-
+      <h2 id="landing-page-headline" class="text-center text-jumbo">Make Money. Code Remotely.</h2>
+      <h5 id="subtitle" class="text-center"> Get Paid Upfront  |  Find Local Developer Contracts  |  Set Your Own Rate </h5>
     <% end %>
       <br>
       <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
@@ -75,23 +74,12 @@
 
   <div class="row">
     <div class="large-3 columns">
-      <%= image_tag('adam.jpg', :class => 'testimonial_image') %>
-    </div>
-    <div class="large-9 columns testimonial">
-      <blockquote>What Airbnb&trade; did for unused room capacity, San Francisco Developer Exchange&trade; accomplishes for unused talent capacity - it gives you efficient access to tech talent on an as-needed basis.<cite>Adam Wohlberg - Ruby on Rails Developer & Founder</cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
-        <br>
-    </div>
-    <hr>
-  </div>
-
-  <div class="row">
-    <div class="large-3 columns">
       <%= image_tag('face_4.png', :class => 'testimonial_image') %>
     </div>
     <div class="large-9 columns testimonial">
-      <blockquote>I wanted to live the freelance lifestyle and still afford a Tesla&reg;. <cite>Joshua Busby - Freelance Developer </cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
+      <blockquote>I wanted to live the <strong>freelance lifestyle</strong> and still afford a Tesla&reg;. The <strong>minimum contract amount</strong> feature allowed me to only be contacted by clients with contracts of <strong>$25,000 or more.</strong><cite>Joshua Busby - Freelance Developer </cite></blockquote> 
       <br>
-                <br>
+     <br>
     </div>
     <hr>
   </div>
@@ -101,12 +89,64 @@
       <%= image_tag('face_3.png', :class => 'testimonial_image') %>
     </div>
     <div class="large-9 columns testimonial">
-      <blockquote>'Tune In. Turn On. Drop Out of College and Code.' That was my mantra and now I make more money coding remotely than both my parents make <em>combined</em>. <cite>Joshua Busby - Freelance Developer </cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
+      <blockquote><strong>Tune In. Turn On. Drop Out of College and Code.</strong> That was my mantra and now I make more money coding remotely than both my parents make <em>combined</em>. <cite>Joshua Busby - Freelance Developer </cite></blockquote> 
         <br>
     </div>
     <hr>
   </div>
 
+  <div class="row">
+    <div class="large-3 columns">
+      <%= image_tag('adam.jpg', :class => 'testimonial_image') %>
+    </div>
+    <div class="large-9 columns testimonial">
+      <blockquote>What Airbnb&trade; did for unused <strong>room capacity</strong>, San Francisco Developer Exchange&trade; accomplishes for unused <strong>talent capacity</strong> - it gives you efficient access to tech talent on an as-needed basis.<cite>Adam Wohlberg - Ruby on Rails Developer & Founder</cite><p><%= link_to('...currently on the lookout for a great contract.', developers_path) %></p></blockquote> 
+        <br>
+    </div>
+    <hr>
+  </div>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <%= image_tag('face_1.jpg', :class => 'testimonial_image') %>
+    </div>
+    <div class="large-9 columns testimonial">
+      <blockquote>I didn't want to work a <strong>corporate job</strong>, but I still wanted to make a high <strong>six figure income</strong> as a <strong>Ruby on Rails software developer</strong>. Now I can work from my laptop from anywhere in the world and still make a corporate salary.<cite>Simon Greene - Ruby on Rails Developer</cite></blockquote> 
+        <br>
+    </div>
+  </div>
+<hr>
+<br>
+  <div class="row">
+    <div class="large-6 large-centered columns">
+        <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
+      <%= link_to('GET HIRED', register_path(:type => 'Developer'), class: "button large [radius round] button_landing_page_right success") %>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+      <div class="large-12 columns">
+        <h1 class="why_should_i_headline">Corporate jobs are um...<strong>corporate jobs.</strong></h1>       
+        <br>
+        <%= image_tag('corporate.jpg', :class => 'cartoon_image') %>
+        <br>
+        <br> 
+      </div>
+      <div class="large-12 columns">
+        <h1 class="why_should_i_headline">Freelancing on other freelancer sites won't pay the bills.</h1>
+        <br>
+        <%= image_tag('poor.jpg', :class => 'cartoon_image') %>
+            <br>
+      <br>
+      </div>
+      <div class="large-12 columns">
+        <h1 class="why_should_i_headline">Why not enjoy a <strong>corporate paycheck</strong> while living the <strong>freedom-based lifestyle</strong> of an <em>independent</em> developer?</h1>
+        <br>
+        <%= image_tag('freedom.jpg', :class => 'freedom_image') %>
+      </div>
+  </div>
+  <hr>
   <div id="landing_page_benefits_section">
     <div class="row">
       <div class="large-12 columns">
@@ -130,7 +170,15 @@
         <p>Know that your project is going to get done right.  We hold your balance (minus any upfront payment to the developer) in an FDIC-insured escrow account until you sign off on the final deliverable.</p>
       </div>
     </div>
-    <hr>
+<hr>
+<br>
+  <div class="row">
+    <div class="large-6 large-centered columns">
+        <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
+      <%= link_to('GET HIRED', register_path(:type => 'Developer'), class: "button large [radius round] button_landing_page_right success") %>
+    </div>
+  </div>
+<hr>
     <div class="row">
       <div class="large-12 columns">
         <h1 id="why_should_i_sign_up_headline">What Are The Benefits for <em>Developers</em>?</h1>
@@ -152,13 +200,20 @@
         <h4>IT'S SAFE</h4>
         <p>Anyone who contacts you through our app means business - each employer must deposit the full amount of the contract before you write the first line of code. And <strong>developers can earn up to 50% of the contracted amount upfront</strong> <%= link_to '(view details).', 'payouts.html', :class => "popup", :"data-width" => 600, :"data-height" => 400 %></p><p>You can even set a minimum contract amount - so no one can contact you unless they're legit.</p>
       </div>
+    <hr>
     </div>
   </div> 
   <div class="row">
     <div class="large-12 columns">
-        <hr>
-  <h2 id="and_its_always_free_tagline" class="text-center">...and it's <strong><em>always free </em></strong>for developers. Snap!</em></h2>
+  <h2 id="and_its_always_free_tagline" class="text-center">...and it's <strong><em>always free </em></strong>for developers. Oh, Snap!</em></h2>
     <br>
+    <div class="row">
+    <div class="large-6 large-centered columns">
+        <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
+      <%= link_to('GET HIRED', register_path(:type => 'Developer'), class: "button large [radius round] button_landing_page_right success") %>
+    </div>
+    <br>
+  </div>
     <br>
     </div>
   </div>
