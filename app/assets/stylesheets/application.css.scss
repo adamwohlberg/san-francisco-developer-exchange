@@ -30,6 +30,11 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+.grey_button  {
+background-color: #e7e7e7;
+  border-color: #b9b9b9;
+  color: #333333;
+}
 #small_button {
 	max-width: 130px;
 }

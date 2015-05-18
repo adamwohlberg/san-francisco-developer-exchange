@@ -27,9 +27,9 @@
       only show liked developers
     </label>
     <% if current_user.type == 'Employer' %>
-    <span><%= link_to('see how developers view my contracts',search_contracts_path, :id => "see_the_employers_view_link") %></span>
+    <span><%= link_to('see how developers view my contracts',search_contracts_path, :id => "see_the_employers_view_link", :class => "button tiny grey_button") %></span>
     <% elsif current_user.type == 'Developer' %>
-    <span><%= link_to('switch back to standard view',search_contracts_path, :id => "see_the_employers_view_link") %></span>
+    <span><%= link_to('switch back to standard view',search_contracts_path, :id => "see_the_employers_view_link", :class => "button tiny grey_button") %></span>
     <% end %>
    </div>
   </div>
