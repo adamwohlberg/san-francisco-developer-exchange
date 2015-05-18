@@ -51,8 +51,20 @@ a#register_name {
 	font-size: 1.4em;
 }
 #landing_page_login_and_register_links_in_header {
-	font-size: 16px !important;
-	margin-right: 20px;
+	font-size: 24px !important;
+	margin-top: 8px;
+	color: #D3D3D3;
+/*	border: 2px solid green;*/
+	min-width: 300px;
+	text-align: center;
+}
+#landing_page_login_and_register_links_in_header a {
+	color: #D3D3D3;
+/*	border: 2px solid red;*/
+	margin-left: 20px;
+}
+#landing_page_login_and_register_links_in_header a:hover {
+	color: steelblue;
 }
 #hidden-register-name-dropdown-links {
 	display: none;
