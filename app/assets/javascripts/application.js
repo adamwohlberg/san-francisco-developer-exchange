@@ -29,11 +29,10 @@ $(document).ajaxSend(function(e, xhr, options) {
 
 
 function animateProfileImage() {
-	$('#profileImage').load('searching_for_developers.html.erb', function() {
-    $('#profileImage').addClass('throb');
+  $('#profileImage').load('searching_for_developers.html.erb', function() {
+    $('.wrap img').addClass('throb');
 });
 }
-
 
 function renderContracts() {
 		setTimeout(function(){ 

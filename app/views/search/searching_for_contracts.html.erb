@@ -1,7 +1,7 @@
 <%= image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=7&markers=#{current_user.latitude}%2C#{current_user.longitude}", :id => 'search_google_map_background') %>
 <div id="searching_for_things">
 	<h2 id="searching_headline"><em>Searching for contracts near you...</em></h2>
-	<div class="row">
+	<div class="row wrap">
 <!-- 		<div class="large-4 column">
 			<%# image_tag("pow.png", :id => 'pow', size: "225x225", alt: "") %>
 		</div> -->
@@ -9,15 +9,17 @@
 		<div class="large-12 large-centered column">
 <!-- 			if they used paperclip -->
 			<% if current_user.avatar_file_name? %>
-				<%= image_tag(current_user.avatar, :id => 'profileImage', size: "225x225", alt: "search image spinning") %><br />
+				<%= image_tag(current_user.avatar, :id => 'profileImage', size: "225x225", alt: "search image spinning") %>
 <!-- 		    use the fb image -->
 			<% elsif current_user.fb_image.present? %>
-				<%= image_tag(current_user.fb_image, :id => 'profileImage', size: "225x225", alt: "search image spinning") %><br />
+				<%= image_tag(current_user.fb_image, :id => 'profileImage', size: "225x225", alt: "search image spinning") %>
 			<% else %>
-				<%= image_tag('noface.jpg', :id => 'profileImage', size: "225x225", alt: "search image spinning")  %><br />
+				<%= image_tag('noface.jpg', :id => 'profileImage', size: "225x225", alt: "search image spinning")  %>
 			<% end %>
 <!-- 			<div class="side-b"></div> -->
+			<%= image_tag('sfde_square_reverse.png', :id => 'profileImage_sideb', size: "225x225", alt: "search image spinning")  %>
 		</div>
+
 	</div>
 </div>
 
