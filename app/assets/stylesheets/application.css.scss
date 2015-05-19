@@ -813,7 +813,29 @@ width: 100%;
 #header_icons {
 	margin-top: -15px;
 }
+.button_landing_page_left {
+	max-width: 80px !important;
+	margin-left: 40px;
 }
+.button_landing_page_right {
+	max-width: 80px !important;
+}
+.iphone_image {
+	margin-left: -160px;
+}
+.instant_hire_screenshot {
+	margin-left: 0px;
+}
+.cartoon_image, .freedom_image{
+	margin-left: 4%;
+}
+.testimonial_image {
+	margin-left: 30%;
+}
+#mobile_hide {
+	display:none;
+}
+} 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
 /*// Medium screens*/
