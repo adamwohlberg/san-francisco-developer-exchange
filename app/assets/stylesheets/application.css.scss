@@ -30,7 +30,11 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
-
+.iphone_image {
+  margin-left: 8%;
+  min-width: 800px;
+  height: auto;
+}
 .grey_button  {
 background-color: #e7e7e7;
   border-color: #b9b9b9;
