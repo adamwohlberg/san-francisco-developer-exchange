@@ -28,38 +28,36 @@ else window.addEventListener('load', __ldinsp, false);
       <%= link_to image_tag("/images/logo6.png", height: '110', width: '450', :id => 'logo_image', alt: "San Francisco Developer Exchange"), root_path %>
     </ul>
   <div class="right">
-      <div>
-
+      <div id="header_icons">
       <% if current_user && current_user.type == 'Developer' %>
           <%= link_to(my_negotiations_path) do %>
-            <i class="fi-torsos style2"></i>
+            <i class="fi-torsos style2 icon"></i>
           <% end %>
           <%= link_to(my_contracts_path) do %>
-            <i class="fi-page-multiple style1"></i>
+            <i class="fi-page-multiple style1 icon"></i>
           <% end %>
           <%= link_to(edit_user_registration_path) do %>
-            <i class="fi-widget style3"></i>
+            <i class="fi-widget style3 icon"></i>
           <% end %>
           <%= link_to(search_contracts_path) do %>
-            <i class="fi-magnifying-glass style4"></i>
+            <i class="fi-magnifying-glass style4 icon"></i>
           <% end %>
       <% end %>
 
       <% if current_user && current_user.type == 'Employer' %>
           <%= link_to(new_contract_path) do %>
-            <i class="fi-page-edit style_special"></i>
+            <i class="fi-page-edit style_special icon"></i>
           <% end %>
           <%= link_to(my_contracts_path) do %>
-            <i class="fi-page-multiple style2"></i>
+            <i class="fi-page-multiple style2 icon"></i>
           <% end %>
           <%= link_to(edit_user_registration_path) do %>
-            <i class="fi-widget style3"></i>
+            <i class="fi-widget style3 icon"></i>
           <% end %>
           <%= link_to(search_developers_path) do %>
-            <i class="fi-magnifying-glass style4"></i>
+            <i class="fi-magnifying-glass style4 icon"></i>
           <% end %>
       <% end %>
-
       </div>
       <% if current_user && current_user.type == 'Developer' && !current_user.username.present?%>
           <%= link_to('Create Profile', edit_developer_path(current_user.id), :class => "medium button success", :id => "create_a_profile") %>

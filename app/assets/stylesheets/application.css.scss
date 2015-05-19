@@ -650,7 +650,6 @@ XXLarge screens
 #searching_headline {
 margin-top: 15px;
 }
-
 #player_container, #player {
   min-height: 90px;
 }
@@ -658,7 +657,7 @@ margin-top: 15px;
  margin-top: 220px;
  margin-bottom: 0px;
 }
-#headerProfileImage, #pagination_upper {
+#pagination_upper {
 display: none;
 }
 #developer_title {
@@ -698,9 +697,7 @@ button#unlike, button#rockstar{
 #view_full_profile_text {
 	display: none;
 }
-#the_logo {
-font-size: 22px;
-}
+
 #name_tagline {
 margin-top: -38px;
 font-size: 16px;
@@ -803,12 +800,18 @@ width: 100%;
     height: 200px;
     overflow: hidden;
 }
-#the_logo{
-	font-size: 26px;
-}
 #name_tagline{
 	font-size: 16px;
 	margin-top: -40px;
+}
+#logo_image {
+	display: none;
+}
+#register_name {
+	display: none;
+}
+#header_icons {
+	margin-top: -15px;
 }
 }
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
@@ -818,14 +821,40 @@ width: 100%;
 
 } /* min-width 641px, medium screens */
 
-@media only screen and (max-width: 50em) { 
-#headerProfileImage {
-	display:none;
+@media only screen and (max-width: 64em) { 
+#logo_image {
+	display: none;
 }
-#register_and_login_links {
-	display:none;
+.style_special {
+  margin-left: -300px;
+  font-size: 58px;
+  color: green;
+  position: absolute;	
 }
-
+.style1 {
+  margin-left: -300px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;
+}
+.style2 {
+  margin-left: -240px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;
+}
+.style3 {
+  margin-left: -180px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;
+}
+.style4 {
+  margin-left: -120px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;	
+}
 
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
