@@ -60,8 +60,8 @@
     <% end %>
       <br>
       <div>
-      <%= link_to('HIRE', register_path(:type => 'Employer'), class: "button large [radius round] button_landing_page_left") %>
-      <%= link_to('GET HIRED', register_path(:type => 'Developer'), class: "button large [radius round] button_landing_page_right success") %>
+      <%= link_to('HIRE', register_path(:type => 'Employer'), :id => "mobile_hide", class: "button large [radius round] button_landing_page_left") %>
+      <%= link_to('GET HIRED', register_path(:type => 'Developer'), :id => "mobile_hide", class: "button large [radius round] button_landing_page_right success") %>
       </div>
     </div>
   </div>
@@ -134,7 +134,7 @@
 <hr>
 <br>
   <div class="row">
-    <div class="large-12 large-centered columns">
+    <div class="large-6 large-centered columns">
         <%= link_to('HIRE', register_path(:type => 'Employer'), :id => "mobile_hide", :class => "button large [radius round] button_landing_page_left") %>
       <%= link_to('GET HIRED', register_path(:type => 'Developer'), :id => "mobile_hide", :class => "button large [radius round] button_landing_page_right success") %>
     </div>
