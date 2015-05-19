@@ -28,13 +28,48 @@ else window.addEventListener('load', __ldinsp, false);
       <%= link_to image_tag("/images/logo6.png", height: '90', width: '400', :id => 'logo_image', alt: "San Francisco Developer Exchange"), root_path %>
     </ul>
   <div class="right">
+      <div>
+
+      <% if current_user && current_user.type == 'Developer' %>
+          <%= link_to(my_contracts_path) do %>
+            <i class="fi-page-edit style1"></i>
+          <% end %>
+          <%= link_to(my_negotiations_path) do %>
+            <i class="fi-torsos style2"></i>
+          <% end %>
+          <%= link_to(edit_user_registration_path) do %>
+            <i class="fi-widget style3"></i>
+          <% end %>
+          <%= link_to(search_contracts_path) do %>
+            <i class="fi-magnifying-glass style4"></i>
+          <% end %>
+      <% end %>
+
       <% if current_user && current_user.type == 'Employer' %>
-          <%= link_to('New Contract', new_contract_path, :class => "medium button success", :id => "create_a_new_contract") %>
-      <% elsif current_user && current_user.type == 'Developer' && !current_user.username.present?%>
+          <%= link_to(new_contract_path) do %>
+            <i class="fi-page-edit style_special"></i>
+          <% end %>
+          <%= link_to(my_contracts_path) do %>
+            <i class="fi-page-multiple style2"></i>
+          <% end %>
+          <%= link_to(edit_user_registration_path) do %>
+            <i class="fi-widget style3"></i>
+          <% end %>
+          <%= link_to(search_developers_path) do %>
+            <i class="fi-magnifying-glass style4"></i>
+          <% end %>
+      <% end %>
+
+      </div>
+      <% if current_user && current_user.type == 'Developer' && !current_user.username.present?%>
           <%= link_to('Create Profile', edit_developer_path(current_user.id), :class => "medium button success", :id => "create_a_profile") %>
       <% end %>
       <% if current_user && current_user.avatar_file_name? %>
-        <%= image_tag(current_user.avatar, :id => 'headerProfileImage', alt: "profile") %><br />
+        <% if current_user.type == 'Developer' %>         
+          <%= link_to(image_tag(current_user.avatar, :id => 'headerProfileImage', alt: "profile"), edit_developer_path(current_user.id)) %><br />
+        <% elsif current_user.type == 'Employer' %> 
+          <%= link_to(image_tag(current_user.avatar, :id => 'headerProfileImage', alt: "profile"), edit_user_registration_path) %><br />
+        <% end %>
       <% elsif current_user && current_user.fb_image.present? %>
         <%= image_tag(current_user.fb_image, :id => 'headerProfileImage', alt: "profile image") %><br/>
       <% else %>
@@ -51,19 +86,6 @@ else window.addEventListener('load', __ldinsp, false);
       <% end %>
         <div id="hidden-register-name-dropdown-links">
           <li><%= link_to 'LOG OUT', logout_path %></li>
-        <% if user_signed_in? && current_user.type == 'Employer'%>
-        <li><%= link_to('NEW CONTRACT', new_contract_path) %></li>
-          <li><%= link_to('HIRE DEVELOPERS', search_developers_path) %></li>
-          <li><%= link_to('MY CONTRACTS', my_contracts_path) %></li>
-          <li><%= link_to 'MY PROFILE', edit_user_registration_path %></li>
-        <% end %>
-        <% if user_signed_in? && current_user.type == 'Developer'%>
-          <li><%= link_to('MY PROFILE', edit_developer_path(current_user.id)) %></li> 
-          <li><%= link_to('GET HIRED', search_contracts_path) %></li>
-          <li><%= link_to('MY CONTRACTS', my_contracts_path) %></li>
-          <li><%= link_to('MY NEGOTIATIONS', my_negotiations_path) %></li>
-          <li><%= link_to 'MY ACCOUNT', edit_user_registration_path %></li>
-        <% end %>
         </div>
     </ul>
     </div>

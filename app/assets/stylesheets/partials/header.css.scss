@@ -1,3 +1,36 @@
+.style_special {
+  margin-left: -300px;
+  font-size: 58px;
+  color: green;
+  position: absolute;	
+}
+.style1 {
+  margin-left: -300px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;
+}
+.style2 {
+  margin-left: -240px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;
+}
+.style3 {
+  margin-left: -180px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;
+}
+.style4 {
+  margin-left: -120px;
+  font-size: 58px;
+  color: grey;
+  position: absolute;	
+}
+.style1:hover, .style2:hover, .style3:hover, .style4:hover, .style_special:hover {
+  opacity: 0.8;
+}
 #headerProfileImage {
 	width: 62px;
 	height: 62px;
@@ -7,7 +40,12 @@
 	margin-top: 4px;
 	border-radius: 50%;
 	border: 2px solid steelblue;
+	opacity: 1.0;
 }
+#headerProfileImage:hover {
+	opacity: 0.8;
+}
+
 #contractProfileImage {
 	width: 90px;
 	height: 90px;
@@ -46,9 +84,9 @@ a#register_name {
 }
 #register_and_login_links {
 	margin-top: -60px;
-	margin-right: 12px;
+	margin-right: 40px;
 	margin-bottom: 20px;
-	font-size: 1.4em;
+    font-size: 1.4em;
 }
 #landing_page_login_and_register_links_in_header {
 	font-size: 20px !important;
