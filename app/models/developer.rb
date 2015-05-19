@@ -99,7 +99,7 @@ class Developer < User
                            }
   validates :description, presence: true, :on => :update
   validates :min_contract_amount, presence: true, :on => :update
-  validates :cell, presence: true, :on => :update
+  # validates :cell, presence: true, :on => :update
 
   def skills_names
     skills.map &:name

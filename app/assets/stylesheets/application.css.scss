@@ -59,9 +59,14 @@ font-size: 1.0em;
 	margin-left: 10px;
 }
 
-#create_a_new_contract, #create_a_profile {
+#create_a_new_contract {
  position: relative;
  margin-left: -220px;
+ margin-right: 70px;
+}
+#create_a_profile {
+ position: relative;
+ margin-left: -500px;
  margin-right: 70px;
 }
 label.formgroup {
