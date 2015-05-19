@@ -31,11 +31,11 @@ else window.addEventListener('load', __ldinsp, false);
       <div>
 
       <% if current_user && current_user.type == 'Developer' %>
-          <%= link_to(my_contracts_path) do %>
-            <i class="fi-page-edit style1"></i>
-          <% end %>
           <%= link_to(my_negotiations_path) do %>
             <i class="fi-torsos style2"></i>
+          <% end %>
+          <%= link_to(my_contracts_path) do %>
+            <i class="fi-page-multiple style1"></i>
           <% end %>
           <%= link_to(edit_user_registration_path) do %>
             <i class="fi-widget style3"></i>
