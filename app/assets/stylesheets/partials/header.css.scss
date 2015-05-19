@@ -32,20 +32,19 @@
   opacity: 0.8;
 }
 #headerProfileImage {
-	width: 62px;
-	height: 62px;
+	width: 58px;
+	height: 58px;
 	z-index: 100;
 	margin-left: -60px;
 	position: absolute;
-	margin-top: 4px;
+	margin-top: 7px;
 	border-radius: 50%;
-	border: 2px solid steelblue;
+	border: 2px solid black;
 	opacity: 1.0;
 }
 #headerProfileImage:hover {
 	opacity: 0.8;
 }
-
 #contractProfileImage {
 	width: 90px;
 	height: 90px;
@@ -84,7 +83,7 @@ a#register_name {
 }
 #register_and_login_links {
 	margin-top: -60px;
-	margin-right: 40px;
+	margin-right: -35px;
 	margin-bottom: 20px;
     font-size: 1.4em;
 }
