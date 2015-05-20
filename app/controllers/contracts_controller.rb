@@ -10,7 +10,9 @@ class ContractsController < ApplicationController
   def index
     example_contract = Contract.find(1)
     @contracts = Contract.near(Geocoder.coordinates(current_user.location),500).visible.page(params[:page]).per(10)
-    @contracts << example_contract
+    unless @contracts.present? 
+      @contracts << example_contract
+    end
   end
 
   def my_contracts

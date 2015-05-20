@@ -8,7 +8,7 @@
 			<% elsif current_user.fb_image.present? %>
 				<%= image_tag(current_user.fb_image, :id => 'profileImage', size: "225x225", alt: "search image spinning") %>
 			<% else %>
-				<%= image_tag('noface.jpg', :id => 'profileImage_sideb', size: "225x225", alt: "search image spinning")  %>
+				<%= image_tag('noface.jpg', :id => 'profileImage', size: "225x225", alt: "search image spinning")  %>
 			<% end %>
 			<%= image_tag('sfde_square_reverse.png', :id => 'profileImage_sideb', size: "225x225", alt: "search image spinning")  %>
 		</div>
