@@ -106,19 +106,6 @@ function embedGoogleAnalyticsTrackingCode(){
   ga('send', 'pageview');
 };
 
-// $('document').ready(function(){
-//   $("#form span").hide();
-// });
-
-// $('document').ready(function(){ 
-//   $("input").focus(function(){
-//     var field = $(this);
-//     field.next('span').fadeIn('slow');
-//   });
-// });
-
-
-
 
 
 

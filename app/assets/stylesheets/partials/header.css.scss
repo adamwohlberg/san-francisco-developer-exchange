@@ -1,3 +1,25 @@
+/*.header_tip i{
+	background: #000;
+	color: white;
+	width: 150px;
+	height: 3.0em;
+    line-height: 1.5em;
+	font-size: 1.0em;
+	padding: 10px;
+	position: absolute;
+	z-index: 99999;
+    margin-top: 70px;
+    text-align: center;
+    margin-left: -320px;
+}*/
+.has-tip {
+  cursor: pointer;
+  border-bottom: dotted 1px #CCCCCC;
+  color: #333333;
+  width: 500px;
+  height: 500px;
+  font-weight: bold;
+}
 .style_special {
   margin-left: -300px;
   font-size: 45px;

@@ -29,35 +29,41 @@ else window.addEventListener('load', __ldinsp, false);
     </ul>
   <div class="right">
       <div id="header_icons">
-      <% if current_user && current_user.type == 'Developer' %>
-          <%= link_to(my_negotiations_path) do %>
-            <i class="fi-torsos style2 icon"></i>
+        <div id="developer_icons">
+          <% if current_user && current_user.type == 'Developer' %>
+              <%= link_to(my_negotiations_path) do %>
+<!--                 <span data-tooltip aria-haspopup="true" class="has-tip [tip-top]" title="My Negotiations"><i class="fi-torsos style1 icon"></i></span> -->
+                <i class="fi-torsos style1 icon"></i>
+              <% end %>
+              <%= link_to(my_contracts_path) do %>
+                <i class="fi-page-multiple style2 icon"></i>
+              <% end %>
+              <%= link_to(edit_user_registration_path) do %>
+                <i class="fi-widget style3 icon"></i>
+              <% end %>
+              <%= link_to(search_contracts_path) do %>
+                <i class="fi-magnifying-glass style4 icon"></i>
+              <% end %>
           <% end %>
-          <%= link_to(my_contracts_path) do %>
-            <i class="fi-page-multiple style1 icon"></i>
-          <% end %>
-          <%= link_to(edit_user_registration_path) do %>
-            <i class="fi-widget style3 icon"></i>
-          <% end %>
-          <%= link_to(search_contracts_path) do %>
-            <i class="fi-magnifying-glass style4 icon"></i>
-          <% end %>
-      <% end %>
+        </div>
 
-      <% if current_user && current_user.type == 'Employer' %>
-          <%= link_to(new_contract_path) do %>
-            <i class="fi-page-edit style_special icon"></i>
+        <div id="employer_icons">
+          <% if current_user && current_user.type == 'Employer' %>
+              <%= link_to(new_contract_path) do %>
+                <i class="fi-page-edit style_special icon"></i>
+              <% end %>
+              <%= link_to(my_contracts_path) do %>
+                <i class="fi-page-multiple style2 icon"></i>
+              <% end %>
+              <%= link_to(edit_user_registration_path) do %>
+                <i class="fi-widget style3 icon"></i>
+              <% end %>
+              <%= link_to(search_developers_path) do %>
+                <i class="fi-magnifying-glass style4 icon"></i>
+              <% end %>
           <% end %>
-          <%= link_to(my_contracts_path) do %>
-            <i class="fi-page-multiple style2 icon"></i>
-          <% end %>
-          <%= link_to(edit_user_registration_path) do %>
-            <i class="fi-widget style3 icon"></i>
-          <% end %>
-          <%= link_to(search_developers_path) do %>
-            <i class="fi-magnifying-glass style4 icon"></i>
-          <% end %>
-      <% end %>
+        </div>
+
       </div>
       <% if current_user && current_user.type == 'Developer' && !current_user.username.present?%>
           <%= link_to('Create Profile', edit_developer_path(current_user.id), :class => "medium button success", :id => "create_a_profile") %>
