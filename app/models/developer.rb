@@ -88,7 +88,7 @@ class Developer < User
   scope :has_image, -> { where.not(:avatar_file_name => nil)}
 
   validates_numericality_of :min_contract_amount, presence: true, :on => :update,
-            greater_than_or_equal_to: 500,
+            greater_than_or_equal_to: 1000,
             less_than_or_equal_to: 225000
   validates :title, presence: true, :on => :update
   validates :username, presence: true, :on => :update,
