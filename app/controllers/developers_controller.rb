@@ -6,7 +6,9 @@ class DevelopersController < ApplicationController
   layout 'application'
 
   def index
+    example_developer = Developer.find(1)
     @developers = Developer.near(Geocoder.coordinates(current_user.location),500).complete.has_image.page(params[:page]).per(10)
+    @developers << example_developer
   end
 
   def show
