@@ -7,7 +7,7 @@ class DevelopersController < ApplicationController
 
   def index
     example_developer = Developer.find(1)
-    @developers = Developer.near(Geocoder.coordinates(current_user.location),500).complete.has_image.page(params[:page]).per(10)
+    @developers = Developer.near(Geocoder.coordinates(current_user.location),100).complete.has_image.page(params[:page]).per(10)
     unless @developers.present? 
     @developers << example_developer
     end
