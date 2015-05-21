@@ -6,10 +6,11 @@ class DevelopersController < ApplicationController
   layout 'application'
 
   def index
+    example_developer = []
     example_developer = Developer.find(1)
     @developers = Developer.near(Geocoder.coordinates(current_user.location),100).complete.has_image.page(params[:page]).per(10)
-    unless @developers.present? 
-    @developers << example_developer
+    if @developers.blank? 
+      @developers << example_developer
     end
   end
 
