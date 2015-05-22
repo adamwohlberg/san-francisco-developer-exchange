@@ -11,9 +11,7 @@ class ContractsController < ApplicationController
     @contracts = Contract.near(Geocoder.coordinates(current_user.location),1000).visible.page(params[:page]).per(10) 
     if @contracts.blank?
       @contracts = []
-      example_contract = Contract.find(1)
-      @contracts << [example_contract]
-    byebug
+      @contracts << Contract.find(1)
     end
   end
 
