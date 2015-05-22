@@ -30,6 +30,24 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+#ticker_tape {
+	width: 100%;
+	height: 3.55em;
+	background-color: black;
+	margin-top: -20px;
+	padding-top: 0.8em;
+    white-space: nowrap;
+  	transition-duration: 1s;
+  	transition-timing-function: linear;
+}
+#ticker_tape span {
+	color: #a6e22d;
+	font-size: 1.2em;
+	margin-right: 35px;
+	overflow: hidden;
+
+}
+
 body #landing_page, .testimonial blockquote {
 	background-color: #282828;
 	color: #a6a6a7;
