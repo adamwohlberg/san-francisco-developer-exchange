@@ -57,6 +57,7 @@ button #landing_page {
   margin-left: 8%;
   min-width: 800px;
   height: auto;
+  margin-bottom: -70px;
 }
 .grey_button  {
 background-color: #e7e7e7;
@@ -358,7 +359,7 @@ margin-top: 90px !important;
 }
 
 .foundation-icon {
-	font-size: 12em;
+	font-size: 9em;
 	margin-left: 20%;
 	color: #48b8e8;
 /*	color: grey;*/
@@ -662,6 +663,9 @@ XXLarge screens
 
 @media only screen and (max-width: 40em) {
 
+.iphone_image  {
+  margin-left: -200px !important;
+}
 #searching_headline {
 margin-top: 15px;
 }
@@ -835,14 +839,11 @@ width: 100%;
 .button_landing_page_right {
 	max-width: 80px !important;
 }
-.iphone_image {
-	margin-left: -160px;
-}
 .instant_hire_screenshot {
 	margin-left: 0px;
 }
 .cartoon_image, .freedom_image{
-	margin-left: 4%;
+	margin-left: 0%;
 }
 .testimonial_image {
 	margin-left: 30%;
