@@ -30,6 +30,17 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+body #landing_page, .testimonial blockquote {
+	background-color: #282828;
+	color: #a6a6a7;
+}
+button #landing_page {
+	border-radius: 5px;
+}
+#landing-page-headline {
+	margin-bottom: 15px;
+	font-size: 3.5em;
+}
 .my_negotiations_body, .my_contracts_body {
 	margin-bottom: 500px;
 }
@@ -349,7 +360,8 @@ margin-top: 90px !important;
 .foundation-icon {
 	font-size: 12em;
 	margin-left: 20%;
-	color: grey;
+	color: #48b8e8;
+/*	color: grey;*/
 }
 .landing-page-buttons {
 	position: absolute;
@@ -451,10 +463,12 @@ width: 100%;
 .button_landing_page_left {
 	margin-right: 40px;
 	min-width: 190px;
+	border-radius: 10px;
 }
 .button_landing_page_right {
 	margin-right: 40px;
 	min-width: 190px;
+	border-radius: 10px;
 }
 #youtube_video {
 /*position: fixed; 
@@ -555,6 +569,7 @@ body {
 
 #and_its_always_free_tagline {
 	margin-top: 50px;
+	color: #fff;
 }
 
 #logo_tagline {

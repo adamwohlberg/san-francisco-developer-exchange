@@ -2,6 +2,8 @@
 BUGS & FEATURES
 *******************************
 
+Devs and Contracts can't be pngs - need to update message and validation => blank images can be seen through on mobile version.
+
 Contract form should have an image upload in addition to document upload.  If image uploaded it should be used....if no image, use the employers, if no employer image, then noface.jpg
 
 Client-side form validation w/ Javascript!!!!

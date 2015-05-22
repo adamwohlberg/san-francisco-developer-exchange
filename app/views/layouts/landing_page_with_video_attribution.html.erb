@@ -1,13 +1,13 @@
-<%= render 'layouts/header' %>
-
-<%=yield %>
-
-<%= render 'layouts/footer' %>
-<div class="large-12 columns footer_nav_bar">
-  <div class="row">
-  	<div class="large-12 large-centered columns" id="video_attribution">
-  	<p><%= link_to '"The City of the Bridges" by Christophe Tauziet
-Used under Creative Commons 3.0 License', 'https://vimeo.com/104346255', :class => "popup", :"data-width" => 600, :"data-height" => 400 %></p>
-  	</div>
-</div>
+<div id="landing_page">
+	<%= render 'layouts/header' %>
+		<%=yield %>
+	<%= render 'layouts/footer' %>
+	<div class="large-12 columns footer_nav_bar">
+	  <div class="row">
+	  	<div class="large-12 large-centered columns" id="video_attribution">
+	  	<p><%= link_to '"The City of the Bridges" by Christophe Tauziet
+	Used under Creative Commons 3.0 License', 'https://vimeo.com/104346255', :class => "popup", :"data-width" => 600, :"data-height" => 400 %></p>
+	  	</div>
+	</div>
+	</div>
 </div>
