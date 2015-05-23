@@ -37,16 +37,31 @@
 	margin-top: -20px;
 	padding-top: 0.8em;
     white-space: nowrap;
-  	transition-duration: 1s;
-  	transition-timing-function: linear;
 }
 #ticker_tape span {
 	color: #a6e22d;
 	font-size: 1.2em;
 	margin-right: 35px;
 	overflow: hidden;
-
 }
+#ticker_tape span:first-child {
+/*	border: 2px solid red;*/
+/*	margin-left: 90%;*/
+	-webkit-animation-name: slide;
+	-webkit-animation-duration: 90s;
+    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+    animation-timing-function: linear;
+}
+
+/*Keyframes 
+-----------------------------------*/
+@-webkit-keyframes slide {
+	from { margin-left: 100%; }
+	to { margin-left: -1000%;  }
+}
+
+
+
 
 body #landing_page, .testimonial blockquote {
 	background-color: #282828;
