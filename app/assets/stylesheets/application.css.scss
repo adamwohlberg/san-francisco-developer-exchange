@@ -41,8 +41,14 @@
 #ticker_tape span {
 	color: #a6e22d;
 	font-size: 1.2em;
-	margin-right: 35px;
+/*	margin-right: 35px;*/
 	overflow: hidden;
+}
+#ticker_tape_developer_type {
+	margin-right: 8px;	
+}
+#ticker_tape_contract_amount {
+	margin-right: 40px;	
 }
 #ticker_tape span:first-child {
 /*	border: 2px solid red;*/

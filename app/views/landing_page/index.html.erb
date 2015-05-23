@@ -15,49 +15,8 @@
     </div>
     </div>
     <div class="text-center landing-page-buttons full-width border" id="headlines">
-    <% if (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;I used to work corporate. Now I freelance from a beachhouse in Bali.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Nicholas Jones, PHP Developer, Bali, Indonesia</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The fastest, easiest way to hire a local developer.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Patrick Murphy, CTO, Salt Lake City</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Wow! I love tech recruiter spam. Said no one ever.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Jason Bloomberg, Ruby on Rails Developer, NY</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Software developers are going to flock to this app like files to git.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Peter Gregorian, Venture Capitalist - Silicon Valley</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The four hour workweek was just a dream; this is the site that makes 'lifestyle design' a reality.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Nicholas Freeman, Entrepreneur</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Now I can freelance and still make a high six-figure income.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - David Zuckerman, Front-End Developer, Williamsburgh, Brooklyn</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;We hire slowly and fire quickly...always for a contract first.  Only after a successful contract, will we extend a full-time offer.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Angela Fiarino, VP Human Resources</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Recruiters only wanted to place me in full-time positions; I wanted my freedom to travel while working from my laptop.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveler, Developer</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Recruiters only wanted to place me in full-time positions; I wanted my freedom to travel while working from my laptop.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - David Hoffmeier, World Traveler, Developer</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;The New York Stock Exchange of developer contracts.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Christopher Perry, VC - Private Equity Fund</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Where the smartest entrepreneurs and developers in Silicon Valley connect to build great apps.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Alexander Johnson, Freelance App Developer - San Francisco</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">&ldquo;Make Money. Code Remotely.&rdquo;</h2>
-      <h5 id="subtitle" class="text-center"> - Alexander Johnson, Freelance App Developer - San Francisco</h5>
-    <% elsif (Time.now.to_i % 10) == 10 %>
-      <h2 id="landing-page-headline" class="text-center text-jumbo">Make Money. Code Remotely.</h2>
-      <h5 id="subtitle" class="text-center"> Get Paid Upfront | Find Local Developer Contracts | Set Your Own Rate </h5>
-    <% else %>
       <h2 id="landing-page-headline" class="text-center text-jumbo">Welcome to the stock market for tech talent.</h2>
-      <h5 id="subtitle" class="text-center"> Instantly Find and Hire Local Developers for ONE WEEK contracts.</h5>
-    <% end %>
+      <h5 id="subtitle" class="text-center"> Instantly Find and Hire Local Developers for ONE WEEK contracts.</h5>s
       <br>
       <div>
       <%= link_to('HIRE', register_path(:type => 'Employer'), :id => "mobile_hide", class: "button large [radius round] button_landing_page_left") %>
@@ -66,63 +25,10 @@
     </div>
   </div>
   <div id="ticker_tape">
-    <% 1000.times do %>
-        <span><%= ['RAILS','NODE.JS','ANGULAR.JS','PHP','ERICA'].sample + "  $" + rand(1000..5000).to_s %></span>
+    <% 200.times do %>
+        <span id="ticker_tape_developer_type"><%= ['Ruby on Rails Developer','Node.js Developer','AngularJS Developer','Java Developer','Front-End Developer'].sample %></span>
+        <span id="ticker_tape_contract_amount"><%= number_to_currency(rand(2000..4000).round(-2), :precision => 0) %></span>
     <% end %>
-<!--     <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>NODE.JS&nbsp;&nbsp;&nbsp;$5000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-     <span>PHP&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>METEOR&nbsp;&nbsp;&nbsp;$2000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$5000</span> 
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>NODE.JS&nbsp;&nbsp;&nbsp;$5000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-     <span>PHP&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>METEOR&nbsp;&nbsp;&nbsp;$2000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$5000</span> 
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>NODE.JS&nbsp;&nbsp;&nbsp;$5000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-     <span>PHP&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>METEOR&nbsp;&nbsp;&nbsp;$2000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$5000</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>NODE.JS&nbsp;&nbsp;&nbsp;$5000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-     <span>PHP&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>METEOR&nbsp;&nbsp;&nbsp;$2000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$5000</span> 
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>NODE.JS&nbsp;&nbsp;&nbsp;$5000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-     <span>PHP&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>METEOR&nbsp;&nbsp;&nbsp;$2000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$5000</span> 
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>NODE.JS&nbsp;&nbsp;&nbsp;$5000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-     <span>PHP&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$1500</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$2500</span>
-    <span>METEOR&nbsp;&nbsp;&nbsp;$2000</span>
-    <span>ANGULAR.JS&nbsp;&nbsp;&nbsp;$1000</span>
-    <span>RAILS&nbsp;&nbsp;&nbsp;$5000</span>   -->
   </div>
 
   <div class="row">
@@ -271,13 +177,13 @@
       <div class="large-4 columns">
         <i class="fi-fast-forward foundation-icon"></i>
         <h4>IT'S FAST</h4>
-        <p>Get PAID UPFRONT up to 50% of the full contract value before you write your first line of code.</p><p>No more endless meetings, blogging, and online marketing to keep your pipeline of clients stocked - lock in a steady flow of clients to avoid the feast-or-famine experienced by other freelancers.</p>
+        <p>Get <strong>paid upfront</strong> up to 50% of the full contract value before you write your first line of code.</p><p>No more endless meetings, blogging, and online marketing to keep your pipeline of clients stocked - lock in a steady flow of clients to avoid the feast-or-famine experienced by other freelancers. </p><p>No more selling yourself short or taking a lower-paying corporate job for fear of not finding enough contract work. It's a developers market - know your true market value and lock in great contracts - every week.</p>
       </div>
       
       <div class="large-4 columns">
         <i class="fi-compass foundation-icon"></i>
         <h4>IT'S LOCAL</h4>
-        <p>Make a corporate salary while living a freedom-based, remote lifestyle. You can find a short-term project or meet once or twice a month in person, and work from your laptop the rest of the time - it's up to you and the employer to negotiate your preferred terms. And no more competing with offshore developers charging six dollars per hour on those other freelance websites - that endless race to the bottom stops here.</p>
+        <p>Make a corporate salary while living a freedom-based, remote lifestyle. You can find a short-term project and work next week! Then take a week off and fly to Bali for a surf trip! And no more competing with offshore developers charging six dollars per hour on those other freelance websites - that endless race to the bottom stops here.</p>
       </div>
       
       <div class="large-4 columns">
@@ -294,19 +200,19 @@
       <div class="large-4 columns">
         <i class="fi-fast-forward foundation-icon"></i>
         <h4>IT'S FAST</h4>
-        <p>No more waiting around for recruiters.  Find and hire a local developer today.</p>
+        <p>No more waiting around for recruiters.  Find and hire a local developer today. Find a great, local developer and have them in your office the next day - or meet with them once and let them work remotely the rest of the week - it's totally up to you! </p>
       </div>
       
       <div class="large-4 columns">
         <i class="fi-compass foundation-icon"></i>
         <h4>IT'S LOCAL</h4>
-        <p>Find a great, local developer who you can meet with in person when needed. No more miscommunication across timezones and cultures. Sometimes offshoring is the right choice, but when you need a talented, local developer to join your team, we're here for you.  And know that your developer is part of our community, a local resource whenever you need to scale up quickly.</p>
+        <p>No more miscommunication across timezones and cultures. Sometimes offshoring is the right choice, but when you need a talented, local developer to join your team, we're here for you.  And know that your developer is part of our community, a local resource whenever you need to scale up quickly.</p>
       </div>
   
       <div class="large-4 columns">
         <i class="fi-cloud foundation-icon"></i>
         <h4>IT'S SAFE</h4>
-        <p>Know that your project is going to get done right.  We hold your balance (minus any upfront payment to the developer) in an FDIC-insured escrow account until you sign off on the final deliverable.</p>
+        <p>Limit your risk by hiring a developer for one week only.  If you like them, hire them back or make them a full-time offer. If not, simply hire a new developer the next week.  It just makes sense to have a test period before you take on the risk of a new full-time hire. Our app allows you to test a new developer in your culture each week - and then stick with the one who is the perfect fit. The smartest firm hire slowly and fire quickly - our app let's you take less risk and find the perfect fit before you hire them full-time or scale up and down flexibly as new projects come and go - making your costs inremental rather than fixed - your CFO and account will love it as will your investors!</p>
       </div>
       </div>
     </div> 
