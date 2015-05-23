@@ -30,6 +30,45 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+#ticker_tape {
+	width: 100%;
+	height: 3.55em;
+	background-color: black;
+	margin-top: -20px;
+	padding-top: 0.8em;
+    white-space: nowrap;
+}
+#ticker_tape span {
+	color: #a6e22d;
+	font-size: 1.2em;
+/*	margin-right: 35px;*/
+	overflow: hidden;
+}
+#ticker_tape_developer_type {
+	margin-right: 8px;	
+}
+#ticker_tape_contract_amount {
+	margin-right: 40px;	
+}
+#ticker_tape span:first-child {
+/*	border: 2px solid red;*/
+/*	margin-left: 90%;*/
+	-webkit-animation-name: slide;
+	-webkit-animation-duration: 152s;
+    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+    animation-timing-function: linear;
+}
+
+/*Keyframes 
+-----------------------------------*/
+@-webkit-keyframes slide {
+	from { margin-left: 100%; }
+	to { margin-left: -1000%;  }
+}
+
+
+
+
 body #landing_page, .testimonial blockquote {
 	background-color: #282828;
 	color: #a6a6a7;
