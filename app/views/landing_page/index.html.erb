@@ -16,7 +16,7 @@
     </div>
     <div class="text-center landing-page-buttons full-width border" id="headlines">
       <h2 id="landing-page-headline" class="text-center text-jumbo">Welcome to the stock market for tech talent.</h2>
-      <h5 id="subtitle" class="text-center"> Instantly Find and Hire Local Developers for ONE WEEK contracts.</h5>
+      <h5 id="subtitle" class="text-center"> Instantly Find and Hire Local Developers for short-term contracts.</h5>
       <br>
       <div>
       <%= link_to('HIRE', register_path(:type => 'Employer'), :id => "mobile_hide", class: "button large [radius round] button_landing_page_left") %>
@@ -27,7 +27,7 @@
   <div id="ticker_tape">
     <% 400.times do %>
         <span id="ticker_tape_developer_type"><%= ['Ruby on Rails Developer','Node.js Developer','AngularJS Developer','Java Developer','Front-End Developer'].sample %></span>
-        <span id="ticker_tape_contract_amount"><%= number_to_currency(rand(2000..4000).round(-2), :precision => 0) %></span>
+        <span id="ticker_tape_contract_amount"><%= number_to_currency(rand(2000..50000).round(-2), :precision => 0) %></span>
     <% end %>
   </div>
 
