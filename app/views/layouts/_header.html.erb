@@ -33,16 +33,16 @@ else window.addEventListener('load', __ldinsp, false);
         <div id="developer_icons">
           <% if current_user && current_user.type == 'Developer' %>
               <%= link_to(my_negotiations_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="My Negotiations"><i class="fi-torsos style1 icon"></i></span>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Negotiations"><i class="fi-torsos style1 icon"></i></span>
               <% end %>
               <%= link_to(my_contracts_path) do %>
-                <span id="second" data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="My Contracts"><i class="fi-page-multiple style2 icon"></i></span>
+                <span id="second" data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Contracts"><i class="fi-page-multiple style2 icon"></i></span>
               <% end %>
               <%= link_to(edit_user_registration_path) do %>
-                <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="Edit My Profile"><i class="fi-widget style3 icon"></i></span>
+                <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Edit My Profile"><i class="fi-widget style3 icon"></i></span>
               <% end %>
               <%= link_to(search_contracts_path) do %>
-                <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="Search Contracts"><i class="fi-magnifying-glass style4 icon"></i></span>
+                <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Search Contracts"><i class="fi-magnifying-glass style4 icon"></i></span>
               <% end %>
           <% end %>
         </div>
@@ -50,16 +50,16 @@ else window.addEventListener('load', __ldinsp, false);
         <div id="employer_icons">
           <% if current_user && current_user.type == 'Employer' %>
               <%= link_to(new_contract_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="New Contract"><i class="fi-page-edit style_special icon"></i></span>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="New Contract"><i class="fi-page-edit style_special icon"></i></span>
               <% end %>
               <%= link_to(my_contracts_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="My Contracts"><i class="fi-page-multiple style2 icon"></i></span>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Contracts"><i class="fi-page-multiple style2 icon"></i></span>
               <% end %>
               <%= link_to(edit_user_registration_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="Edit Profile"><i class="fi-widget style3 icon"></i></span>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Edit Profile"><i class="fi-widget style3 icon"></i></span>
               <% end %>
               <%= link_to(search_developers_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom radius round" title="Search Developers"><i class="fi-magnifying-glass style4 icon"></i></span>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Search Developers"><i class="fi-magnifying-glass style4 icon"></i></span>
               <% end %>
           <% end %>
         </div>

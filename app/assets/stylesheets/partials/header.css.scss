@@ -1,7 +1,9 @@
-/*#first .tooltip {
-  margin-top: -27px;
+.tooltip {
+  margin-top: -30px;
   margin-left: -320px;
-}*/
+  min-width: 260px !important;
+  text-align: center;
+}
 .has-tip {
   cursor: pointer;
 }

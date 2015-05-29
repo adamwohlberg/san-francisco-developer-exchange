@@ -23,22 +23,24 @@
 //= require angular-animate
 //= require_tree .
 
-// $(document).ready(function(){
-//   $(document).foundation({
-//     tooltip: {
-//       selector : '.has-tip',
-//       additional_inheritable_classes : [],
-//       tooltip_class : '.tooltip',
-//       touch_close_text: 'tap to close',
-//       disable_for_touch: false,
-//       tip_template : function (selector, content) {
-//         return '<span data-selector="' + selector + '" class="'
-//           + Foundation.libs.tooltip.settings.tooltip_class.substring(1)
-//           + '">' + content + '<span class="nub"></span></span>';
-//       }
-//     }
-//   });
-// });
+$(document).ready(function(){
+  $(document).foundation({
+    tooltip: {
+      selector : '.has-tip',
+      additional_inheritable_classes : [],
+      tooltip_class : '.tooltip',
+      animation_speed : '25',
+      hover_delay : '0',
+      touch_close_text: 'tap to close',
+      disable_for_touch: false,
+      tip_template : function (selector, content) {
+        return '<span data-selector="' + selector + '" class="'
+          + Foundation.libs.tooltip.settings.tooltip_class.substring(1)
+          + '">' + content + '<span class="nub"></span></span>';
+      }
+    }
+  });
+});
 
 $(document).ajaxSend(function(e, xhr, options) {
   var token = $("meta[name='csrf-token']").attr("content");
