@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="The premium marketplace for freelance, developer contracts. The fastest, easiest way to find and hire a local developer.">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag '/favicon.ico' %>
@@ -32,17 +33,16 @@ else window.addEventListener('load', __ldinsp, false);
         <div id="developer_icons">
           <% if current_user && current_user.type == 'Developer' %>
               <%= link_to(my_negotiations_path) do %>
-<!--                 <span data-tooltip aria-haspopup="true" class="has-tip [tip-top]" title="My Negotiations"><i class="fi-torsos style1 icon"></i></span> -->
-                <i class="fi-torsos style1 icon"></i>
+                <span data-tooltip aria-haspopup="true" class="has-tip" title="My Negotiations"><i class="fi-torsos style1 icon"></i></span>
               <% end %>
               <%= link_to(my_contracts_path) do %>
-                <i class="fi-page-multiple style2 icon"></i>
+                <span data-tooltip aria-haspopup="true" class="has-tip" title="My Contracts"><i class="fi-page-multiple style2 icon"></i></span>
               <% end %>
               <%= link_to(edit_user_registration_path) do %>
-                <i class="fi-widget style3 icon"></i>
+                <span data-tooltip aria-haspopup="true" class="has-tip" title="Edit My Profile"><i class="fi-widget style3 icon"></i></span>
               <% end %>
               <%= link_to(search_contracts_path) do %>
-                <i class="fi-magnifying-glass style4 icon"></i>
+                <span data-tooltip aria-haspopup="true" class="has-tip" title="Search for Contracts"><i class="fi-magnifying-glass style4 icon"></i></span>
               <% end %>
           <% end %>
         </div>
