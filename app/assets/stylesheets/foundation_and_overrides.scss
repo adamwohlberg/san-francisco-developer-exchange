@@ -732,8 +732,8 @@ $input-error-message-font-weight: $font-weight-normal;
 
 // Here, we're setting the tip font styles
 // $joyride-tip-font-color: $white;
-// $joyride-tip-font-size: rem-calc(14);
-$joyride-tip-header-weight: $font-weight-bold;
+//  $joyride-tip-font-size: rem-calc(14);
+// $joyride-tip-header-weight: $font-weight-bold;
 
 // This changes the nub size
 // $joyride-tip-nub-size: 10px;
@@ -746,7 +746,7 @@ $joyride-tip-header-weight: $font-weight-bold;
 // This changes up the styles for the close button
 // $joyride-tip-close-color: $monsoon;
 // $joyride-tip-close-size: 24px;
-$joyride-tip-close-weight: $font-weight-normal;
+// $joyride-tip-close-weight: $font-weight-normal;
 
 // When Joyride is filling the screen, we use this style for the bg
 // $joyride-screenfill: rgba(0,0,0,0.5);
@@ -784,7 +784,7 @@ $joyride-tip-close-weight: $font-weight-normal;
 
 // We use these to style the label text
 // $label-font-sizing: rem-calc(11);
-$label-font-weight: $font-weight-normal;
+// $label-font-weight: $font-weight-normal;
 // $label-font-color: $oil;
 // $label-font-color-alt: $white;
 // $label-font-family: $body-font-family;
@@ -815,7 +815,7 @@ $label-font-weight: $font-weight-normal;
 
 // Off Canvas Tab Bar Headers
 // $tabbar-header-color: $white;
-$tabbar-header-weight: $font-weight-bold;
+// $tabbar-header-weight: $font-weight-bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;
 
@@ -829,7 +829,7 @@ $tabbar-header-weight: $font-weight-bold;
 // $off-canvas-label-color: $aluminum;
 // $off-canvas-label-text-transform: uppercase;
 // $off-canvas-label-font-size: rem-calc(12);
-$off-canvas-label-font-weight: $font-weight-bold;
+// $off-canvas-label-font-weight: $font-weight-bold;
 // $off-canvas-label-bg: $tuatara;
 // $off-canvas-label-border-top: 1px solid scale-color($tuatara, $lightness: 14%);
 // $off-canvas-label-border-bottom: none;
@@ -1005,7 +1005,7 @@ $price-money-weight: $font-weight-normal;
 // $price-desc-padding: rem-calc(15);
 // $price-desc-align: center;
 // $price-desc-font-size: rem-calc(12);
-$price-desc-weight: $font-weight-normal;
+// $price-desc-weight: $font-weight-normal;
 // $price-desc-line-height: 1.4;
 // $price-desc-bottom-border: dotted 1px $gainsboro;
 
@@ -1014,7 +1014,7 @@ $price-desc-weight: $font-weight-normal;
 // $price-item-padding: rem-calc(15);
 // $price-item-align: center;
 // $price-item-font-size: rem-calc(14);
-$price-item-weight: $font-weight-normal;
+// $price-item-weight: $font-weight-normal;
 // $price-item-bottom-border: dotted 1px $gainsboro;
 
 // We use these to control the CTA area styles
@@ -1325,35 +1325,35 @@ $table-head-font-weight: $font-weight-bold;
 // $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
 
 // Radius and transition speed for thumbs
-$thumb-radius: $global-radius;
-// $thumb-transition-speed: 200ms;
+// $thumb-radius: $global-radius;
+// // $thumb-transition-speed: 200ms;
 
-// 33. Tooltips
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// // 33. Tooltips
+// // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-html-tooltip-classes: $include-html-classes;
+// $include-html-tooltip-classes: $include-html-classes;
 
-$has-tip-border-bottom: dotted 1px $iron;
+// $has-tip-border-bottom: dotted 1px $iron;
 // $has-tip-font-weight: $font-weight-bold;
-$has-tip-font-color: $oil;
-$has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%);
-$has-tip-font-color-hover: $primary-color;
-$has-tip-cursor-type: help;
+// $has-tip-font-color: $oil;
+// $has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%);
+// $has-tip-font-color-hover: $primary-color;
+// $has-tip-cursor-type: help;
 
-$tooltip-padding: rem-calc(12);
-$tooltip-bg: $oil;
-$tooltip-font-size: rem-calc(14);
+// $tooltip-padding: rem-calc(12);
+// $tooltip-bg: #48b8e8;
+// $tooltip-font-size: rem-calc(14);
 // $tooltip-font-weight: $font-weight-normal;
-$tooltip-font-color: $white;
-$tooltip-line-height: 1.3;
-$tooltip-close-font-size: rem-calc(10);
+// $tooltip-font-color: $white;
+// $tooltip-line-height: 1.3;
+// $tooltip-close-font-size: rem-calc(10);
 // $tooltip-close-font-weight: $font-weight-normal;
-$tooltip-close-font-color: $monsoon;
-$tooltip-font-size-sml: rem-calc(14);
-$tooltip-radius: $global-radius;
-$tooltip-rounded: $global-rounded;
-$tooltip-pip-size: 5px;
-$tooltip-max-width: 300px;
+// $tooltip-close-font-color: $monsoon;
+// $tooltip-font-size-sml: rem-calc(14);
+// $tooltip-radius: $global-radius;
+// $tooltip-rounded: $global-rounded;
+// $tooltip-pip-size: 5px;
+// $tooltip-max-width: 300px;
 
 // 34. Top Bar
 // - - - - - - - - - - - - - - - - - - - - - - - - -
