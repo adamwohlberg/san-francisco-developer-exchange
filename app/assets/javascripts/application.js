@@ -29,8 +29,8 @@ $(document).ajaxSend(function(e, xhr, options) {
 });
 
 
-function animateProfileImage() {
-  $('#profileImage').load('searching_for_developers.html.erb', function() {
+function animateProfileImageSearchPage() {
+  $('#profileImageSearchPage').load('searching_for_developers.html.erb', function() {
     $('.wrap img').addClass('throb');
 });
 }

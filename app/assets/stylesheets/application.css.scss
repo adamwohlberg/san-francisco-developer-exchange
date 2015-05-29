@@ -242,7 +242,7 @@ margin-top: -20px;
 color: white;
 font-weight: 800px;
 }
-#profileImage {
+#profileImage, #profileImageSearchPage {
 margin-top: 30px;
 border-radius: 50%;
 border: 10px solid white;
@@ -255,7 +255,7 @@ opacity: 1.0;
 text-align: center;
 -webkit-backface-visibility: hidden;
 }
-#profileImage_sideb {
+#profileImageSearchPage_sideb {
 margin-top: 30px;
 border-radius: 50%;
 border: 10px solid white;
@@ -800,12 +800,11 @@ width: 100%;
 	-webkit-transform: rotateY(180deg);
 }
 #developer_profile_image {
-	height: 340px;
-	width: 500px !important;
+	height: 358px;
 }
 
 #developer_profile_image, .developer_image_box {
-	margin-top: 5px;
+	margin-top: 0px;
 	border-radius: 15px 15px 15px 15px;
 	box-shadow: 2px 2px 2px #ccc;
   	-moz-box-shadow:    2px 2px 2px 3px #ccc;
@@ -817,6 +816,9 @@ width: 100%;
 	-o-filter: saturate(100%);
 	-ms-filter: saturate(100%);
 	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	min-width: 100% !important;
 }
 #developer_profile_image:hover {
 	filter: saturate(100%);
@@ -842,11 +844,17 @@ width: 100%;
 	border-radius: 20px;
 	background: #FAFAFA;
 	height: 360px;
-	width: 100%;
+	width: 314px;
+	margin-left: 13px;
 	position:absolute;
 	-webkit-transform: rotateY(-180deg);
-	z-index: 99;
+	z-index: 999;
 	user-select: none;
+}
+#developer_title {
+	user-select: none;	
+}
+.developer_container_each_developer {
 }
 #hire_now_button {
 	display: none;
