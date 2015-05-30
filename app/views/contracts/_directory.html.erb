@@ -24,11 +24,11 @@
     <label class="formgroup">
        <input type="checkbox" ng-model="showOnlyFavoritesChecked" name="selected">  
       only show liked contracts
-      <% if current_user.type == 'Developer' %>
-      <span><%= link_to("see how employers view my profile", search_developers_path, :id => "see_the_developers_view_link", :class => "button tiny grey_button") %></span>
-      <% elsif current_user.type == 'Employer' %>
-       <span><%= link_to("switch back to standard view",search_developers_path, :id => "see_the_developers_view_link", :class => "button tiny grey_button") %></span>       
-      <% end %>
+      <%# if current_user.type == 'Developer' %>
+<!--       <span><%# link_to("see how employers view my profile", search_developers_path, :id => "see_the_developers_view_link", :class => "button tiny grey_button") %></span>
+      <%# elsif current_user.type == 'Employer' %>
+       <span><%# link_to("switch back to standard view",search_developers_path, :id => "see_the_developers_view_link", :class => "button tiny grey_button") %></span>       
+      <%# end %> -->
     </label>
    </div>
   </div>
