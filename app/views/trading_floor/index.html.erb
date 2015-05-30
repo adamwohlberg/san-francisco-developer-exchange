@@ -100,7 +100,7 @@
             </td>
             <td>
               <%= link_to_if(@developer_ruby_senior.nil?, 'n/a', '#' ) do             
-                  link_to(number_to_currency(@developer_ruby_senior.min_contract_amount, precision: 0), developer_path(@developer_ios_senior.id)) 
+                  link_to(number_to_currency(@developer_ruby_senior.min_contract_amount, precision: 0), developer_path(@developer_ruby_senior.id)) 
                   end %>
             </td>
           </tr>
