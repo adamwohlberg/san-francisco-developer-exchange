@@ -51,13 +51,13 @@
           <tr>
             <td>PHP Developer (Senior)</td>
             <td>
-              <%= link_to_if(@contract_ruby_senior.nil?, 'n/a', '#' ) do 
-                  link_to(number_to_currency(@contract_ruby_senior.amount, precision: 0), contract_path(@contract_ruby_senior.id)) 
+              <%= link_to_if(@contract_php_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_php_senior.amount, precision: 0), contract_path(@contract_php_senior.id)) 
                   end %>
             </td>
             <td>
-              <%= link_to_if(@developer_ruby_senior.nil?, 'n/a', '#' ) do             
-                  link_to(number_to_currency(@developer_ruby_senior.min_contract_amount, precision: 0), developer_path(@developer_ruby_senior.id)) 
+              <%= link_to_if(@developer_php_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_php_senior.min_contract_amount, precision: 0), developer_path(@developer_php_senior.id)) 
                   end %>
             </td>
           </tr>
