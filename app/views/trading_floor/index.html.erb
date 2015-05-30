@@ -1,0 +1,404 @@
+  <div class="row">
+    <div id="big_board_headline" class="large-12 columns large-centered">
+      <h1>Real-Time 30-Day Contracts</h1>
+      <p>*click bid/ask to view the contract or developer, respectively</p>
+    </div>  
+  </div>  
+
+  <div class="row">
+    <div class="large-12 columns large-centered">
+      <table id="data_table" style="width:100%;text-align:center;">
+        <thead>
+<!--           <tr>
+            <th id="head" colspan="3"></th>
+          </tr> -->
+          <tr>
+            <th>Developer Type</th>
+            <th>Bid*</th>
+            <th>Ask**</th>
+          </tr>
+        <thead>
+        <tbody>
+
+          <tr>
+            <td>PHP Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_php_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_php_junior.amount, precision: 0), contract_path(@contract_php_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_php_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_php_junior.min_contract_amount, precision: 0), developer_path(@developer_php_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>PHP Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_php_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_php_midlevel.amount, precision: 0), contract_path(@contract_php_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_php_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_php_midlevel.min_contract_amount, precision: 0), developer_path(@developer_php_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>PHP Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_ruby_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ruby_senior.amount, precision: 0), contract_path(@contract_ruby_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ruby_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ruby_senior.min_contract_amount, precision: 0), developer_path(@developer_ruby_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Ruby on Rails Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_ruby_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ruby_junior.amount, precision: 0), contract_path(@contract_ruby_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ruby_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ruby_junior.min_contract_amount, precision: 0), developer_path(@developer_ruby_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Ruby on Rails Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_ruby_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ruby_midlevel.amount, precision: 0), contract_path(@contract_ruby_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ruby_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ruby_midlevel.min_contract_amount, precision: 0), developer_path(@developer_ruby_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Ruby on Rails Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_ruby_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ruby_senior.amount, precision: 0), contract_path(@contract_ruby_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ruby_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ruby_senior.min_contract_amount, precision: 0), developer_path(@developer_ios_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>iOS Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_ios_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ios_junior.amount, precision: 0), contract_path(@contract_ios_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ios_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ios_junior.min_contract_amount, precision: 0), developer_path(@developer_ios_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>iOS Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_ios_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ios_midlevel.amount, precision: 0), contract_path(@contract_ios_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ios_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ios_midlevel.min_contract_amount, precision: 0), developer_path(@developer_ios_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>iOS Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_ios_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ios_senior.amount, precision: 0), contract_path(@contract_ios_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ios_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ios_senior.min_contract_amount, precision: 0), developer_path(@developer_ios_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Android Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_ios_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ios_junior.amount, precision: 0), contract_path(@contract_ios_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ios_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ios_junior.min_contract_amount, precision: 0), developer_path(@developer_ios_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Android Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_ios_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ios_midlevel.amount, precision: 0), contract_path(@contract_ios_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ios_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ios_midlevel.min_contract_amount, precision: 0), developer_path(@developer_ios_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Android Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_ios_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ios_senior.amount, precision: 0), contract_path(@contract_ios_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ios_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ios_senior.min_contract_amount, precision: 0), developer_path(@developer_ios_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Java Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_java_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_java_junior.amount, precision: 0), contract_path(@contract_java_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_java_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_java_junior.min_contract_amount, precision: 0), developer_path(@developer_java_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Java Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_java_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_java_midlevel.amount, precision: 0), contract_path(@contract_java_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_java_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_java_midlevel.min_contract_amount, precision: 0), developer_path(@developer_java_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Java Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_frontend_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_frontend_senior.amount, precision: 0), contract_path(@contract_frontend_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_frontend_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_frontend_senior.min_contract_amount, precision: 0), developer_path(@developer_frontend_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Front-End Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_frontend_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_frontend_junior.amount, precision: 0), contract_path(@contract_frontend_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_frontend_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_frontend_junior.min_contract_amount, precision: 0), developer_path(@developer_frontend_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+          <tr>
+            <td>Front-End Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_frontend_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_frontend_midlevel.amount, precision: 0), contract_path(@contract_frontend_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_frontend_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_frontend_midlevel.min_contract_amount, precision: 0), developer_path(@developer_frontend_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Front-End Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_frontend_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_frontend_senior.amount, precision: 0), contract_path(@contract_frontend_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_frontend_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_frontend_senior.min_contract_amount, precision: 0), developer_path(@developer_frontend_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>UI/UX Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_ui_ux_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ui_ux_junior.amount, precision: 0), contract_path(@contract_ui_ux_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ui_ux_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ui_ux_junior.min_contract_amount, precision: 0), developer_path(@developer_ui_ux_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+          <tr>
+            <td>UI/UX Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_ui_ux_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ui_ux_midlevel.amount, precision: 0), contract_path(@contract_ui_ux_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ui_ux_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ui_ux_midlevel.min_contract_amount, precision: 0), developer_path(@developer_ui_ux_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>UI/UX Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_ui_ux_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_ui_ux_senior.amount, precision: 0), contract_path(@contract_ui_ux_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_ui_ux_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_ui_ux_senior.min_contract_amount, precision: 0), developer_path(@developer_ui_ux_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Project Manager Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_project_manager_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_project_manager_junior.amount, precision: 0), contract_path(@contract_project_manager_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_project_manager_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_project_manager_junior.min_contract_amount, precision: 0), developer_path(@developer_project_manager_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+          <tr>
+            <td>Project Manager Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_project_manager_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_project_manager_midlevel.amount, precision: 0), contract_path(@contract_project_manager_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_project_manager_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_project_manager_midlevel.min_contract_amount, precision: 0), developer_path(@developer_project_manager_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Project Manager Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_project_manager_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_project_manager_senior.amount, precision: 0), contract_path(@contract_project_manager_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_project_manager_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_project_manager_senior.min_contract_amount, precision: 0), developer_path(@developer_project_manager_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Creative Director Developer (Junior)</td>
+            <td>
+              <%= link_to_if(@contract_creative_director_junior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_creative_director_junior.amount, precision: 0), contract_path(@contract_creative_director_junior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_creative_director_junior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_creative_director_junior.min_contract_amount, precision: 0), developer_path(@developer_creative_director_junior.id)) 
+                  end %>
+            </td>
+          </tr>
+          <tr>
+            <td>Creative Director Developer (Mid-level)</td>
+            <td>
+              <%= link_to_if(@contract_creative_director_midlevel.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_creative_director_midlevel.amount, precision: 0), contract_path(@contract_creative_director_midlevel.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_creative_director_midlevel.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_creative_director_midlevel.min_contract_amount, precision: 0), developer_path(@developer_creative_director_midlevel.id)) 
+                  end %>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Creative Director Developer (Senior)</td>
+            <td>
+              <%= link_to_if(@contract_creative_director_senior.nil?, 'n/a', '#' ) do 
+                  link_to(number_to_currency(@contract_creative_director_senior.amount, precision: 0), contract_path(@contract_creative_director_senior.id)) 
+                  end %>
+            </td>
+            <td>
+              <%= link_to_if(@developer_creative_director_senior.nil?, 'n/a', '#' ) do             
+                  link_to(number_to_currency(@developer_creative_director_senior.min_contract_amount, precision: 0), developer_path(@developer_creative_director_senior.id)) 
+                  end %>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <p>*Bid=Highest Employer Contract **Ask=Lowest Developer Offer</p>
+    </div>
+  </div>

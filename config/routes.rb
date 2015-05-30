@@ -22,6 +22,7 @@ end
   resources :developers do
     get :new_profile_conversion, on: :collection 
   end
+  resources :trading_floor, only: [:index]  
   resources :employers
   resources :contracts do
     post :check_developer_minimum, on: :collection

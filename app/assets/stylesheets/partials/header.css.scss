@@ -10,7 +10,7 @@
 .far-left {
   margin-left: -360px;
   font-size: 45px;
-  color: green;
+  color: grey;
   position: absolute;	
 }
 .style_special, {
@@ -43,7 +43,7 @@
   color: grey;
   position: absolute;	
 }
-.style1:hover, .style2:hover, .style3:hover, .style4:hover, .style_special:hover {
+.far-left:hover, .style1:hover, .style2:hover, .style3:hover, .style4:hover, .style_special:hover {
   opacity: 0.8;
 }
 #headerProfileImage {

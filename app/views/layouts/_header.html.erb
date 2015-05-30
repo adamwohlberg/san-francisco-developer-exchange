@@ -32,8 +32,8 @@ else window.addEventListener('load', __ldinsp, false);
       <div id="header_icons">
         <div id="developer_icons">
           <% if current_user && current_user.type == 'Developer' %>
-              <%= link_to(new_contract_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Big Board"><i class="fi-dollar-bill far-left icon"></i></span>
+              <%= link_to(trading_floor_index_path) do %>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="San Francisco Developer Exchange"><i class="fi-results-demographics far-left icon"></i></span>
               <% end %>
               <%= link_to(my_negotiations_path) do %>
                   <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Negotiations"><i class="fi-torsos style1 icon"></i></span>
@@ -52,8 +52,8 @@ else window.addEventListener('load', __ldinsp, false);
 
         <div id="employer_icons">
           <% if current_user && current_user.type == 'Employer' %>
-              <%= link_to(new_contract_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Big Board"><i class="fi-dollar-bill far-left icon"></i></span>
+              <%= link_to(trading_floor_index_path) do %>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="San Francisco Developer Exchange"><i class="fi-results-demographics far-left icon"></i></span>
               <% end %>
               <%= link_to(new_contract_path) do %>
                   <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="New Contract"><i class="fi-page-edit style_special icon"></i></span>

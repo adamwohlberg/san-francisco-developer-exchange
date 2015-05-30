@@ -30,7 +30,14 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
-
+#big_board_headline {
+	margin-top:20px;
+	color: grey;
+}
+#big_board_headline h1 {
+	margin-top:20px;
+	color: #FFF;
+}
 #head {
 	text-align: center;
 }
@@ -71,10 +78,12 @@
 	to { margin-left: -1000%;  }
 }
 
+body #trading_floor {
+	margin-top: -30px;
+	min-height: 1300px;
+}
 
-
-
-body #landing_page, .testimonial blockquote {
+body #landing_page, .testimonial blockquote, body #trading_floor {
 	background-color: #282828;
 	color: #a6a6a7;
 }
