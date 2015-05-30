@@ -755,6 +755,7 @@ display: none;
 /*a {
 pointer-events: none;
 }*/
+
 .developer_container_each_developer a{
 pointer-events: none;
 user-select: none;	
@@ -924,6 +925,9 @@ width: 100%;
 }
 #mobile_hide {
 	display:none;
+}
+#search_google_map_background {
+	margin-top: -200px;
 }
 } 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
