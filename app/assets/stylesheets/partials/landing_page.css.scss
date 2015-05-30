@@ -5,6 +5,31 @@
     font-size: 1.5em;
     margin-top: 35px;
 }*/
+#data_table a {
+  color: #a6e22d; 
+}
+#data_table a:hover {
+  background-color: #48b8e8; 
+  color: black;
+}
+#data_table td, #data_table tr {
+  color: #a6e22d;
+  font-size: 20px;
+  background-color: black;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#data_table, #data_table th {
+  background-color: black;
+  color: #a6e22d; 
+  font-size: 23px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#data_table td:hover {
+  background-color: #48b8e8;
+  color: black;
+}
 .cartoon_image {
   margin-left: 25%;
   border-radius: 50%;

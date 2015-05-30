@@ -1,0 +1,17 @@
+  CONTRACT_AVERAGE = 10000
+
+  MIN = 1.0
+  MAX = 1.0
+
+  JUNIOR = 0.9
+  MIDLEVEL = 1.0
+  SENIOR = 1.1
+
+  PHP = 0.6
+  RUBY = 1.2
+  IOS = 1.2
+  ANDROID = 1.2
+  CREATIVE_AGENCY = 1.3
+
+  BID = 0.8
+  ASK = 1.2

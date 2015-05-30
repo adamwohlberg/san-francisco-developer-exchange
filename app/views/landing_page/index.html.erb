@@ -26,8 +26,8 @@
   </div>
   <div id="ticker_tape">
     <% 400.times do %>
-        <span id="ticker_tape_developer_type"><%= ['Ruby on Rails Developer','Node.js Developer','AngularJS Developer','Java Developer','Front-End Developer'].sample %></span>
-        <span id="ticker_tape_contract_amount"><%= number_to_currency(rand(2000..50000).round(-2), :precision => 0) %></span>
+        <span id="ticker_tape_developer_type"><%= ['Ruby on Rails Developer (Junior)','Ruby on Rails Developer (Mid-level)','Ruby on Rails Developer (Senior)','PHP Developer (Junior)','PHP Developer (Mid-level)','PHP Developer (Senior)','iOS Developer (Junior)','iOS Developer (Mid-level)','iOS Developer (Senior)','AngularJS Developer','Java Developer','Front-End Developer'].sample %></span>
+        <span id="ticker_tape_contract_amount"><%= number_to_currency(rand(8000..15000).round(-2), :precision => 0) %></span>
     <% end %>
   </div>
 
@@ -84,6 +84,63 @@
     </div>
   </div>
   <hr>
+  <div class="row">
+    <div class="large-10 columns large-centered">
+      <table id="data_table" style="width:100%;text-align:center;">
+        <thead>
+          <tr>
+            <th id="head" colspan="3">30-Day Contracts</th>
+          </tr>
+          <tr>
+            <th>Developer Type</th>
+            <th>Bid*</th>
+            <th>Ask**</th>
+          </tr>
+        <thead>
+        <tbody>
+          <tr><td><%= link_to("PHP Developer (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*BID..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("PHP Developer (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("PHP Developer (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><td><%= link_to("Ruby on Rails Developer (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*RUBY*JUNIOR*BID..MAX*CONTRACT_AVERAGE*RUBY*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*RUBY*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*RUBY*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Ruby on Rails Developer (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*RUBY*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*RUBY*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*RUBY*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*RUBY*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Ruby on Rails Developer (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*RUBY*SENIOR*BID..MAX*CONTRACT_AVERAGE*RUBY*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*RUBY*SENIOR*BID..MAX*CONTRACT_AVERAGE*RUBY*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><td><%= link_to("iOS (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*IOS*JUNIOR*BID..MAX*CONTRACT_AVERAGE*IOS*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*IOS*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*IOS*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("iOS (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*IOS*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*IOS*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*IOS*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*IOS*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("iOS (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*IOS*SENIOR*BID..MAX*CONTRACT_AVERAGE*IOS*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*IOS*SENIOR*BID..MAX*CONTRACT_AVERAGE*IOS*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><td><%= link_to("Android Developer (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*JUNIOR*BID..MAX*CONTRACT_AVERAGE*ANDROID*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*ANDROID*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Android Developer (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Android Developer (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*SENIOR*BID..MAX*CONTRACT_AVERAGE*ANDROID*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*SENIOR*BID..MAX*CONTRACT_AVERAGE*ANDROID*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><td><%= link_to("Java Developer (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*JUNIOR*BID..MAX*CONTRACT_AVERAGE*ANDROID*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*ANDROID*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Java Developer (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*ANDROID*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Java Developer (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*SENIOR*BID..MAX*CONTRACT_AVERAGE*ANDROID*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*ANDROID*SENIOR*BID..MAX*CONTRACT_AVERAGE*ANDROID*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><td><%= link_to("Front-End Developer (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*BID..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Front-End Developer (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Front-End Developer (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><tr><td><%= link_to("UI/UX Developer (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*BID..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><tr><td><%= link_to("UI/UX Developer (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><tr><td><%= link_to("UI/UX Developer (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><tr><td><%= link_to("Project Manager (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*BID..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*PHP*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><tr><td><%= link_to("Project Manager (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*PHP*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><tr><td><%= link_to("Project Manager (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*PHP*SENIOR*BID..MAX*CONTRACT_AVERAGE*PHP*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+          <tr><td><%= link_to("Creative Director (Junior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*CREATIVE_AGENCY*JUNIOR*BID..MAX*CONTRACT_AVERAGE*CREATIVE_AGENCY*JUNIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*CREATIVE_AGENCY*JUNIOR*ASK..MAX*CONTRACT_AVERAGE*CREATIVE_AGENCY*JUNIOR*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Creative Director (Mid-level)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*CREATIVE_AGENCY*MIDLEVEL*BID..MAX*CONTRACT_AVERAGE*CREATIVE_AGENCY*MIDLEVEL*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*CREATIVE_AGENCY*MIDLEVEL*ASK..MAX*CONTRACT_AVERAGE*CREATIVE_AGENCY*MIDLEVEL*ASK), precision: 0), contracts_path) %></td></tr>
+          <tr><td><%= link_to("Creative Director (Senior)", developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*CREATIVE_AGENCY*SENIOR*BID..MAX*CONTRACT_AVERAGE*CREATIVE_AGENCY*SENIOR*BID), precision: 0), developers_path) %></td><td><%= link_to(number_to_currency(rand(MIN*CONTRACT_AVERAGE*CREATIVE_AGENCY*SENIOR*BID..MAX*CONTRACT_AVERAGE*CREATIVE_AGENCY*SENIOR*BID), precision: 0), contracts_path) %></td></tr>
+
+        </tbody>
+      </table>
+      <p>*Bid=Highest Employer Contract **Ask=Lowest Developer Offer</p>
+    </div>
+  </div>
+  <hr>
+
   <div class="row">
        <div class="large-12 columns">
         <h1 class="why_should_i_headline">Instantly find local developers or local contracts.</h1>

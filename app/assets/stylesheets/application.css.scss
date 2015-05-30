@@ -30,6 +30,10 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+
+#head {
+	text-align: center;
+}
 #ticker_tape {
 	width: 100%;
 	height: 3.55em;
@@ -729,7 +733,7 @@ XXLarge screens
 
 @media only screen and (max-width: 40em) {
 #ticker_tape {
-	margin-top: 0px;
+	margin-top: 20px;
 }
 .iphone_image  {
   margin-left: -200px !important;
