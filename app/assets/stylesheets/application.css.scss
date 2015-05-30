@@ -728,7 +728,9 @@ XXLarge screens
 @media only screen { } /* Define mobile styles */
 
 @media only screen and (max-width: 40em) {
-
+#ticker_tape {
+	margin-top: 0px;
+}
 .iphone_image  {
   margin-left: -200px !important;
 }
@@ -934,10 +936,14 @@ width: 100%;
 
 /*// Medium screens*/
 @media only screen and (min-width: 40.063em) { 
-
 } /* min-width 641px, medium screens */
 
 @media only screen and (max-width: 64em) { 
+#landing-page-headline{
+	// border: 2px solid red;
+	margin-top: -140px;
+	font-size: 2.4em;
+}
 #logo_image {
 	display: none;
 }
