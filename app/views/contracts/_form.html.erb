@@ -1,4 +1,4 @@
-<div id="contract_form">
+/<div id="contract_form">
 <h2>List Your Project</h2>
 <!-- <h4>...so you can find a local developer.</h4> -->
         <%= simple_form_for(@contract, html: {multipart: true}) do |f| %>
@@ -16,7 +16,7 @@
 
           <div class="field">
             <%= f.label "Type of developer you are seeking:" %><br>
-            <%= f.select :title, ['PHP Developer (Junior)', 'PHP Developer (Mid-level)','PHP Developer (Senior)','Ruby on Rails Developer (Junior)', 'Ruby on Rails Developer (Mid-level)', 'Ruby on Rails Developer (Senior)','iOS Developer (Junior)', 'iOS Developer (Mid-level)', 'iOS Developer (Senior)', 'Android Developer (Junior)', 'Android Developer (Mid-level)', 'Android Developer (Senior)', 'Front End Developer (Junior)', 'Front End Developer (Mid-level)', 'Front End Developer (Senior)', 'Creative Director', 'UI UX Developer (Junior)',  'UI UX Developer (Mid-level)',  'UI UX Developer (Senior)','Project Manager (Junior)', 'Project Manager (Mid-level)','Project Manager (Senior)','Full-Service Agency - we do it all!'] %>
+            <%= f.select :title, ['PHP Developer (Junior)', 'PHP Developer (Mid-level)','PHP Developer (Senior)','Ruby on Rails Developer (Junior)', 'Ruby on Rails Developer (Mid-level)', 'Ruby on Rails Developer (Senior)','iOS Developer (Junior)', 'iOS Developer (Mid-level)', 'iOS Developer (Senior)', 'Android Developer (Junior)', 'Android Developer (Mid-level)', 'Android Developer (Senior)', 'Front End Developer (Junior)', 'Front End Developer (Mid-level)', 'Front End Developer (Senior)', 'Creative Director', 'UI/UX Developer (Junior)',  'UI/UX Developer (Mid-level)',  'UI/UX Developer (Senior)','Project Manager (Junior)', 'Project Manager (Mid-level)','Project Manager (Senior)','Full-Service Agency - we do it all!'] %>
           </div>
           <div class="field">
             <%= f.label "Your project's name:" %><br>
