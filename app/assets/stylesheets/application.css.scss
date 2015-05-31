@@ -97,9 +97,22 @@ button #landing_page {
 .my_negotiations_body, .my_contracts_body {
 	margin-bottom: 500px;
 }
-.searching_screenshot {
+.searching_screenshot, .instant_hire_screenshot {
 	border-radius: 10px;
 	border: 2px solid black;
+  -webkit-transition: all 0.8s ease;
+     -moz-transition: all 0.8s ease;
+       -o-transition: all 0.8s ease;
+      -ms-transition: all 0.8s ease;
+          transition: all 0.8s ease;
+}
+.searching_screenshot:hover, .instant_hire_screenshot:hover {
+transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-webkit-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-moz-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-o-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+-ms-transform: rotate(0deg) scale(1.05) skew(0deg) translate(0px);
+opacity: 0.8;
 }
 .instant_hire_screenshot {
 	border-radius: 10px;
