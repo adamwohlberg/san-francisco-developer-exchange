@@ -3,8 +3,8 @@ class TradingFloorController < ApplicationController
 	layout 'trading_floor'
 
 	def index
-		@contracts = Contract.all
-		@developers = Developer.all
+		@contracts = Contract.near(Geocoder.coordinates(current_user.location),100)
+		@developers = Developer.near(Geocoder.coordinates(current_user.location),100)
 
 		@developer_php_junior = Developer.where(title: 'PHP Developer (Junior)').order(min_contract_amount: :asc).first
 		@developer_php_midlevel = Developer.where(title: 'PHP Developer (Mid-level)').order(min_contract_amount: :asc).first
