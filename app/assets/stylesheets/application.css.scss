@@ -779,11 +779,6 @@ user-select: none;
 #the_word_like, #the_word_liked {
 display: none;
 }
-/*disable clicking on mobile.*/
-/*a {
-pointer-events: none;
-}*/
-
 .developer_container_each_developer a{
 pointer-events: none;
 user-select: none;	
@@ -847,7 +842,7 @@ width: 100%;
 	position: relative;
 	transition: -webkit-transform 1s ease-in;
 	-webkit-transform-style: preserve-3d;
-	height: 340px;
+	height: 360px;
 	width: 105%;
 	margin: 0px 0px 0px -10px;
 }
@@ -896,15 +891,16 @@ width: 100%;
 /*SIDE B*/
 .developer_stats_box {
 	border: 2px solid $border2;
-	border-radius: 20px;
+	border-radius: 18px;
 	background: #FAFAFA;
 	height: 360px;
-	width: 314px;
-	margin-left: 13px;
 	position:absolute;
 	-webkit-transform: rotateY(-180deg);
 	z-index: 999;
 	user-select: none;
+    margin-left: 13px;
+    margin-right: 10px;
+    width: 94.5%;  
 }
 #developer_title {
 	user-select: none;	
