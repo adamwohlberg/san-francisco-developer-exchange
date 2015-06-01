@@ -754,6 +754,10 @@ XXLarge screens
 @media only screen { } /* Define mobile styles */
 
 @media only screen and (max-width: 40em) {
+
+#searching_for_things {
+margin-top: -20%;
+} 
 #ticker_tape {
 	margin-top: 20px;
 }
