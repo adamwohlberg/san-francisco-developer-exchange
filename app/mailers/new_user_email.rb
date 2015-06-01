@@ -1,4 +1,4 @@
-class ContactAdministrator < ActionMailer::Base
+class NewUser < ActionMailer::Base
   default from: "from@example.com"
   def employer_marked_contract_closed_now_pay_the_developer(contract)
   	@contract = contract

@@ -69,6 +69,9 @@ class User < ActiveRecord::Base
     #after_validation :geocode, :if => :location_changed?
   end
 
+  after_create :send_admin_new_user_email
+
+
   validates :type, presence: true, inclusion: { in: %w(Employer Developer),
     message: "%{value} is not a valid type of user" }, unless: -> { from_omniauth? }
   validates :first_name, presence: true, unless: -> { from_omniauth? }
@@ -105,21 +108,10 @@ class User < ActiveRecord::Base
     return user
   end
 
-
-
-=begin
-  def self.new_with_session(params, session)
-    if session["devise.user_attributes"]
-       new(session["devise.user_attributes"], without_protection: true) do |user|
-        user.user_attributes = params
-        user.valid?
-       end
-    else
-      super
-    end
+  def send_admin_new_user_email
+    @user = User.last
+    SendAdminNewUserEmail.send_admin_new_user_email(@user).deliver
   end
-=end
-
 
   def password_required?
     # don't require password if signing in through omniauth
