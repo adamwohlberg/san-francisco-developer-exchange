@@ -46,7 +46,7 @@
 	text-align: center;
 }
 #ticker_tape {
-	width: 100%;
+	width: 100%; 
 	height: 3.55em;
 	background-color: black;
 	margin-top: -20px;
@@ -86,7 +86,6 @@ body #trading_floor {
 	margin-top: -30px;
 	min-height: 1300px;
 }
-
 body #landing_page, .testimonial blockquote, body #trading_floor {
 	background-color: #282828;
 	color: #a6a6a7;
@@ -269,12 +268,10 @@ background-image: radial-gradient(circle closest-corner at center bottom, #33333
 	margin-left: 80px;
 }
 .alert, .notice {
-/*	margin-left: 20px;*/
-	text-align: center;
-}
-.alert, .notice {
 	color:red;
 	font-size: 1.4em; 
+	text-align: center;
+	padding-top: 40px;
 }
 .developer_ratings_section {
 	background: blue;
