@@ -53,6 +53,8 @@
 	padding-top: 0.8em;
     white-space: nowrap;
     overflow: hidden;
+    position: absolute;
+    z-index: 9999;
 }
 #ticker_tape span {
 	color: #a6e22d;
@@ -760,13 +762,12 @@ XXLarge screens
   font-size: 1.4em;
 }
 .why_should_i_headline {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 #data_table {
 	margin-left: -5px;
 	font-size: 0.6em;
 }
-
 #searching_for_things {
 margin-top: -20%;
 } 
@@ -926,7 +927,7 @@ width: 100%;
 	display: none;
 } 
 #landing-page-headline,#subtitle {
-    display: none;
+    font-size: 1.5em;
 }
 .bg-content-wrapper {
     position: absolute;
