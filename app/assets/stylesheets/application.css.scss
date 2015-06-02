@@ -370,7 +370,7 @@ opacity: 0.0;
 #searching_for_things {
 text-align: center;
 width: 100%;
-height: 125%;
+height: 100%;
 margin-top: -15%;
 padding-top: 130px;
 /* IE10 Consumer Preview */ 
@@ -755,14 +755,25 @@ XXLarge screens
 
 @media only screen and (max-width: 40em) {
 
+#why_should_i_sign_up_headline {
+  font-size: 1.4em;
+}
+.why_should_i_headline {
+  font-size: 1.4em;
+}
+#data_table {
+	margin-left: -5px;
+	font-size: 0.6em;
+}
+
 #searching_for_things {
 margin-top: -20%;
 } 
 #ticker_tape {
 	margin-top: 20px;
 }
-.iphone_image  {
-  margin-left: -200px !important;
+.iphone_image, .iphone_image_back  {
+  margin-left: -205px !important;
 }
 #searching_headline {
 margin-top: 15px;
@@ -810,7 +821,6 @@ button#unlike, button#rockstar{
 #view_full_profile_text {
 	display: none;
 }
-
 #name_tagline {
 margin-top: -38px;
 font-size: 16px;
