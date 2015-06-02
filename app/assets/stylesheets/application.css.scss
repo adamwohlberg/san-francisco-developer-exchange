@@ -171,11 +171,12 @@ background-color: #e7e7e7;
   }
 }
 .simple_form .hint {
-margin-top: -5px;
+margin-top: -14px; 
 display: none;
-// border-radius: 20px;
+// border-radius: 10px;
 padding: 3px 5px;
-background-color: #48b8e8;
+background-color: #ffffcc;
+// border: 1px solid black;
 color: #420600;
 font-size: 1.0em;
 }
