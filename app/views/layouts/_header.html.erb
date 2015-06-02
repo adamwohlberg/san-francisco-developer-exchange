@@ -38,10 +38,10 @@ else window.addEventListener('load', __ldinsp, false);
                   </div>
               <% end %>
               <%= link_to(my_negotiations_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Negotiations"><i class="fi-torsos style1 icon"><span class="iconCounter"><span id="counterNumber"><%= current_user.negotiations.count %></span><span></i></span>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Negotiations"><i class="fi-torsos style1 icon"><span class="iconCounter"><span id="counterNumber"><%= current_user.negotiations.not_deleted.count %></span><span></i></span>
               <% end %>
               <%= link_to(my_contracts_path) do %>
-                <span id="second" data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Contracts"><i class="fi-page-multiple style2 icon"><span class="iconCounter"><span id="counterNumber"><%= current_user.contracts.count %></span><span></i></span>
+                <span id="second" data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Contracts"><i class="fi-page-multiple style2 icon"><span class="iconCounter"><span id="counterNumber"><%= current_user.contracts.visible.count %></span><span></i></span>
               <% end %>
               <%= link_to(edit_user_registration_path) do %>
                 <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Edit My Profile"><i class="fi-widget style3 icon"></i></span>
@@ -61,7 +61,7 @@ else window.addEventListener('load', __ldinsp, false);
                   <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="New Contract"><i class="fi-page-edit style_special icon"></i></span>
               <% end %>
               <%= link_to(my_contracts_path) do %>
-                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Contracts"><i class="fi-page-multiple style2 icon"><span class="iconCounter"><span id="counterNumber"><%= current_user.contracts.count %></span><span></i></span>
+                  <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="My Contracts"><i class="fi-page-multiple style2 icon"><span class="iconCounter"><span id="counterNumber"><%= current_user.contracts.visible.count %></span><span></i></span>
               <% end %>
               <%= link_to(edit_user_registration_path) do %>
                   <span data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Edit Profile"><i class="fi-widget style3 icon"></i></span>

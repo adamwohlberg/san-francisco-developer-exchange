@@ -22,5 +22,4 @@ class Negotiation < ActiveRecord::Base
 	belongs_to :employer
 	has_many :negotiation_messages
 
-
 end

@@ -72,6 +72,7 @@ class Contract < ActiveRecord::Base
   scope :closed, -> { where(status: 'closed') }
   scope :visible, -> { where(visible: true)}
 
+
   validates :title, presence: true
   validates :name, presence: true
   validates :description, presence: true
