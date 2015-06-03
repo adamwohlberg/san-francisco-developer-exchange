@@ -67,8 +67,12 @@ span #counterNumber {
   color: grey;
   position: absolute;	
 }
-.far-left:hover, .style1:hover, .style2:hover, .style3:hover, .style4:hover, .style_special:hover {
+.style1:hover, .style2:hover, .style3:hover, .style4:hover, .style_special:hover {
   opacity: 0.8;
+  color: #FFF;
+}
+.far-left:hover {
+  color: #FFF;
 }
 #headerProfileImage {
 	width: 45px;
