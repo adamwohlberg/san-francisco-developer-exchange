@@ -759,6 +759,16 @@ XXLarge screens
 
 @media only screen and (max-width: 40em) {
 
+#searching_for_things {
+  height: 1000px;
+  padding-top: 60px;
+  margin-top: -100px !important;
+}
+#search_google_map_background {
+  height: 1000px;
+  padding-top: 0px;
+  margin-top: -200px;
+}
 #why_should_i_sign_up_headline {
   font-size: 1.4em;
 }
@@ -967,9 +977,7 @@ width: 100%;
 #mobile_hide {
 	display:none;
 }
-#search_google_map_background {
-	margin-top: -200px;
-}
+
 } 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
@@ -977,7 +985,17 @@ width: 100%;
 @media only screen and (min-width: 40.063em) { 
 } /* min-width 641px, medium screens */
 
-@media only screen and (max-width: 64em) { 
+@media only screen and (max-width: 64em) {
+#searching_for_things {
+  height: 1000px;
+  padding-top: 60px;
+  margin-top: -100px !important;
+}
+#search_google_map_background {
+  height: 1000px;
+  padding-top: 0px;
+  margin-top: -200px;
+} 
 #landing-page-headline{
 	// border: 2px solid red;
 	margin-top: -140px;
