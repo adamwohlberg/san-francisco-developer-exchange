@@ -77,7 +77,7 @@ class Contract < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
 
-
+  validates :description, length: {minimum: 0, maximum: 200}, allow_blank: true
   validates_numericality_of :amount, presence: true,
             greater_than_or_equal_to: 1000,
             less_than_or_equal_to: 225001

@@ -8,7 +8,7 @@
       <%= image_tag('noface.jpg', :id => 'developer_profile_image_show') %><br />
       <% end %>
     </div>
-    <div class="large-6 columns show-for-large-only">
+    <div class="large-6 columns">
         <%= image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=9&markers=#{@employer.latitude}%2C#{@employer.longitude}", :id => 'google_map_show') %>
     </div>
   </div>
@@ -17,7 +17,7 @@
   <section class="tabs" ng-controller="TabController as tab">
     <ul class="tabs" data-tab role="tablist">
       <li class="tab-title" ng-class="{ active: tab.isSet(1) }">
-        <a href ng-click="tab.setTab(1)">Project Description</a></li>
+        <a href ng-click="tab.setTab(1)">Project Summary</a></li>
       <li class="tab-title"  ng-class="{ active: tab.isSet(2) }">
         <a href ng-click="tab.setTab(2)">Required Skills</a></li>
       <li class="tab-title"  ng-class="{ active: tab.isSet(3) }">

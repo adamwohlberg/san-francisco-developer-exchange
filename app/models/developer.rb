@@ -87,6 +87,7 @@ class Developer < User
   scope :complete, -> { where.not(:username => nil)}
   scope :has_image, -> { where.not(:avatar_file_name => nil)}
 
+  validates :description, length: {minimum: 0, maximum: 200}, allow_blank: true
   validates_numericality_of :min_contract_amount, presence: true, :on => :update,
             greater_than_or_equal_to: 1000,
             less_than_or_equal_to: 225000
