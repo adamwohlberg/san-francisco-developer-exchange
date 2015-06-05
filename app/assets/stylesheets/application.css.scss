@@ -30,6 +30,10 @@
 @import 'partials/trading_floor';
 @import 'partials/user';
 
+body {
+  overflow-x: hidden;
+}
+
 #big_board_headline {
 	margin-top:20px;
 	color: grey;
@@ -992,7 +996,6 @@ width: 100%;
 	margin-left: 0px;
 }
 .cartoon_image, .freedom_image{
-	// margin-left: 0%;
 	max-width: 200px;
 	height: auto;
 	text-align: center;
@@ -1031,6 +1034,9 @@ width: 100%;
 } /* min-width 641px, medium screens */
 
 @media only screen and (max-width: 64em) {
+.testimonial_image {
+	margin-left: 40%;
+}
 #ticker_tape {
 	display: none;
 }
