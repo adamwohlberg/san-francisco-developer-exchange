@@ -962,8 +962,6 @@ width: 100%;
 #developer_title {
 	user-select: none;	
 }
-.developer_container_each_developer {
-} 
 .bg-content-wrapper {
     position: absolute;
     height: 200px;
@@ -979,17 +977,17 @@ width: 100%;
 #header_icons {
 	margin-top: -15px;
 }
-// .button_landing_page_left {
-// 	max-width: 40px !important;
-// 	margin-left: 40px;
-// }
-// .button_landing_page_right {
-// 	max-width: 80px !important;
-// }
-// .button_landing_page_right {
-//  margin-top: 220px;
-//  margin-bottom: 0px;
-// }
+#first_buttons {
+	display:none;
+	margin-top: 100px;
+	padding: 10px;
+}
+.button_landing_page_left {
+	width: 100%;	
+}
+.button_landing_page_right {
+	width: 100%;
+}
 .instant_hire_screenshot {
 	margin-left: 0px;
 }
@@ -1005,11 +1003,11 @@ width: 100%;
 .foundation-icon {
 	margin-left: 30%;
 }
-#subtitle {
-	display: none;
+#subtitle.text-center{
+	// display: none;
 }
-#landing-page-headline{
-	display: none;
+#landing-page-headline.text-center{
+	// display: none;
 }
 #facebook_button {
 	margin-left: 15px;
