@@ -832,10 +832,6 @@ margin-top: 15px;
 #player_container, #player {
   min-height: 95px;
 }
-.button_landing_page_right {
- margin-top: 220px;
- margin-bottom: 0px;
-}
 #pagination_upper {
 display: none;
 }
@@ -859,9 +855,6 @@ button#unlike, button#rockstar{
 }
 #rockstar {
 	margin-left: 0px;
-}
-#developer_description {
-/*	display: none;*/
 }
 #developer-description-content {
 	margin-top: 170px;
@@ -917,7 +910,6 @@ width: 100%;
 #developer_profile_image {
 	height: 358px;
 }
-
 #developer_profile_image, .developer_image_box {
 	margin-top: 0px;
 	border-radius: 15px 15px 15px 15px;
@@ -971,10 +963,7 @@ width: 100%;
 	user-select: none;	
 }
 .developer_container_each_developer {
-}
-// #hire_now_button {
-// 	display: none;
-// } 
+} 
 .bg-content-wrapper {
     position: absolute;
     height: 200px;
@@ -984,22 +973,23 @@ width: 100%;
 	font-size: 16px;
 	margin-top: -40px;
 }
-// #logo_image {
-// 	display: none;
-// }
 #register_name {
 	display: none;
 }
 #header_icons {
 	margin-top: -15px;
 }
-.button_landing_page_left {
-	max-width: 80px !important;
-	margin-left: 40px;
-}
-.button_landing_page_right {
-	max-width: 80px !important;
-}
+// .button_landing_page_left {
+// 	max-width: 40px !important;
+// 	margin-left: 40px;
+// }
+// .button_landing_page_right {
+// 	max-width: 80px !important;
+// }
+// .button_landing_page_right {
+//  margin-top: 220px;
+//  margin-bottom: 0px;
+// }
 .instant_hire_screenshot {
 	margin-left: 0px;
 }
@@ -1011,9 +1001,6 @@ width: 100%;
 }
 .testimonial_image {
 	margin-left: 30%;
-}
-#mobile_hide {
-	display:none;
 }
 .foundation-icon {
 	margin-left: 30%;
@@ -1035,6 +1022,9 @@ width: 100%;
 #facebook_button_register_page {
 	margin-left: 10%;
 }
+#ticker_tape {
+	margin-top: 0%;
+}
 } 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
@@ -1043,7 +1033,22 @@ width: 100%;
 } /* min-width 641px, medium screens */
 
 @media only screen and (max-width: 64em) {
-
+#ticker_tape {
+	display: none;
+}
+#hire-button {
+	width: 150px !important;
+	min-width: 150px !important;
+	font-size: 0.9em;
+}
+#get-hired-button {
+	width: 150px !important;
+	min-width: 150px !important;
+	font-size: 0.9em;
+}
+#subtitle {
+	font-size: 1.4em;
+}
 #searching_for_things {
   height: 1000px;
   padding-top: 60px;
@@ -1056,8 +1061,8 @@ width: 100%;
 } 
 #landing-page-headline{
 	// border: 2px solid red;
-	margin-top: -120px;
-	font-size: 2.4em;
+	margin-top: -130px;
+	font-size: 2em;
 }
 #logo_image {
 	display: none;
