@@ -71,17 +71,34 @@
 #ticker_tape span:first-child {
 /*	border: 2px solid red;*/
 /*	margin-left: 90%;*/
-	-webkit-animation-name: slide;
-	-webkit-animation-duration: 152s;
-    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
-    animation-timing-function: linear;
+	// -webkit-animation-name: slide;
+	// -webkit-animation-duration: 152s;
+ //    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+ //    animation-timing-function: linear;
 }
-
+#ticker_tape span:first-child {
+  -webkit-animation: slide 152s linear; /* Safari 4+ */
+  -moz-animation:    slide 152s linear; /* Fx 5+ */
+  -o-animation:      slide 152s linear; /* Opera 12+ */
+  animation:         slide 152s linear; /* IE 10+, Fx 29+ */
+}
 /*Keyframes 
 -----------------------------------*/
 @-webkit-keyframes slide {
-	from { margin-left: 100%; }
-	to { margin-left: -1000%;  }
+  0%   { margin-left: 100%; }
+  100% { margin-left: -1000%;  }
+}
+@-moz-keyframes slide {
+  0%   { margin-left: 100%; }
+  100% { margin-left: -1000%;  }
+}
+@-o-keyframes slide {
+  0%   { margin-left: 100%; }
+  100% { margin-left: -1000%;  }
+}
+@keyframes slide {
+  0%   { margin-left: 100%; }
+  100% { margin-left: -1000%;  }
 }
 
 body #trading_floor {
@@ -758,7 +775,6 @@ XXLarge screens
 @media only screen { } /* Define mobile styles */
 
 @media only screen and (max-width: 40em) {
-
 #searching_for_things {
   height: 1000px;
   padding-top: 60px;
@@ -776,23 +792,27 @@ XXLarge screens
   font-size: 1.6em;
 }
 #data_table {
-	margin-left: -5px;
-	font-size: 0.6em;
+	margin-left: 0px;
+	margin-right: 0px;
+	max-width: 100%;
+}
+#data_table td, #data_table th {
+	font-size: 16px;
 }
 #searching_for_things {
 margin-top: -20%;
 } 
 #ticker_tape {
-	margin-top: 20px;
+	margin-top: 0px;
 }
 .iphone_image, .iphone_image_back  {
-  margin-left: -205px !important;
+  margin-left: -218px !important;
 }
 #searching_headline {
 margin-top: 15px;
 }
 #player_container, #player {
-  min-height: 90px;
+  min-height: 95px;
 }
 .button_landing_page_right {
  margin-top: 220px;
@@ -934,12 +954,9 @@ width: 100%;
 }
 .developer_container_each_developer {
 }
-#hire_now_button {
-	display: none;
-} 
-#landing-page-headline,#subtitle {
-    font-size: 1.5em;
-}
+// #hire_now_button {
+// 	display: none;
+// } 
 .bg-content-wrapper {
     position: absolute;
     height: 200px;
@@ -949,9 +966,9 @@ width: 100%;
 	font-size: 16px;
 	margin-top: -40px;
 }
-#logo_image {
-	display: none;
-}
+// #logo_image {
+// 	display: none;
+// }
 #register_name {
 	display: none;
 }
@@ -969,7 +986,10 @@ width: 100%;
 	margin-left: 0px;
 }
 .cartoon_image, .freedom_image{
-	margin-left: 0%;
+	// margin-left: 0%;
+	max-width: 200px;
+	height: auto;
+	text-align: center;
 }
 .testimonial_image {
 	margin-left: 30%;
@@ -977,7 +997,26 @@ width: 100%;
 #mobile_hide {
 	display:none;
 }
-
+.foundation-icon {
+	margin-left: 30%;
+}
+#subtitle {
+	display: none;
+}
+#landing-page-headline{
+	display: none;
+}
+#facebook_button {
+	margin-left: 15px;
+}
+.sign_up_form {
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+#facebook_button_register_page {
+	margin-left: 10%;
+}
 } 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
@@ -986,6 +1025,7 @@ width: 100%;
 } /* min-width 641px, medium screens */
 
 @media only screen and (max-width: 64em) {
+
 #searching_for_things {
   height: 1000px;
   padding-top: 60px;
@@ -998,7 +1038,7 @@ width: 100%;
 } 
 #landing-page-headline{
 	// border: 2px solid red;
-	margin-top: -140px;
+	margin-top: -120px;
 	font-size: 2.4em;
 }
 #logo_image {

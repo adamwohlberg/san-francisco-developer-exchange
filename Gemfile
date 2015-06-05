@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 
 group :development, :test do
@@ -18,10 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'paperclip', '~> 4.2.1'
-# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-# gem 'touchpunch-rails'
-# gem 'jquery-ui-rails'
 gem 'jquery_mobile_rails'
 gem 'better_errors'
 gem 'binding_of_caller'
@@ -49,6 +45,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'byebug'
 gem "letter_opener", :group => :development
 gem "paranoia", "~> 2.0"
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

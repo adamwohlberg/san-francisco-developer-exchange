@@ -14,7 +14,7 @@
               <%= label_tag(:type, "I'm an employer") %>
           <% elsif params[:type] == nil %>
               <%= radio_button_tag(:type, "Employer")%>
-              <%= label_tag(:type, "I'm an employer") %>
+              <%= label_tag(:type, "I'm an employer") %><br>
               <%= radio_button_tag(:type, "Developer", {:checked => true}) %>
               <%= label_tag(:type, "I'm a developer or agency") %>
           <% end %>        
