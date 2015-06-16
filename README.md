@@ -1,4 +1,4 @@
-#This is the public repo for San Francisco Developer Exchange.
+###San Francisco Developer Exchange.
 
 The SF Developer Exchange was envisioned to create a marketplace for developer contracts. 
 
