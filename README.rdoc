@@ -1,28 +1,12 @@
-== README
+#This is the public repo for San Francisco Developer Exchange.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The SF Developer Exchange was envisioned to create a marketplace for developer contracts. 
 
-Things you may want to cover:
+Employers can search for local developers to hire on a contract, contract-to-hire, or full time basis.
 
-* Ruby version
+Developers can search for local contracts and apply to them.  Developers can set a minimum contract amount.  Developers can be contacted through the app, but only by employers who have posted a contract that meets or exceeds the developer's minimum contract.
 
-* System dependencies
+The site has been live for about thirty days and is currently a 'ghost town', but please feel free to contribute any ideas.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Thanks!
+Adam
