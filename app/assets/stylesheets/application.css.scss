@@ -797,6 +797,9 @@ XXLarge screens
 @media only screen { } /* Define mobile styles */
 
 @media only screen and (max-width: 40em) {
+label {
+	font-size: 1.2em;
+}
 #video, #player_container, #player {
 	display: none;
 }
@@ -1020,7 +1023,7 @@ width: 100%;
 	// display: none;
 }
 #facebook_button {
-	margin-left: 15px;
+	margin-left: 5px;
 }
 .sign_up_form {
 	width: 96%;
@@ -1028,7 +1031,7 @@ width: 100%;
 	margin-right: 2%;
 }
 #facebook_button_register_page {
-	margin-left: 10%;
+	margin-left: 5px;
 }
 #ticker_tape {
 	margin-top: 0%;
