@@ -797,6 +797,13 @@ XXLarge screens
 @media only screen { } /* Define mobile styles */
 
 @media only screen and (max-width: 40em) {
+#video, #player_container, #player {
+	display: none;
+}
+#landing_page {
+	margin-top: -30px;
+  overflow-x: hidden;
+}
 #searching_for_things {
   height: 1000px;
   padding-top: 60px;
@@ -1035,7 +1042,7 @@ width: 100%;
 
 @media only screen and (max-width: 64em) {
 .testimonial_image {
-	margin-left: 40%;
+	margin-left: 25%;
 }
 #ticker_tape {
 	display: none;
